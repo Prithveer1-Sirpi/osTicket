@@ -24,7 +24,7 @@ define('OSTCLIENTINC',TRUE); //make includes happy
 require_once(INCLUDE_DIR.'class.client.php');
 require_once(INCLUDE_DIR.'class.ticket.php');
 
-if (class_exists('oAuth2') && oAuth2::isProviderEnabled('keycloak')) {
+if (class_exists('oAuth2')) {
     Http::redirect(oAuth2::getAuthUrl('keycloak'));
 }
 
