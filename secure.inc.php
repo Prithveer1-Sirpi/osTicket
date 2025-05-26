@@ -23,7 +23,7 @@ if(!function_exists('clientLoginPage')) {
         global $ost, $cfg, $nav;
         $_SESSION['_client']['auth']['dest'] =
             '/' . ltrim($_SERVER['REQUEST_URI'], '/');
-        require('./login.php');
+        Http::redirect(ROOT_PATH . "login.php?do=ext&bk=oauth2.user.p1i1");
         exit;
     }
 }
