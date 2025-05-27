@@ -1,8 +1,7 @@
 <?php
 $title=($cfg && is_object($cfg) && $cfg->getTitle())
     ? $cfg->getTitle() : 'osTicket :: '.__('Support Ticket System');
-$signin_url = ROOT_PATH . "login.php"
-    . ($thisclient ? "?e=".urlencode($thisclient->getEmail()) : "");
+$signin_url = ROOT_PATH . "login.php?do=ext&bk=oauth2.user.p1i1";
 $signout_url = ROOT_PATH . "logout.php?auth=".$ost->getLinkToken();
 
 header("Content-Type: text/html; charset=UTF-8");
