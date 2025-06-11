@@ -49,8 +49,8 @@ if (osTicket::is_ie())
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/rtl.css"/>
     <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/select2.min.css">
     <!-- Favicons -->
-    <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/oscar-favicon-32x32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/oscar-favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/tgdex_favicon.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/tgdex_favicon.png" sizes="16x16" />
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-3.7.0.min.js"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-ui-1.13.2.custom.min.js"></script>
     <script type="text/javascript" src="<?php echo ROOT_PATH; ?>js/jquery-ui-timepicker-addon.js"></script>
@@ -98,25 +98,60 @@ if (osTicket::is_ie())
         ?>
         <div id="header">
             <div class="pull-right flush-right">
-            <p>
+            <p >
              <?php
                 if ($thisclient && is_object($thisclient) && $thisclient->isValid()
                     && !$thisclient->isGuest()) {
-                 echo Format::htmlchars($thisclient->getName()).'&nbsp;|';
+    echo '<span style="
+        display: inline-block;
+        background-color: #28a745;
+        color: white;
+        padding: 0.5rem;
+        font-size: 0.85em;
+        border-radius: 999px;
+        font-weight:600
+        margin-right: 5px;
+        text-transform: capitalize;
+        
+    ">' . Format::htmlchars($thisclient->getName()) . '</span> |';
+?>
                  ?>
                 <a href="<?php echo ROOT_PATH; ?>profile.php"><?php echo __('Profile'); ?></a> |
                 <a href="<?php echo ROOT_PATH; ?>tickets.php"><?php echo sprintf(__('Tickets <b>(%d)</b>'), $thisclient->getNumTickets()); ?></a> -
                 <a href="<?php echo $signout_url; ?>"><?php echo __('Sign Out'); ?></a>
             <?php
             } elseif($nav) {
-                if ($cfg->getClientRegistrationMode() == 'public') { ?>
-                    <?php echo __('Guest User'); ?> | <?php
-                }
+               if ($cfg->getClientRegistrationMode() == 'public') { ?>
+        <span style="
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-radius: 999px;
+            font-weight:600
+            text-transform: capitalize;
+        ">
+            <?php echo __('Guest User'); ?>
+        </span> |
+<?php
+    }
                 if ($thisclient && $thisclient->isValid() && $thisclient->isGuest()) { ?>
                     <a href="<?php echo $signout_url; ?>"><?php echo __('Sign Out'); ?></a><?php
                 }
                 elseif ($cfg->getClientRegistrationMode() != 'disabled') { ?>
-                    <a href="<?php echo $signin_url; ?>"><?php echo __('Sign In'); ?></a>
+                    <a href="<?php echo $signin_url; ?>" 
+                    style="
+            display: inline-block;
+            border: 1px solid #1f2937;
+            color: black;
+            padding: 8px 20px;
+            font-size: 14px;
+            border-radius: 999px;
+            text-transform: capitalize;
+            font-weight:500
+        "
+                    ><?php echo __('SIGN IN'); ?></a>
 <?php
                 }
             } ?>

@@ -33,7 +33,9 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
 ?>
 <h1><?php echo __('Open a New Ticket');?></h1>
 <p><?php echo __('Please fill in the form below to open a new ticket.');?></p>
-<form id="ticketForm" method="post" action="open.php" enctype="multipart/form-data">
+<form
+style="font-family: Open Sans, Helvetica, Arial, sans-serif"
+id="ticketForm" method="post" action="open.php" enctype="multipart/form-data"  >
   <?php csrf_token(); ?>
   <input type="hidden" name="a" value="open">
   <table width="800" cellpadding="1" cellspacing="0" border="0">
@@ -58,6 +60,7 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
         <b><?php echo __('Help Topic'); ?></b>
         </div>
     </td></tr>
+    
     <tr>
         <td colspan="2">
             <select id="topicId" name="topicId" onchange="javascript:
@@ -114,10 +117,17 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
     </tbody>
   </table>
 <hr/>
-  <p class="buttons" style="text-align:center;">
-        <input type="submit" value="<?php echo __('Create Ticket');?>">
-        <input type="reset" name="reset" value="<?php echo __('Reset');?>">
-        <input type="button" name="cancel" value="<?php echo __('Cancel'); ?>" onclick="javascript:
+  <p class="buttons" style="text-align:center;margin:0;">
+       <button type="submit"
+    style="background-color: #00a651; color: white; border: none; padding: 10px 20px; border-radius: 999px; cursor: pointer;">
+    <?php echo __('Create Ticket');?>
+</button>
+        <input type="reset"
+            style="border: 1px solid grey; padding: 10px 20px; border-radius: 999px; cursor: pointer;" 
+        name="reset" value="<?php echo __('Reset');?>">
+        <input type="button" 
+            style="background-color: red; color: white; border: none; padding: 10px 20px; border-radius: 999px; cursor: pointer;"
+        name="cancel" value="<?php echo __('Cancel'); ?>" onclick="javascript:
             $('.richtext').each(function() {
                 var redactor = $(this).data('redactor');
                 if (redactor && redactor.opts.draftDelete)
