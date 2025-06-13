@@ -39,10 +39,27 @@ else
     <div class="instructions">
 <?php if ($cfg && $cfg->getClientRegistrationMode() !== 'disabled') { ?>
         <?php echo __('Have an account with us?'); ?>
-        <a href="login.php"><?php echo __('Sign In'); ?></a> <?php
+        <?php
+        // Find OAuth2 plugin instance dynamically
+        $login_url = ROOT_PATH . "login.php";
+        if (class_exists('OAuth2Plugin')) {
+            foreach (PluginManager::allInstalled() as $path => $plugin) {
+                if ($plugin instanceof OAuth2Plugin && $plugin->isActive()) {
+                    // Get the first active instance of the plugin
+                    $instances = $plugin->getActiveInstances();
+                    if ($instances && $instances->count() > 0) {
+                        $instance = $instances->first();
+                        $login_url = ROOT_PATH . "login.php?do=ext&bk=oauth2.user.p" . $plugin->getId() . "i" . $instance->getId();
+                    }
+                    break;
+                }
+            }
+        }
+        ?>
+        <a href="<?php echo $login_url; ?>"><?php echo __('Sign In'); ?></a> <?php
     if ($cfg->isClientRegistrationEnabled()) { ?>
 <?php echo sprintf(__('or %s register for an account %s to access all your tickets.'),
-    '<a href="account.php?do=create">','</a>');
+    '<a href="' . $login_url . '">','</a>');
     }
 }?>
     </div>
