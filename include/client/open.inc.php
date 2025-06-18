@@ -31,108 +31,97 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
 }
 
 ?>
-<h1><?php echo __('Open a New Ticket');?></h1>
-<p><?php echo __('Please fill in the form below to open a new ticket.');?></p>
-<form
-style="font-family: Open Sans, Helvetica, Arial, sans-serif"
-id="ticketForm" method="post" action="open.php" enctype="multipart/form-data"  >
-  <?php csrf_token(); ?>
-  <input type="hidden" name="a" value="open">
-  <table width="800" cellpadding="1" cellspacing="0" border="0">
-    <tbody>
-<?php
-        if (!$thisclient) {
-            $uform = UserForm::getUserForm()->getForm($_POST);
-            if ($_POST) $uform->isValid();
-            $uform->render(array('staff' => false, 'mode' => 'create'));
-        }
-        else { ?>
-            <tr><td colspan="2"><hr /></td></tr>
-        <tr><td><?php echo __('Email'); ?>:</td><td><?php
-            echo $thisclient->getEmail(); ?></td></tr>
-        <tr><td><?php echo __('Client'); ?>:</td><td><?php
-            echo Format::htmlchars($thisclient->getName()); ?></td></tr>
-        <?php } ?>
-    </tbody>
-    <tbody>
-    <tr><td colspan="2"><hr />
-        <div class="form-header" style="margin-bottom:0.5em">
-        <b><?php echo __('Help Topic'); ?></b>
-        </div>
-    </td></tr>
-    
-    <tr>
-        <td colspan="2">
-            <select id="topicId" name="topicId" onchange="javascript:
-                    var data = $(':input[name]', '#dynamic-form').serialize();
-                    $.ajax(
-                      'ajax.php/form/help-topic/' + this.value,
-                      {
-                        data: data,
-                        dataType: 'json',
-                        success: function(json) {
-                          $('#dynamic-form').empty().append(json.html);
-                          $(document.head).append(json.media);
+<h1 style="text-decoration: none; padding:0rem 1.3rem; background-clip: text; font-family: Helvetica Neue" ><?php echo __('Submit a Request');?></h1>
+<!-- <p><?php echo __('Please fill in the form below to open a new ticket.');?></p> -->
+<form id="ticketForm" method="post" action="open.php" enctype="multipart/form-data" style="font-family: Open Sans, Helvetica, Arial, sans-serif; padding: 1rem">
+    <?php csrf_token(); ?>
+    <input type="hidden" name="a" value="open">
+
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; font-family:Avenir">
+        <div style="flex: 1; min-width: 300px; display:flex; flex-direction:column; gap:1rem">
+            <!-- Name -->
+            <div style="margin-bottom: 1rem;">
+                <label for="name" style="display: block; font-weight: 600; margin-bottom: 5px;"><?php echo __('Name'); ?> <span style="color:red">*</span></label>
+                <input type="text" name="name" id="name" value="<?php echo $info['name']; ?>" class="green-focus-input" placeholder="Enter Full Name"
+                    style="width: 90%; padding: 10px; border: 1px solid #ccc; border-radius: 999px;">
+            </div>
+
+            <!-- Email -->
+            <div style="margin-bottom: 1rem;">
+                <label for="email" style="display: block; font-weight: 600; margin-bottom: 5px;"><?php echo __('Email ID'); ?> <span style="color:red">*</span></label>
+                <input type="email" name="email" id="email" value="<?php echo $info['email']; ?>" placeholder="Enter Email ID"
+                    style="width: 90%; padding: 10px; border: 1px solid #ccc; border-radius: 999px;">
+            </div>
+
+            <!-- Topic Dropdown -->
+            <div style="margin-bottom: 1rem;">
+                <label for="topicId" style="display: block; font-weight: 600; margin-bottom: 5px;"><?php echo __('Reason'); ?> <span style="color:red">*</span></label>
+                <select id="topicId" name="topicId"
+                style="width: 93%; padding: 10px; border: 1px solid #ccc; border-radius: 999px;
+                   background-color: #fff;
+                    background-image: url('data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'12\' height=\'8\'><path fill=\'%23333\' d=\'M6 8L0 0h12z\'/></svg>');
+                    background-repeat: no-repeat;
+                    background-position: right 1rem center;
+                    background-size: 0.65rem;
+                    appearance: none;
+                    -webkit-appearance: none;
+                    -moz-appearance: none;
+                    transition: border-color 0.3s ease;"
+                    >
+                    <option value="" selected>&mdash; <?php echo __('Select a Help Topic');?> &mdash;</option>
+                    <?php
+                    if($topics=Topic::getPublicHelpTopics()) {
+                        foreach($topics as $id =>$name) {
+                            echo sprintf('<option value="%d" %s>%s</option>',
+                                    $id, ($info['topicId']==$id)?'selected="selected"':'', $name);
                         }
-                      });">
-                <option value="" selected="selected">&mdash; <?php echo __('Select a Help Topic');?> &mdash;</option>
-                <?php
-                if($topics=Topic::getPublicHelpTopics()) {
-                    foreach($topics as $id =>$name) {
-                        echo sprintf('<option value="%d" %s>%s</option>',
-                                $id, ($info['topicId']==$id)?'selected="selected"':'', $name);
-                    }
-                } ?>
-            </select>
-            <font class="error">*&nbsp;<?php echo $errors['topicId']; ?></font>
-        </td>
-    </tr>
-    </tbody>
-    <tbody id="dynamic-form">
+                    } ?>
+                </select>
+                <font class="error"><?php echo $errors['topicId']; ?></font>
+            </div>
+
+            <!-- Subject -->
+            <div style="margin-bottom: 1rem;">
+                <label for="subject" style="display: block; font-weight: 600; margin-bottom: 5px;"><?php echo __('Subject'); ?></label>
+                <input type="text" name="subject" id="subject" placeholder="Enter Subject"
+                    style="width: 90%; padding: 10px; border: 1px solid #ccc; border-radius: 999px;">
+            </div>
+        </div>
+
+        <!-- Message Textarea (Right side) -->
+        <div style="flex: 1; min-width: 300px;">
+       <div class="form-right" style="flex: 1; min-width: 320px;">
+      <?php
+        // Always show the Issue/Message field
+        $messageField = TicketForm::objects()->one()->getField('message');
+        if ($messageField) {
+            echo '<div class="form-group">';
+            echo '<label for="message"><b>' . __('Issue') . '</b><span class="error">*</span></label>';
+            $messageField->render(array('client'=>true));
+            echo '</div>';
+        }
+      ?>
+      <small class="form-helper-text">
+        Please enter the details of your request and, if you have any questions regarding our Terms of use, please include specific samples of the usage you wish to give our resources. If you're reporting a problem, make sure to include as much information as possible.
+      </small>
+    </div>
+  </div>
+    </div>
+
+    <!-- Dynamic Form (optional fields from selected Topic) -->
+    <div id="dynamic-form" style="margin-top: 2rem;">
         <?php
         $options = array('mode' => 'create');
         foreach ($forms as $form) {
             include(CLIENTINC_DIR . 'templates/dynamic-form.tmpl.php');
         } ?>
-    </tbody>
-    <tbody>
-    <?php
-    if($cfg && $cfg->isCaptchaEnabled() && (!$thisclient || !$thisclient->isValid())) {
-        if($_POST && $errors && !$errors['captcha'])
-            $errors['captcha']=__('Please re-enter the text again');
-        ?>
-    <tr class="captchaRow">
-        <td class="required"><?php echo __('CAPTCHA Text');?>:</td>
-        <td>
-            <span class="captcha"><img src="captcha.php" border="0" align="left"></span>
-            &nbsp;&nbsp;
-            <input id="captcha" type="text" name="captcha" size="6" autocomplete="off">
-            <em><?php echo __('Enter the text shown on the image.');?></em>
-            <font class="error">*&nbsp;<?php echo $errors['captcha']; ?></font>
-        </td>
-    </tr>
-    <?php
-    } ?>
-    <tr><td colspan=2>&nbsp;</td></tr>
-    </tbody>
-  </table>
-<hr/>
-  <p class="buttons" style="text-align:center;margin:0;">
-       <button type="submit"
-    style="background-color: #00a651; color: white; border: none; padding: 10px 20px; border-radius: 999px; cursor: pointer;">
-    <?php echo __('Create Ticket');?>
-</button>
-        <input type="reset"
-            style="border: 1px solid grey; padding: 10px 20px; border-radius: 999px; cursor: pointer;" 
-        name="reset" value="<?php echo __('Reset');?>">
-        <input type="button" 
-            style="background-color: red; color: white; border: none; padding: 10px 20px; border-radius: 999px; cursor: pointer;"
-        name="cancel" value="<?php echo __('Cancel'); ?>" onclick="javascript:
-            $('.richtext').each(function() {
-                var redactor = $(this).data('redactor');
-                if (redactor && redactor.opts.draftDelete)
-                    redactor.plugin.draft.deleteDraft();
-            });
-            window.location.href='index.php';">
-  </p>
+    </div>
+
+    <!-- Submit Button -->
+    <div style="text-align: right; margin-top: 2rem;">
+        <button type="submit"
+            style="background-color: #00a651; color: white; border: none; padding: 10px 30px; border-radius: 999px; font-weight: bold; cursor: pointer;">
+            <?php echo __('Submit Request'); ?>
+        </button>
+    </div>
 </form>

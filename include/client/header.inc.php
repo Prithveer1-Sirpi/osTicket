@@ -97,7 +97,7 @@ if (osTicket::is_ie())
             echo sprintf('<div class="notice_bar">%s</div>', $ost->getNotice());
         ?>
         <div id="header">
-            <div class="pull-right flush-right">
+            <div class="header_items">
             <p >
              <?php
                 if ($thisclient && is_object($thisclient) && $thisclient->isValid()
@@ -109,16 +109,16 @@ if (osTicket::is_ie())
         padding: 0.5rem;
         font-size: 0.85em;
         border-radius: 999px;
-        font-weight:600
+        font-weight:600;
         margin-right: 5px;
         text-transform: capitalize;
         
-    ">' . Format::htmlchars($thisclient->getName()) . '</span> |';
+    ">' . Format::htmlchars($thisclient->getName()) . '</span> ';
 ?>
-                 ?>
-                <a href="<?php echo ROOT_PATH; ?>profile.php"><?php echo __('Profile'); ?></a> |
-                <a href="<?php echo ROOT_PATH; ?>tickets.php"><?php echo sprintf(__('Tickets <b>(%d)</b>'), $thisclient->getNumTickets()); ?></a> -
-                <a href="<?php echo $signout_url; ?>"><?php echo __('Sign Out'); ?></a>
+
+                <a href="<?php echo ROOT_PATH; ?>profile.php"><?php echo __('PROFILE'); ?></a> 
+                <a href="<?php echo ROOT_PATH; ?>tickets.php"><?php echo sprintf(__('TICKETS <b>(%d)</b>'), $thisclient->getNumTickets()); ?></a> 
+                <a style="border:1px solid black; padding:0.5rem; border-radius:999px; font-weight:bold" href="<?php echo $signout_url; ?>"><?php echo __('Sign Out'); ?></a>
             <?php
             } elseif($nav) {
                if ($cfg->getClientRegistrationMode() == 'public') { ?>
@@ -129,7 +129,7 @@ if (osTicket::is_ie())
             padding: 0.5rem;
             font-size: 1rem;
             border-radius: 999px;
-            font-weight:600
+            font-weight:600;
             text-transform: capitalize;
         ">
             <?php echo __('Guest User'); ?>
@@ -149,7 +149,7 @@ if (osTicket::is_ie())
             font-size: 14px;
             border-radius: 999px;
             text-transform: capitalize;
-            font-weight:500
+            font-weight:500;
         "
                     ><?php echo __('SIGN IN'); ?></a>
 <?php
