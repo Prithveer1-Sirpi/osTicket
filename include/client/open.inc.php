@@ -120,7 +120,7 @@ if ($info['topicId'] && ($topic=Topic::lookup($info['topicId']))) {
     <!-- Submit Button -->
     <div style="text-align: right; margin-top: 2rem;">
         <button type="submit"
-            style="background-color: #00a651; color: white; border: none; padding: 10px 30px; border-radius: 999px; font-weight: bold; cursor: pointer;">
+            style="background-color: #00a651; color: white; border: black; padding: 10px 30px; border-radius: 999px; font-weight: bold; cursor: pointer;">
             <?php echo __('Submit Request'); ?>
         </button>
     </div>
