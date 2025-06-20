@@ -131,7 +131,7 @@ a,
 }
 a:hover,
 .link:hover {
-  border-bottom: 1px dotted #0072bc;
+  /* border-bottom: 1px dotted #0072bc; */
   margin-bottom: 1px;
   cursor: pointer;
 }
@@ -348,15 +348,20 @@ body {
 #header {
   position: relative;
   /* height: 71px; */
-  padding: 10px 20px;
   top: 0;
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
   align-items: center;
+  border: 1px #c2c2c2;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  padding: 10px 20px !important;
 }
 .header_items {
   text-align: right !important;
+  display: flex;
+  align-items: center;
 }
 .header_items a {
   text-decoration: none;
@@ -367,10 +372,8 @@ body {
   height: 100%;
 }
 #header #logo img {
-  max-height: 45px;
-  max-width: 380px;
   width: auto;
-  height: auto;
+  height: 1.875rem;
   vertical-align: middle;
 }
 .valign-helper {
@@ -384,10 +387,10 @@ body {
   padding: 10px 0 0;
 }
 #nav {
-  padding: 12px 10px;
+  /* padding: 12px 10px;
   height: auto;
   border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0; */
 
   display: flex;
   justify-content: space-evenly;
@@ -463,7 +466,7 @@ body {
 } */
 #content {
   /* padding: 20px 0; */
-  margin: 0 20px;
+  margin: 16px 0px;
   height: auto !important;
   height: 350px;
   min-height: 350px;
@@ -504,6 +507,7 @@ body {
   flex-direction: row-reverse;
   justify-content: space-around;
   align-items: center;
+  background: url("../images/tgdex_bg.png");
 }
 #landing_page #new_ticket {
   margin-top: 40px;
@@ -1454,4 +1458,17 @@ img.avatar {
   font-weight: bold;
   margin-bottom: 0.3em;
   font-size: 1.1em;
+}
+#gradient-green-title {
+  font-family: Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #05ac54, #015b2d);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+  padding-left: 1.5rem;
+  text-align: center;
+  display: inline-block;
 }
