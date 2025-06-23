@@ -132,7 +132,7 @@ if (($lang = Internationalization::getCurrentLanguage())) {
                                 sprintf(__('TICKETS <b>(%d)</b>'), $thisclient->getNumTickets()) .
                                 '</a>';
 
-                            echo '<a style=" padding:0.5rem; border-radius:999px; font-weight:500;   display: inline-block;
+                            echo '<a style=" padding:0.5rem; border-radius:999px; font-weight:500;   display: inline-block; margin:0rem 1rem;
                 border: 1px solid #1f2937;
                 color: black;
                 padding: 8px 20px;
@@ -168,6 +168,7 @@ if (($lang = Internationalization::getCurrentLanguage())) {
                 border-radius: 999px;
                 text-transform: capitalize;
                 font-weight:500;
+                margin:0rem 1rem;
            "><?php echo __('SIGN IN'); ?></a>
                             <?php
                             }

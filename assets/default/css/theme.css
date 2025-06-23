@@ -1,6 +1,6 @@
 html {
   font-size: 100%;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
@@ -315,6 +315,20 @@ h2,
 
 /* blue button is open new ticket */
 
+#gradient-green-title {
+  font-family: Arial, sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #05ac54, #015b2d);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: transparent !important;
+  padding: 1rem 1rem;
+  text-align: center;
+  display: inline-block;
+}
+
 .blue.button,
 .blue.button:visited {
   background-color: #00a651;
@@ -331,10 +345,10 @@ body {
   /* background: url("../images/tgdex_bg.png") top left repeat-x; */
 }
 #container {
-  background: #fff;
+  /* background: #fff; */
+  /* max-height: 80vh; */
   overflow: auto;
   height: 100vh;
-  /* max-height: 80vh; */
   /* width: 870px; */
   /* margin: 0 auto;
   box-shadow: 0 0 6px rgba(0, 0, 0, 0.5);
@@ -348,6 +362,7 @@ body {
 #header {
   position: relative;
   /* height: 71px; */
+  padding: 0 20px;
   top: 0;
   display: flex;
   flex-direction: row-reverse;
@@ -356,12 +371,10 @@ body {
   border: 1px #c2c2c2;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  padding: 10px 20px !important;
+  padding: 1rem 0rem 1rem;
 }
 .header_items {
   text-align: right !important;
-  display: flex;
-  align-items: center;
 }
 .header_items a {
   text-decoration: none;
@@ -375,6 +388,7 @@ body {
   width: auto;
   height: 1.875rem;
   vertical-align: middle;
+  padding: 0rem 2rem;
 }
 .valign-helper {
   height: 100%;
@@ -387,10 +401,10 @@ body {
   padding: 10px 0 0;
 }
 #nav {
-  /* padding: 12px 10px;
+  padding: 12px 10px;
   height: auto;
   border-top: 1px solid #e0e0e0;
-  border-bottom: 1px solid #e0e0e0; */
+  border-bottom: 1px solid #e0e0e0;
 
   display: flex;
   justify-content: space-evenly;
@@ -466,10 +480,12 @@ body {
 } */
 #content {
   /* padding: 20px 0; */
-  margin: 16px 0px;
+  margin: 0 20px;
   height: auto !important;
   height: 350px;
   min-height: 350px;
+  padding-top: 1.2rem;
+  flex: 1;
 }
 #content > h1 {
   color: #00a651;
@@ -499,6 +515,7 @@ body {
 }
 .front-page-button {
 }
+
 .main-content {
   width: 565px;
 }
@@ -507,7 +524,6 @@ body {
   flex-direction: row-reverse;
   justify-content: space-around;
   align-items: center;
-  background: url("../images/tgdex_bg.png");
 }
 #landing_page #new_ticket {
   margin-top: 40px;
@@ -685,7 +701,7 @@ body {
   display: block;
 }
 #ticketForm div label {
-  padding: 0 0.5rem !important;
+  /* padding: 0 0.5rem !important; */
 }
 label.required,
 span.required {
@@ -1458,17 +1474,4 @@ img.avatar {
   font-weight: bold;
   margin-bottom: 0.3em;
   font-size: 1.1em;
-}
-#gradient-green-title {
-  font-family: Arial, sans-serif;
-  font-size: 1.4rem;
-  font-weight: bold;
-  background: linear-gradient(to right, #05ac54, #015b2d);
-  -webkit-background-clip: text !important;
-  -webkit-text-fill-color: transparent !important;
-  background-clip: text !important;
-  color: transparent !important;
-  padding-left: 1.5rem;
-  text-align: center;
-  display: inline-block;
 }
