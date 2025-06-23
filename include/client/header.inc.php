@@ -1,8 +1,29 @@
 <?php
-$title = ($cfg && is_object($cfg) && $cfg->getTitle())
-    ? $cfg->getTitle() : 'osTicket :: ' . __('Support Ticket System');
-$signin_url = ROOT_PATH . "login.php?do=ext&bk=oauth2.user.p1i1";
-$signout_url = ROOT_PATH . "logout.php?auth=" . $ost->getLinkToken();
+$title=($cfg && is_object($cfg) && $cfg->getTitle())
+    ? $cfg->getTitle() : 'osTicket :: '.__('Support Ticket System');
+
+// Find OAuth2 plugin instance dynamically
+$signin_url = ROOT_PATH . "login.php";
+$oauth2_plugin = null;
+
+// Only try to find OAuth2 plugin if the class exists
+if (class_exists('OAuth2Plugin')) {
+    foreach (PluginManager::allInstalled() as $path => $plugin) {
+        if ($plugin instanceof OAuth2Plugin && $plugin->isActive()) {
+            $oauth2_plugin = $plugin;
+            break;
+        }
+    }
+    if ($oauth2_plugin) {
+        // Get the first active instance of the plugin
+        $instances = $oauth2_plugin->getActiveInstances();
+        if ($instances && $instances->count() > 0) {
+            $instance = $instances->first();
+            $signin_url = ROOT_PATH . "login.php?do=ext&bk=oauth2.user.p" . $oauth2_plugin->getId() . "i" . $instance->getId();
+        }
+    }
+}
+$signout_url = ROOT_PATH . "logout.php?auth=".$ost->getLinkToken();
 
 header("Content-Type: text/html; charset=UTF-8");
 header("Content-Security-Policy: frame-ancestors " . $cfg->getAllowIframes() . "; script-src 'self' 'unsafe-inline'; object-src 'none'");
