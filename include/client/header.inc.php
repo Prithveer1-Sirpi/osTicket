@@ -1,6 +1,6 @@
 <?php
-$title=($cfg && is_object($cfg) && $cfg->getTitle())
-    ? $cfg->getTitle() : 'osTicket :: '.__('Support Ticket System');
+$title = ($cfg && is_object($cfg) && $cfg->getTitle())
+    ? $cfg->getTitle() : 'osTicket :: ' . __('Support Ticket System');
 
 // Find OAuth2 plugin instance dynamically
 $signin_url = ROOT_PATH . "login.php";
@@ -23,7 +23,7 @@ if (class_exists('OAuth2Plugin')) {
         }
     }
 }
-$signout_url = ROOT_PATH . "logout.php?auth=".$ost->getLinkToken();
+$signout_url = ROOT_PATH . "logout.php?auth=" . $ost->getLinkToken();
 
 header("Content-Type: text/html; charset=UTF-8");
 header("Content-Security-Policy: frame-ancestors " . $cfg->getAllowIframes() . "; script-src 'self' 'unsafe-inline'; object-src 'none'");
@@ -162,20 +162,20 @@ if (($lang = Internationalization::getCurrentLanguage())) {
                             $initials = strtoupper(substr($thisclient->getName(), 0, 1) . (strpos($thisclient->getName(), ' ') !== false ? substr($thisclient->getName(), strpos($thisclient->getName(), ' ') + 1, 1) : ''));
 
                             echo '<a href="' . ROOT_PATH . 'profile.php" style="
-        display: inline-block;
-        background-color: #28a745;
-        color: white;
-        font-size: 0.85em;
-        width: 1rem;
-        height: 1rem;
-        text-align: center;
-        border-radius: 50%;
-        font-weight:600;
-        margin-right: 5px;
-        text-transform: capitalize;
-        margin-left: 5px;
-        padding: 13px;
-    ">' . Format::htmlchars($initials) . '</a>';
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background-color: #28a745;
+    color: white;
+    font-size: 0.85em;
+    border-radius: 50%;
+    font-weight: 600;
+    margin: 0 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+                        ">' . Format::htmlchars($initials) . '</a>';
                         } elseif ($nav) {
                             if ($cfg->getClientRegistrationMode() != 'disabled') {
                         ?>
