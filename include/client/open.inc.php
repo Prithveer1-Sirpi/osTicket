@@ -33,9 +33,9 @@ if ($info['topicId'] && ($topic = Topic::lookup($info['topicId']))) {
 }
 ?>
 
-<h1 id="gradient-green-title"><?php echo __('Submit a Request'); ?></h1>
+<h1 id="gradient-green-title" style="padding-left: 4rem !important;"><?php echo __('Submit a Request'); ?></h1>
 
-<form id="ticketForm" method="post" action="open.php" enctype="multipart/form-data" style="font-family: Open Sans, Helvetica, Arial, sans-serif; padding: 1rem;">
+<form id="ticketForm" method="post" action="open.php" enctype="multipart/form-data" style="font-family: Open Sans, Helvetica, Arial, sans-serif; padding: 1rem; padding-left: 4rem;">
     <?php csrf_token(); ?>
     <input type="hidden" name="a" value="open">
 
@@ -79,7 +79,7 @@ if ($info['topicId'] && ($topic = Topic::lookup($info['topicId']))) {
                         }
                       });"
                     style="width: 100%; padding: 10px; border-radius: 999px; border: 1px solid #ccc;">
-                    <option value="" selected>&mdash; <?php echo __('Select a Help Topic'); ?> &mdash;</option>
+                    <option value="" selected> <?php echo __('Select a Help Topic'); ?></option>
                     <?php
                     if ($topics = Topic::getPublicHelpTopics()) {
                         foreach ($topics as $id => $name) {
@@ -96,11 +96,11 @@ if ($info['topicId'] && ($topic = Topic::lookup($info['topicId']))) {
             </div>
 
             <!-- Subject -->
-            <div>
+            <!-- <div>
                 <label for="subject" style="font-weight: 600;"><?php echo __('Subject'); ?></label>
                 <input type="text" name="subject" id="subject" placeholder="Enter Subject"
-                    style="width: 96.7%; padding: 10px; border: 1px solid #ccc; border-radius: 999px;">
-            </div>
+                    style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 999px;">
+            </div> -->
         </div>
 
         <!-- RIGHT COLUMN -->
@@ -141,5 +141,4 @@ if ($info['topicId'] && ($topic = Topic::lookup($info['topicId']))) {
             <?php echo __('Submit Request'); ?>
         </button>
     </div>
-    <hr>
 </form>
