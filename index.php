@@ -42,9 +42,9 @@ if ($cfg && $cfg->isKnowledgebaseEnabled()) { ?>
     ?>
     </div>
 </div>
-<div class="clear"></div>
+<!-- <div class="clear"></div> -->
 
-<div>
+<div style="display:none" >
 <?php
 if($cfg && $cfg->isKnowledgebaseEnabled()){
     //FIXME: provide ability to feature or select random FAQs ??
@@ -79,4 +79,4 @@ if ($cats->all()) { ?>
 </div>
 </div>
 
-<?php require(CLIENTINC_DIR.'footer.inc.php'); ?>
+
