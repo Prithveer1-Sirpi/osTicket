@@ -140,14 +140,13 @@ require(CLIENTINC_DIR . 'header.inc.php');
             <!-- Right: AI City -->
             <div style="
                 width: 70px;
-                height: 55px;
                 border-radius: 8px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-shrink: 0;
             ">
-                <img src="/osTicket/assets/default/images/AI-CITY-Logo.svg">
+                <img src="/osTicket/assets/default/images/AI-CITY-Logo.svg" style="width: 80px">
             </div>
         </div>
 
