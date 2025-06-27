@@ -53,7 +53,7 @@ require(CLIENTINC_DIR . 'header.inc.php');
             <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
                 <!-- Government Seal -->
                 <div style="width: 50px; height: 50px; flex-shrink: 0;">
-                    <img src="/osTicket/assets/default/images/TelenganaGovt-logo.svg" style="width: 100%; height: 100%;">
+                    <img src="assets/default/images/TelenganaGovt-logo.svg" style="width: 100%; height: 100%;">
                 </div>
 
                 <!-- Chief Minister Card -->
@@ -75,7 +75,7 @@ require(CLIENTINC_DIR . 'header.inc.php');
                         border: 2px solid #d8b167;
                         flex-shrink: 0;
                     ">
-                        <img src="/osTicket/assets/default/images/honcm.svg" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="assets/default/images/honcm.svg" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div>
                         <div style="
@@ -114,7 +114,7 @@ require(CLIENTINC_DIR . 'header.inc.php');
                         border: 2px solid #d8b167;
                         flex-shrink: 0;
                     ">
-                        <img src="/osTicket/assets/default/images/itmin.svg" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="assets/default/images/itmin.svg" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div>
                         <div style="
@@ -145,7 +145,7 @@ require(CLIENTINC_DIR . 'header.inc.php');
                 justify-content: center;
                 flex-shrink: 0;
             ">
-                <img src="/osTicket/assets/default/images/AI-CITY-Logo.svg">
+                <img src="assets/default/images/AI-CITY-Logo.svg">
             </div>
         </div>
 
@@ -159,7 +159,7 @@ require(CLIENTINC_DIR . 'header.inc.php');
             margin-top: 5px;
             padding-top: 1rem;
         ">
-            <img src="/osTicket/assets/default/images/logo.png" style="height: 46px;">
+            <img src="assets/default/images/logo.png" style="height: 46px;">
             <div style="
                 font-size: 36px;
                 color: #333;
