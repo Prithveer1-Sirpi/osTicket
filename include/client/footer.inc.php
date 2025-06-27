@@ -147,9 +147,9 @@
                     </a>
                 </div>
                 <div style="display: flex; align-items: center; gap: 1rem;">
-                    <a href="https://tgdex.telangana.gov.in/" style="color: #374151; text-decoration: none; font-size: 14px; font-weight: 400;">Privacy Policy</a>
+                    <a href="https://tgdex.telangana.gov.in/privacy-policy" style="color: #374151; text-decoration: none; font-size: 14px; font-weight: 400;">Privacy Policy</a>
                     <span style="color: #9ca3af;">|</span>
-                    <a href="https://tgdex.telangana.gov.in/" style="color: #374151; text-decoration: none; font-size: 14px; font-weight: 400;">Terms of Service</a>
+                    <a href="https://tgdex.telangana.gov.in/terms-of-service" style="color: #374151; text-decoration: none; font-size: 14px; font-weight: 400;">Terms of Service</a>
                 </div>
             </div>
 
