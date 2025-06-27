@@ -27,7 +27,7 @@ require(CLIENTINC_DIR . 'header.inc.php');
     width: 100%;
     background: #ffffff;
     border-bottom: 1px solid #e0e0e0;
-    padding: 15px 20px;
+    padding: 0 20px 20px 0 !important;
     box-sizing: border-box;
     position: relative;
     z-index: 1000;
@@ -35,8 +35,8 @@ require(CLIENTINC_DIR . 'header.inc.php');
     overflow: hidden;
 ">
     <div style="
-        max-width: 1200px;
-        margin: 0 auto;
+        max-width: 100%;
+        /* margin: 0 auto; */
         display: flex;
         flex-direction: column;
         gap: 15px;
@@ -52,7 +52,7 @@ require(CLIENTINC_DIR . 'header.inc.php');
             <!-- Left: Seal + Ministers -->
             <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
                 <!-- Government Seal -->
-                <div style="width: 50px; height: 50px; flex-shrink: 0;">
+                <div style="width: 80px; height: 80px; flex-shrink: 0;">
                     <img src="/osTicket/assets/default/images/TelenganaGovt-logo.svg" style="width: 100%; height: 100%;">
                 </div>
 
@@ -62,14 +62,15 @@ require(CLIENTINC_DIR . 'header.inc.php');
                     align-items: center;
                     gap: 10px;
                     background: #ffffff;
-                    padding: 10px 20px;
-                    border-radius: 35px;
+                    padding: 0.25rem 0.5rem;
+                    padding-right: 3rem;
+                    border-radius: 40px;
                     border: 1px solid #d8b167;
                     white-space: nowrap;
                 ">
                     <div style="
-                        width: 60px;
-                        height: 60px;
+                        width: 72px;
+                        height: 72px;
                         border-radius: 50%;
                         overflow: hidden;
                         border: 2px solid #d8b167;
@@ -79,14 +80,14 @@ require(CLIENTINC_DIR . 'header.inc.php');
                     </div>
                     <div>
                         <div style="
-                            font-size: 14px;
+                            font-size: 1rem;
                             color: #000;
                             font-weight: 700;
                             margin: 0 0 2px 0;
                             line-height: 1;
                         ">Hon'ble Chief Minister</div>
                         <div style="
-                            font-size: 13px;
+                            font-size: 1rem;
                             color: #333;
                             margin: 0;
                             font-weight: 400;
@@ -101,14 +102,15 @@ require(CLIENTINC_DIR . 'header.inc.php');
                     align-items: center;
                     gap: 10px;
                     background: #ffffff;
-                    padding: 10px 20px;
-                    border-radius: 35px;
+                    padding: 0.25rem 0.5rem;
+                    padding-right: 5rem;
+                    border-radius: 40px;
                     border: 1px solid #d8b167;
                     white-space: nowrap;
                 ">
                     <div style="
-                        width: 60px;
-                        height: 60px;
+                        width: 72px;
+                        height: 72px;
                         border-radius: 50%;
                         overflow: hidden;
                         border: 2px solid #d8b167;
@@ -118,14 +120,14 @@ require(CLIENTINC_DIR . 'header.inc.php');
                     </div>
                     <div>
                         <div style="
-                            font-size: 14px;
+                            font-size: 1rem;
                             color: #000;
                             font-weight: 700;
                             margin: 0 0 2px 0;
                             line-height: 1;
                         ">Hon'ble IT Minister</div>
                         <div style="
-                            font-size: 13px;
+                            font-size: 1rem;
                             color: #333;
                             margin: 0;
                             font-weight: 400;
@@ -138,14 +140,13 @@ require(CLIENTINC_DIR . 'header.inc.php');
             <!-- Right: AI City -->
             <div style="
                 width: 70px;
-                height: 55px;
                 border-radius: 8px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
                 flex-shrink: 0;
             ">
-                <img src="/osTicket/assets/default/images/AI-CITY-Logo.svg">
+                <img src="/osTicket/assets/default/images/AI-CITY-Logo.svg" style="width: 80px">
             </div>
         </div>
 
@@ -161,10 +162,11 @@ require(CLIENTINC_DIR . 'header.inc.php');
         ">
             <img src="/osTicket/assets/default/images/logo.png" style="height: 46px;">
             <div style="
-                font-size: 36px;
-                color: #333;
-                font-weight: 500;
+                font-size: 52px;
+                color: #212529;
+                font-weight: 400;
                 margin-left: 5px;
+                padding-bottom: 0.6rem
             ">Telangana Data Exchange</div>
         </div>
 
