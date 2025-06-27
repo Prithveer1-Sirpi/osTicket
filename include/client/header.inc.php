@@ -235,7 +235,7 @@ if (($lang = Internationalization::getCurrentLanguage())) {
                         } ?>
                     </p>
                 </div>
-                <a class="pull-left" id="logo" href="<?php echo ROOT_PATH; ?>index.php"
+                <a class="pull-left" id="logo" href="https://tgdex.telangana.gov.in/"
                     title="<?php echo __('Support Center'); ?>">
                     <span class="valign-helper"></span>
                     <img src="<?php echo ROOT_PATH; ?>logo.php" border=0 alt="<?php
