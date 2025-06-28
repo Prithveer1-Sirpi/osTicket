@@ -380,8 +380,79 @@ body {
 .header_items a {
   text-decoration: none;
   color: #000;
-  padding: 0 1rem;
+  margin-right: 1rem;
 }
+/* Active tab button */
+.active_tab_header {
+  padding: 0.5rem;
+  background-color: #f1fffb;
+  border: 0.5px solid
+    light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+  border-radius: 6.25rem;
+}
+
+/* Ticket link */
+.ticket_link_header {
+  margin-right: 10px;
+}
+
+/* Sign out button */
+.signout_btn_header {
+  padding: 8px 20px !important;
+  border: 1px solid #1f2937;
+  border-radius: 999px;
+  font-weight: 500;
+  font-size: 14px;
+  display: inline-block;
+  margin: 0rem 1rem;
+  color: black;
+  text-decoration: none;
+}
+
+/* Sign in button */
+.signin_btn_header {
+  display: inline-block;
+  border: 1px solid #1f2937;
+  color: black;
+  padding: 8px 20px !important;
+  font-size: 14px;
+  border-radius: 999px;
+  text-transform: capitalize;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+/* Guest user badge */
+.guest_user_header {
+  display: inline-block;
+  background-color: #28a745;
+  color: white;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Avatar circle */
+.user_avatar_header {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  background-color: #28a745;
+  color: white !important;
+  font-size: 0.85em;
+  border-radius: 50%;
+  font-weight: 600;
+  margin: 0 5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: default;
+}
+
 #logo {
   height: 100%;
 }
@@ -459,6 +530,7 @@ body {
 #nav li a.active {
   border: 1px solid gray;
   background-color: #f6f6f6;
+  padding: 8px 20px !important;
 }
 #nav li a:hover {
   background-color: #c8f1dc;
@@ -545,6 +617,12 @@ body {
 #landing_page h2,
 #landing_page h3 {
   margin-bottom: 10px;
+}
+.sidebar_home {
+  width: 16rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 /* Landing page FAQ not yet implemented. */
 #faq {
@@ -692,6 +770,25 @@ body {
 }
 #kb-search #breadcrumbs #breadcrumbs a {
   color: #555;
+}
+#ticketForm {
+  font-family: Open Sans, Helvetica, Arial, sans-serif;
+  padding: 1rem;
+  padding-left: 4rem;
+}
+.ticke_submit_wrapper_open_ticket {
+  text-align: right;
+  margin-top: 0rem;
+  padding-right: 5rem;
+}
+.ticke_submit_open_ticket {
+  background-color: #00a651;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
 }
 #ticketForm div.clear,
 #clientLogin div.clear {
@@ -919,6 +1016,13 @@ span.required {
   font-size: 1em;
   background-image: url("../images/icons/thread.gif?1319556657");
 }
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+  margin-left: auto;
+  margin-right: auto;
+}
 #ticketTable {
   border: none;
   border-collapse: collapse;
@@ -1112,6 +1216,9 @@ img.sign-in-image {
   max-width: 200px;
   width: auto;
   height: auto;
+}
+.login-wrapper {
+  display: table-row;
 }
 .login-box {
   width: 40%;
@@ -1488,4 +1595,421 @@ img.avatar {
   font-weight: bold;
   margin-bottom: 0.3em;
   font-size: 1.1em;
+}
+/* Only show menu button on small screens */
+.menu-button {
+  display: none;
+}
+#logo {
+  position: relative;
+  z-index: 1001;
+}
+.show-guest-mob {
+  display: none;
+}
+/* Make header items stack vertically on small screens */
+@media (max-width: 768px) {
+  .sidebar_home {
+    width: 100%;
+  }
+  .main-content_index {
+    padding: 1rem;
+  }
+  #ticketForm {
+    padding: 0rem;
+  }
+  .ticke_submit_open_ticket {
+    margin-top: 0rem;
+  }
+  .ticke_submit_wrapper_open_ticket {
+    margin-top: 0rem;
+    margin-bottom: 0.5rem;
+  }
+  #header #logo img {
+    padding: 0rem 2.5rem 0rem 0rem;
+  }
+  .menu-button {
+    border: 0.0625rem solid #eab309;
+    border-radius: 6.1875rem;
+    padding: 0.375rem 0.75rem;
+    color: #eab309;
+    font-weight: 500;
+    background-color: transparent;
+    transition: all 0.3s ease-in-out;
+    font-size: 0.875rem;
+    width: 5.5625rem;
+    height: 2.625rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .show-guest-mob {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    background-color: #28a745;
+    color: white;
+    font-size: 0.85em;
+    border-radius: 50%;
+    font-weight: 600;
+    margin: 0 5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: default;
+  }
+  #header {
+    align-items: flex-start;
+    padding: 10px 15px;
+    z-index: 1001;
+    align-items: center;
+  }
+
+  #headerNav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #headerNav.show {
+    display: flex;
+  }
+
+  /* #headerNav a,
+  #headerNav span,
+  #headerNav button {
+    display: block;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    text-decoration: none;
+    border: none;
+    background: none;
+    text-align: left;
+  } */
+
+  #headerNav a {
+    display: block;
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    text-align: start;
+    margin-bottom: 1rem;
+  }
+
+  #headerNav .ticket_link_header {
+    font-weight: bold;
+  }
+
+  .guest_user_header {
+    display: none;
+  }
+  .user_avatar_header {
+    display: none !important;
+  }
+  .signin_btn_header {
+    border: none !important;
+  }
+  .signout_btn_header {
+    margin: 0rem;
+    border: none;
+  }
+  .login-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .login-box {
+    width: 100%;
+    /* display: table-cell; */
+    box-shadow: none;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .flag {
+    margin: 4px;
+    display: inline-block;
+  }
+  #headerNav .ticket_link_header {
+    font-weight: 500;
+  }
+}
+
+/* tickets page  */
+@media screen and (max-width: 600px) {
+  .table-container {
+    overflow-x: auto; /* Enable horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling for touch devices */
+  }
+
+  #ticketTable {
+    min-width: 600px; /* Ensure table is wide enough to require scrolling */
+    width: 100%;
+  }
+
+  #ticketTable th,
+  #ticketTable td {
+    padding: 8px 10px; /* Reduce padding for compactness */
+    font-size: 14px; /* Smaller font size for small screens */
+  }
+
+  #ticketTable th {
+    font-size: 12px; /* Slightly smaller header font */
+  }
+
+  /* Adjust column widths to be more compact */
+  #ticketTable th:nth-child(1),
+  #ticketTable td:nth-child(1) {
+    width: 100px; /* Ticket ID */
+  }
+
+  #ticketTable th:nth-child(2),
+  #ticketTable td:nth-child(2) {
+    width: 100px; /* Create Date */
+  }
+
+  #ticketTable th:nth-child(3),
+  #ticketTable td:nth-child(3) {
+    width: 80px; /* Status */
+  }
+
+  #ticketTable th:nth-child(4),
+  #ticketTable td:nth-child(4) {
+    width: 200px; /* Subject */
+  }
+
+  #ticketTable th:nth-child(5),
+  #ticketTable td:nth-child(5) {
+    width: 100px; /* Department */
+  }
+
+  #ticketTable td a {
+    word-break: break-word; /* Allow long links to wrap */
+  }
+
+  #ticketTable .truncate {
+    max-width: 180px; /* Adjust truncation for smaller screens */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #ticketTable th,
+  #ticketTable td {
+    padding: 6px 8px; /* Further reduce padding */
+    font-size: 13px; /* Even smaller font size */
+  }
+
+  #ticketTable th {
+    font-size: 11px;
+  }
+
+  #ticketTable .truncate {
+    max-width: 150px; /* Tighter truncation for very small screens */
+  }
+}
+
+.pagination-container {
+  width: 80%;
+  margin: 4px;
+  margin-bottom: 30px;
+  padding-top: 10px;
+  text-align: left;
+}
+
+.search.well {
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0);
+  margin-bottom: 30px;
+  margin-top: -15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Updated styles for large screens */
+.search.well .flush-left {
+  float: left; /* Restore original float layout */
+  width: 100%;
+}
+
+.search.well form#ticketSearchForm {
+  display: flex; /* Inline-block to contain input and button */
+  vertical-align: middle;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.search.well input[type="text"] {
+  width: 300px; /* Match original size (approximated from size="30") */
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 16px; /* Consistent with .search-form .search */
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-sizing: border-box;
+  margin-right: 10px;
+}
+
+.search.well input[type="submit"] {
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 16px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  vertical-align: middle;
+}
+
+.search.well input[type="submit"]:hover {
+  background-color: #218838;
+}
+
+.search.well .pull-right {
+  float: inline-end; /* Restore original float to position at the end */
+  text-align: right;
+  line-height: 34px; /* Align vertically with input/button */
+}
+
+.search.well .pull-right span {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.search.well select {
+  width: 200px; /* Reduced from 410px for better fit */
+  padding: 7px 8px; /* Adjust padding to match input height */
+  font-size: 14px;
+  border-radius: 16px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+.search.well div[style="margin-top:10px"] {
+  clear: both; /* Ensure it appears below floated elements */
+  width: 100%;
+  text-align: left;
+  padding-top: 5px; /* Reduce vertical space */
+}
+
+.search.well div[style="margin-top:10px"] a {
+  font-size: 14px;
+  color: #777;
+  text-decoration: none;
+}
+
+.search.well div[style="margin-top:10px"] a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+#ticketInfo-container {
+  padding: 0 5rem 0 5rem;
+}
+
+/* Responsive styles for small devices (unchanged from working mobile version) */
+@media screen and (max-width: 600px) {
+  .search.well {
+    padding: 8px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .search.well .flush-left {
+    float: none; /* Remove float for stacking */
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: stretch;
+    gap: 5px;
+  }
+
+  .search.well form#ticketSearchForm {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .search.well input[type="text"] {
+    width: 100%; /* Full width on small screens */
+    max-width: none; /* Remove max-width constraint */
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  .search.well input[type="submit"] {
+    width: 100%;
+    max-width: 150px; /* Limit button width */
+    font-size: 13px;
+    padding: 6px 12px;
+    margin-top: 8px;
+  }
+
+  .search.well .pull-right {
+    float: none; /* Remove float for stacking */
+    width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    line-height: normal;
+  }
+
+  .search.well select {
+    width: 100%;
+    max-width: none;
+    font-size: 13px;
+    padding: 6px;
+  }
+
+  .search.well div[style="margin-top:10px"] {
+    text-align: center;
+    padding-top: 8px;
+  }
+
+  .search.well div[style="margin-top:10px"] a {
+    font-size: 13px;
+  }
+
+  #ticketInfo-container {
+    padding: 0;
+  }
+
+  #inputGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .search.well {
+    padding: 6px;
+  }
+
+  .search.well input[type="text"],
+  .search.well select,
+  .search.well input[type="submit"] {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  .search.well div[style="margin-top:10px"] a {
+    font-size: 12px;
+  }
 }
