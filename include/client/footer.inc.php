@@ -132,6 +132,49 @@
                 footer>div>div:first-child {
                     text-align: left;
                 }
+
+                .bottom-powered-section {
+                    flex-direction: column !important;
+                    gap: 1.5rem !important;
+                    text-align: center !important;
+                    padding: 1.5rem 1rem !important;
+                    align-items: center !important;
+                }
+
+                .powered-by-container {
+                    flex-direction: column !important;
+                    align-items: center !important;
+                    gap: 0.5rem !important;
+                }
+
+                .powered-by-container span {
+                    font-size: 12px !important;
+                    margin-right: 0 !important;
+                }
+
+                .powered-by-container img {
+                    height: 60px !important;
+                    padding: 0.5rem 0 !important;
+                }
+
+                .bottom-links {
+                    justify-content: center !important;
+                    flex-wrap: wrap !important;
+                    gap: 0.5rem !important;
+                }
+
+                .bottom-links a {
+                    font-size: 12px !important;
+                }
+
+                .copyright-section {
+                    padding: 1rem !important;
+                    text-align: center !important;
+                }
+
+                .copyright-section span {
+                    font-size: 12px !important;
+                }
             }
         </style>
         </div>
@@ -139,22 +182,22 @@
         <!-- Bottom Section -->
         <div style="border-top: 1px solid #e5e7eb;">
             <!-- Light section with Powered by and links -->
-            <div style="display: flex; justify-content: space-between; align-items: center; background:rgb(255, 255, 255); padding-left: 4rem; padding-right: 4rem;">
-                <div style="display: flex; align-items: center;">
+            <div class="bottom-powered-section" style="display: flex; justify-content: space-between; align-items: center; background:rgb(255, 255, 255); padding-left: 4rem; padding-right: 4rem;">
+                <div class="powered-by-container" style="display: flex; align-items: center;">
                     <span style="color: #6b7280; font-size: 14px; margin-right: 1rem;">Powered by :</span>
                     <!-- <a href="https://your-site.com" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;"> -->
                     <img src="/osTicket/assets/default/images/et-logo.png" alt="Your Logo" style="height:75px; vertical-align: middle; padding: 1rem 0rem 1rem 0rem;">
                     </a>
                 </div>
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <a href="https://tgdex.telangana.gov.in/" style="color: #374151; text-decoration: none; font-size: 14px; font-weight: 400;">Privacy Policy</a>
+                <div class="bottom-links" style="display: flex; align-items: center; gap: 1rem;">
+                    <a href="https://tgdex.telangana.gov.in/privacy-policy" style="color: #374151; text-decoration: none; font-size: 14px; font-weight: 400;">Privacy Policy</a>
                     <span style="color: #9ca3af;">|</span>
-                    <a href="https://tgdex.telangana.gov.in/" style="color: #374151; text-decoration: none; font-size: 14px; font-weight: 400;">Terms of Service</a>
+                    <a href="https://tgdex.telangana.gov.in/terms-of-service" style="color: #374151; text-decoration: none; font-size: 14px; font-weight: 400;">Terms of Service</a>
                 </div>
             </div>
 
             <!-- Dark copyright section -->
-            <div style="background:rgb(33, 45, 63); color: #ffffff; padding: 0.5rem 0; padding-left: 2rem; padding-right: 2rem; text-align: left;">
+            <div class="copyright-section" style="background:rgb(33, 45, 63); color: #ffffff; padding: 0.5rem 0; padding-left: 2rem; padding-right: 2rem; text-align: left;">
                 <span style="font-size: 13px;">© Government of Telangana</span>
             </div>
         </div>

@@ -35,7 +35,7 @@ if ($info['topicId'] && ($topic = Topic::lookup($info['topicId']))) {
 
 <h1 id="gradient-green-title" style="padding-left: 4rem !important;"><?php echo __('Submit a Request'); ?></h1>
 
-<form id="ticketForm" method="post" action="open.php" enctype="multipart/form-data" style="font-family: Open Sans, Helvetica, Arial, sans-serif; padding: 1rem; padding-left: 4rem;">
+<form id="ticketForm" method="post" action="open.php" enctype="multipart/form-data" style="">
     <?php csrf_token(); ?>
     <input type="hidden" name="a" value="open">
 
@@ -135,9 +135,8 @@ if ($info['topicId'] && ($topic = Topic::lookup($info['topicId']))) {
     <?php } ?>
 
     <!-- Submit Button -->
-    <div style="text-align: right; margin-top: 2rem; padding-right: 5rem">
-        <button type="submit"
-            style="background-color: #00a651; color: white; border: none; padding: 10px 30px; border-radius: 999px; font-weight: bold; cursor: pointer;">
+    <div class="ticke_submit_wrapper_open_ticket">
+        <button type="submit" class="ticke_submit_open_ticket" ">
             <?php echo __('Submit Request'); ?>
         </button>
     </div>

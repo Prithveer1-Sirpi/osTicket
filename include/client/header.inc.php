@@ -110,6 +110,12 @@ if (($lang = Internationalization::getCurrentLanguage())) {
         }
         ?>
     </head>
+    <script>
+        function toggleMenu() {
+            var nav = document.getElementById('headerNav');
+            nav.classList.toggle('show');
+        }
+    </script>
 
     <body>
         <div id="container">
@@ -122,75 +128,64 @@ if (($lang = Internationalization::getCurrentLanguage())) {
                 echo sprintf('<div class="notice_bar">%s</div>', $ost->getNotice());
             ?>
             <div id="header">
-                <div class="header_items">
+                <div class="show-guest-mob">
+                    <?php
+                    if ($thisclient && is_object($thisclient) && $thisclient->isValid()) {
+                        if (!$thisclient->isGuest()) {
+                            // Logged-in user (not guest): show initials
+                            $initials = strtoupper(substr($thisclient->getName(), 0, 1) .
+                                (strpos($thisclient->getName(), ' ') !== false ? substr($thisclient->getName(), strpos($thisclient->getName(), ' ') + 1, 1) : ''));
+                            echo '<span class="user_avatar_mob">' . Format::htmlchars($initials) . '</span>';
+                        } else {
+                            // Guest user: show sign out
+                            echo '<a href="' . $signout_url . '">' . __('SIGN OUT') . '</a>';
+                        }
+                    } elseif ($cfg->getClientRegistrationMode() == 'public') {
+                        // Public registration mode and not logged in: show 'GU'
+                        echo '<span class="guest_user_header_mob">' . __('GU') . '</span>';
+                    }
+                    ?>
+                </div>
+
+                <!-- Responsive Menu Button -->
+                <button class="menu-button" onclick="toggleMenu()">Menu ⋮</button>
+
+                <div class="header_items" id="headerNav">
                     <p>
+
                         <?php
                         $current = basename($_SERVER['SCRIPT_NAME']);
-                        function activeTabStyle($file)
+                        function activeTabClass($file)
                         {
-                            return basename($_SERVER['SCRIPT_NAME']) === $file
-                                ? 'padding:0.5rem; background-color: #f1fffb;border:.5px solid light-dark(rgba(16,16,16,.3),rgba(255,255,255,.3)); border-radius:6.25rem;'
-                                : '';
+                            return basename($_SERVER['SCRIPT_NAME']) === $file ? 'active_tab_header' : '';
                         }
                         ?>
-
                         <a href="<?php echo ROOT_PATH; ?>index.php"
-                            style=" <?php echo activeTabStyle('index.php'); ?>">
+                            class="<?php echo activeTabClass('index.php'); ?>">
                             <?php echo __('SUPPORT CENTER HOME'); ?>
                         </a>
 
                         <a href="<?php echo ROOT_PATH; ?>open.php"
-                            style=" <?php echo activeTabStyle('open.php'); ?>">
+                            class="<?php echo activeTabClass('open.php'); ?>">
                             <?php echo __('OPEN A NEW TICKET'); ?>
                         </a>
 
                         <?php
-                        if (
-                            $thisclient && is_object($thisclient) && $thisclient->isValid()
-                            && !$thisclient->isGuest()
-                        ) {
-                            echo '<a href="' . ROOT_PATH . 'tickets.php" style=" margin-right: 10px; ' . activeTabStyle('tickets.php') . '">' .
+                        if ($thisclient && is_object($thisclient) && $thisclient->isValid() && !$thisclient->isGuest()) {
+                            echo '<a href="' . ROOT_PATH . 'tickets.php" class="ticket_link_header ' . activeTabClass('tickets.php') . '">' .
                                 sprintf(__('TICKETS <b>(%d)</b>'), $thisclient->getNumTickets()) .
                                 '</a>';
 
-                            echo '<a style=" padding:0.5rem; border-radius:999px; font-weight:500;   display: inline-block; margin:0rem 1rem;
-                border: 1px solid #1f2937;
-                color: black;
-                padding: 8px 20px;
-                font-size: 14px;" href="' . $signout_url . '">' . __('SIGN OUT') . '</a>';
+                            echo '<a class="signout_btn_header" href="' . $signout_url . '">' . __('SIGN OUT') . '</a>';
 
-                            $initials = strtoupper(substr($thisclient->getName(), 0, 1) . (strpos($thisclient->getName(), ' ') !== false ? substr($thisclient->getName(), strpos($thisclient->getName(), ' ') + 1, 1) : ''));
+                            $initials = strtoupper(substr($thisclient->getName(), 0, 1) .
+                                (strpos($thisclient->getName(), ' ') !== false ? substr($thisclient->getName(), strpos($thisclient->getName(), ' ') + 1, 1) : ''));
 
-                            echo '<a href="' . ROOT_PATH . 'profile.php" style="
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 36px;
-    height: 36px;
-    background-color: #28a745;
-    color: white;
-    font-size: 0.85em;
-    border-radius: 50%;
-    font-weight: 600;
-    margin: 0 5px;
-    text-transform: uppercase;
-    text-decoration: none;
-                        ">' . Format::htmlchars($initials) . '</a>';
+                            echo '<a class="user_avatar_header">' . Format::htmlchars($initials) . '</a>';
                         } elseif ($nav) {
                             if ($cfg->getClientRegistrationMode() != 'disabled') {
                         ?>
-                                <a href="<?php echo $signin_url; ?>"
-                                    style="
-                display: inline-block;
-                border: 1px solid #1f2937;
-                color: black;
-                padding: 8px 20px;
-                font-size: 14px;
-                border-radius: 999px;
-                text-transform: capitalize;
-                font-weight:500;
-                margin:0rem 1rem;
-           "><?php echo __('SIGN IN'); ?></a>
+                                <a href="<?php echo $signin_url; ?>" class="signin_btn_header"><?php echo __('SIGN IN'); ?></a>
                             <?php
                             }
 
@@ -198,17 +193,7 @@ if (($lang = Internationalization::getCurrentLanguage())) {
                                 echo '<a href="' . $signout_url . '">' . __('SIGN OUT') . '</a>';
                             } elseif ($cfg->getClientRegistrationMode() == 'public') {
                             ?>
-                                <span style="
-            display: inline-block;
-            background-color: #28a745;
-            color: white;
-            padding: 0.5rem;
-            font-size: 1rem;
-            border-radius: 999px;
-            font-weight:600;
-            text-transform: capitalize;
-            margin-right:5px;
-        ">
+                                <span class="guest_user_header">
                                     <?php echo __('Guest User'); ?>
                                 </span>
                         <?php
@@ -219,9 +204,7 @@ if (($lang = Internationalization::getCurrentLanguage())) {
 
                     <p>
                         <?php
-                        if (($all_langs = Internationalization::getConfiguredSystemLanguages())
-                            && (count($all_langs) > 1)
-                        ) {
+                        if (($all_langs = Internationalization::getConfiguredSystemLanguages()) && count($all_langs) > 1) {
                             $qs = array();
                             parse_str($_SERVER['QUERY_STRING'], $qs);
                             foreach ($all_langs as $code => $info) {
@@ -229,19 +212,19 @@ if (($lang = Internationalization::getCurrentLanguage())) {
                                 $qs['lang'] = $code;
                         ?>
                                 <a class="flag flag-<?php echo strtolower($info['flag'] ?: $locale ?: $lang); ?>"
-                                    href="?<?php echo http_build_query($qs);
-                                            ?>" title="<?php echo Internationalization::getLanguageDescription($code); ?>">&nbsp;</a>
+                                    href="?<?php echo http_build_query($qs); ?>"
+                                    title="<?php echo Internationalization::getLanguageDescription($code); ?>">&nbsp;</a>
                         <?php }
                         } ?>
                     </p>
                 </div>
-                <a class="pull-left" id="logo" href="<?php echo ROOT_PATH; ?>index.php"
-                    title="<?php echo __('Support Center'); ?>">
+                <a class="pull-left" id="logo" href="https://tgdex.telangana.gov.in/" title="<?php echo __('Support Center'); ?>">
                     <span class="valign-helper"></span>
-                    <img src="<?php echo ROOT_PATH; ?>logo.php" border=0 alt="<?php
-                                                                                echo $ost->getConfig()->getTitle(); ?>">
+                    <img src="<?php echo ROOT_PATH; ?>logo.php" border=0 alt="<?php echo $ost->getConfig()->getTitle(); ?>">
                 </a>
+
             </div>
+
             <div class="clear"></div>
 
             <div id="content">
