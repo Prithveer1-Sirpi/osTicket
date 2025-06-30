@@ -119,12 +119,12 @@ require(CLIENTINC_DIR . 'header.inc.php');
         <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap;" class="top_icons_wrapper">
             <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;" class="icons_group_left">
                 <div style="width: 80px; height: 80px; flex-shrink: 0;" class="seal_wrapper">
-                    <img src="/osTicket/assets/default/images/TelenganaGovt-logo.svg" style="width: 100%; height: 100%;">
+                    <img src="../assets/default/images/TelenganaGovt-logo.svg" style="width: 100%; height: 100%;">
                 </div>
 
                 <div style="display: flex; align-items: center; gap: 10px; background: #ffffff; padding: 0.25rem 0.5rem; padding-right: 3rem; border-radius: 40px; border: 1px solid #d8b167; white-space: nowrap;" class="minister_card cm_card">
                     <div style="width: 72px; height: 72px; border-radius: 50%; overflow: hidden; border: 2px solid #d8b167; flex-shrink: 0;" class="minister_img_wrapper">
-                        <img src="/osTicket/assets/default/images/honcm.svg" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="../assets/default/images/honcm.svg" style="width: 100%; height: 100%; object-fit: cover;">
                     </div>
                     <div class="minister_text">
                         <div style="font-size: 1rem; color: #000; font-weight: 700; margin: 0 0 2px 0; line-height: 1;">Hon'ble Chief Minister</div>
@@ -133,7 +133,7 @@ require(CLIENTINC_DIR . 'header.inc.php');
                 </div>
                 <div style="display: flex; align-items: center; gap: 10px; background: #ffffff; padding: 0.25rem 0.5rem; padding-right: 5rem; border-radius: 40px; border: 1px solid #d8b167; white-space: nowrap;" class="minister_card it_card">
                     <div style="width: 72px; height: 72px; border-radius: 50%; overflow: hidden; border: 2px solid #d8b167; flex-shrink: 0;" class="minister_img_wrapper">
-                        <img src="/osTicket/assets/default/images/itmin.svg" style="width: 100%; height: 100%; object-fit: cover;">
+                        <img src="../assets/default/images/itmin.svg" style="width: 100%; height: 100%; object-fit: cover;">
 
                     </div>
                     <div class="minister_text">
@@ -144,12 +144,12 @@ require(CLIENTINC_DIR . 'header.inc.php');
             </div>
 
             <div style="width: 70px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;" class="ai_city_wrapper">
-                <img src="/osTicket/assets/default/images/AI-CITY-Logo.svg" style="width: 80px">
+                <img src="../assets/default/images/AI-CITY-Logo.svg" style="width: 80px">
             </div>
         </div>
 
         <div style="display: flex; align-items: center; justify-content: center; gap: 12px; min-width: 300px; margin-top: 5px; padding-top: 1rem;" class="tgdex_wrapper">
-            <img src="/osTicket/assets/default/images/logo.png" style="height: 46px;">
+            <img src="../assets/default/images/logo.png" style="height: 46px;">
             <div style="font-size: 52px; color: #212529; font-weight: 400; margin-left: 5px; padding-bottom: 0.6rem" class="tgdex_text">Telangana Data Exchange</div>
 
         </div>
