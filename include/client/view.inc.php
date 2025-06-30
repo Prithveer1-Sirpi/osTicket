@@ -19,7 +19,6 @@ if (
     $thisclient && $thisclient->isGuest()
     && $cfg->isClientRegistrationEnabled()
 ) { ?>
-
     <div id="msg_info">
         <i class="icon-compass icon-2x pull-left"></i>
         <strong><?php echo __('Looking for your other tickets?'); ?></strong><br />
@@ -32,9 +31,26 @@ if (
             '</a>'
         ); ?>
     </div>
-
 <?php } ?>
-<div id="ticketInfo-container" style="padding: 0 5rem 0 5rem;">
+
+<style>
+    /* Responsive styles for small devices */
+    @media screen and (max-width: 600px) {
+        .ticket-info-row td {
+            display: block !important;
+            width: 100% !important;
+            padding-right: 0 !important;
+        }
+
+        #ticketInfo {
+            width: 100% !important;
+        }
+
+
+    }
+</style>
+
+<div id="ticketInfo-container">
     <table width="70%" cellpadding="0" cellspacing="0" border="0" id="ticketInfo" style="border-collapse: separate; border-spacing: 0; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.05); background-color: #ffffff;">
         <tr>
             <td colspan="2" width="100%">
@@ -49,24 +65,21 @@ if (
                         <a class="action-button" style="all: unset; display: inline-flex !important; align-items: center !important; gap: 4px !important; background-color: #197a56 !important; color: white !important; padding: 4px 10px !important; border-radius: 4px !important; font-size: 14px !important; font-weight: 500 !important; font-family: 'Segoe UI', sans-serif !important; cursor: pointer !important; text-decoration: none !important; line-height: 1.2 !important;" href="tickets.php?a=print&id=<?php echo $ticket->getId(); ?>">
                             <i class="icon-print"></i> <?php echo __('Print'); ?>
                         </a>
-
                         <?php if ($ticket->hasClientEditableFields() && $thisclient->getId() == $ticket->getUserId()) { ?>
                             <a class="action-button" style="all: unset; display: inline-flex !important; align-items: center !important; gap: 4px !important; background-color: #197a56 !important; color: white !important; padding: 4px 10px !important; border-radius: 4px !important; font-size: 14px !important; font-weight: 500 !important; font-family: 'Segoe UI', sans-serif !important; cursor: pointer !important; text-decoration: none !important; line-height: 1.2 !important;" href="tickets.php?a=edit&id=<?php echo $ticket->getId(); ?>">
                                 <i class="icon-edit"></i> <?php echo __('Edit'); ?>
                             </a>
                         <?php } ?>
                     </div>
-
                 </h1>
             </td>
         </tr>
-        <tr>
-            <td width="50%" style="vertical-align: top; padding-right: 1rem;">
-                <table class="infoTable" cellspacing="0" cellpadding="8" width="100%" border="0"
-                    style="border: 1px solid #ddd; border-radius: 6px; background-color: #f9f9f9; font-family: 'Segoe UI', sans-serif; font-size: 15px;">
+        <tr class="ticket-info-row">
+            <td width="50%" style="display: table-cell; vertical-align: top; padding-right: 1rem;">
+                <table class="infoTable" cellspacing="0" cellpadding="8" width="100%" border="0" style="border: 1px solid #ddd; border-radius: 6px; background-color: #f9f9f9; font-family: 'Segoe UI', sans-serif; font-size: 15px; margin-bottom: 8px;">
                     <thead>
-                        <tr>
-                            <td colspan="2" style="font-weight: bold; background: #f1f1f1; padding: 10px; border-bottom: 1px solid #ddd;">
+                        <tr style="background: #f1f1f1;">
+                            <td colspan="2" style="font-weight: bold; background: #f1f1f1; padding: 10px; border-bottom: 1px solid #ddd; width:100%;">
                                 <?php echo __('Basic Ticket Information'); ?>
                             </td>
                         </tr>
@@ -85,9 +98,8 @@ if (
                     </tr>
                 </table>
             </td>
-            <td width="50%" style="vertical-align: top;">
-                <table class="infoTable" cellspacing="0" cellpadding="8" width="100%" border="0"
-                    style="border: 1px solid #ddd; border-radius: 6px; background-color: #f9f9f9; font-family: 'Segoe UI', sans-serif; font-size: 15px;">
+            <td width="50%" style="display: table-cell; vertical-align: top;">
+                <table class="infoTable" cellspacing="0" cellpadding="8" width="100%" border="0" style="border: 1px solid #ddd; border-radius: 6px; background-color: #f9f9f9; font-family: 'Segoe UI', sans-serif; font-size: 15px; margin-bottom: 8px;">
                     <thead>
                         <tr>
                             <td colspan="2" style="font-weight: bold; background: #f1f1f1; padding: 10px; border-bottom: 1px solid #ddd;">
@@ -110,7 +122,6 @@ if (
                 </table>
             </td>
         </tr>
-
         <tr>
             <td colspan="2">
                 <!-- Custom Data -->
@@ -135,7 +146,7 @@ if (
                 ?>
                     <table class="custom-data" cellspacing="0" cellpadding="4" width="100%" border="0">
                         <tr>
-                            <td colspan="2" class="headline flush-left"><?php echo $forms[$i]; ?></th>
+                            <td colspan="2" class="headline flush-left"><?php echo $forms[$i]; ?></td>
                         </tr>
                         <?php foreach ($answers as $A) {
                             list($v, $a) = $A; ?>
@@ -193,7 +204,7 @@ if (
             <div>
                 <p><em><?php
                         echo __('To best assist you, we request that you be specific and detailed'); ?></em>
-                    <font class="error">*&nbsp;<?php echo $errors['message']; ?></font>
+                    <font class="error">* <?php echo $errors['message']; ?></font>
                 </p>
                 <textarea name="<?php echo $messageField->getFormName(); ?>" id="message" cols="50" rows="9" wrap="soft"
                     class="<?php if ($cfg->isRichTextEnabled()) echo 'richtext';
