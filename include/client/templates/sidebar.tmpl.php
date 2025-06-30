@@ -3,11 +3,7 @@ $BUTTONS = isset($BUTTONS) ? $BUTTONS : true;
 ?>
 <div>
     <?php if ($BUTTONS) { ?>
-        <div style="
-            width: 16rem;    
-            display: flex;
-            flex-direction: column;
-            gap: 1rem; ">
+        <div class="sidebar_home" style="">
             <p>
                 <?php
                 if (
