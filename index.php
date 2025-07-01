@@ -38,9 +38,12 @@ require(CLIENTINC_DIR . 'header.inc.php');
         @media screen and (max-width: 768px) {
             .top_icons_wrapper {
                 flex-direction: row !important;
-                justify-content: center !important;
+                justify-content: space-between !important;
                 flex-wrap: wrap !important;
                 gap: 10px !important;
+                position: absolute;
+                right: 0px;
+                left: -15px;
             }
 
             .icons_group_left {
@@ -68,6 +71,7 @@ require(CLIENTINC_DIR . 'header.inc.php');
                 align-items: center !important;
                 margin-top: 10px !important;
                 text-align: center;
+                margin-top: 5rem !important;
             }
 
             .tgdex_text {
@@ -129,7 +133,11 @@ require(CLIENTINC_DIR . 'header.inc.php');
                 </div>
                 <div class="minister_text" style="padding-left: 0.5rem;">
                     <div style="font-size: 13px; color: #000; font-weight: 700; margin: 0 0 2px 0; line-height: 1; padding-bottom: 2px;font-family: sans-serif ">Sri Duddilla Sridhar Babu</div>
-                    <div style="font-size: 13px; color: #333; margin: 0; font-weight: 400; line-height: 1.6; width: 195px">Hon'ble Minister, ITE&C, I&C and LA</div>
+                    <div style="font-size: 13px; color: #333; margin: 0; font-weight: 400; line-height: 1.6; width: 195px">Hon'ble Minister ITE&C,
+                        <p>
+                            I&C and LA
+                        </p>
+                    </div>
                 </div>
             </div>
 
