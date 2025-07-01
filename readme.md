@@ -39,6 +39,8 @@ The setup requires configuration of the following:
 1. osTicket configuration file (`ost-config.php`)
 2. OAuth2 plugin settings
 
+**Note:** The `ost-config.php` file is now taken from the `upload` folder instead of the `include` folder. Please ensure you place or mount your configuration file at `/var/www/html/upload/ost-config.php`.
+
 ## Usage
 
 ### Running the Container
@@ -46,7 +48,7 @@ The setup requires configuration of the following:
 ```bash
 docker run -d \
   -p 80:80 \
-  -v osticket-data:/var/www/html/include \
+  -v osticket-data:/var/www/html/upload \
   --name osticket \
   osticket:latest
 ```
@@ -55,10 +57,12 @@ docker run -d \
 
 ```
 /var/www/html/
+├── upload/
+│   ├── ost-config.php
+│   └── ... (other upload files)
 ├── include/
 │   ├── plugins/
 │   │   └── auth-oauth2/
-│   └── ost-config.php
 └── ... (other osTicket files)
 ```
 
@@ -76,6 +80,7 @@ Common issues and solutions:
 1. Permission issues: Ensure proper ownership of files (www-data:www-data)
 2. Plugin activation: Check plugin installation in the admin panel
 3. OAuth2 configuration: Verify settings in the plugin configuration
+4. Configuration file location: Make sure `ost-config.php` is present in the `upload` folder, not `include`.
 
 ## License
 

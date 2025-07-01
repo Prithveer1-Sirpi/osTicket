@@ -1,0 +1,23 @@
+# Version control
+.git
+.gitignore
+.gitattributes
+
+# Kubernetes and configuration files
+mysql-values.yaml
+osTicket-plugins/
+osticket-configmap.yaml
+osticket-k8s.yaml
+osticket-mysql.yaml
+osticket-pvc.yaml
+osticket-stack.yml
+osticket-web.yaml
+osticket/ 
+Dockerfile
+Dockerfile2
+old-dockerfile
+web.config
+
+*.yaml
+*.txt
+*.md
