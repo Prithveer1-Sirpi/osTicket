@@ -128,100 +128,118 @@ if (($lang = Internationalization::getCurrentLanguage())) {
                 echo sprintf('<div class="notice_bar">%s</div>', $ost->getNotice());
             ?>
             <div id="header">
-                <div class="show-guest-mob">
-                    <?php
-                    if ($thisclient && is_object($thisclient) && $thisclient->isValid()) {
-                        if (!$thisclient->isGuest()) {
-                            // Logged-in user (not guest): show initials
-                            $initials = strtoupper(substr($thisclient->getName(), 0, 1) .
-                                (strpos($thisclient->getName(), ' ') !== false ? substr($thisclient->getName(), strpos($thisclient->getName(), ' ') + 1, 1) : ''));
-                            echo '<span class="user_avatar_mob">' . Format::htmlchars($initials) . '</span>';
-                        } else {
-                            // Guest user: show sign out
-                            echo '<a href="' . $signout_url . '">' . __('SIGN OUT') . '</a>';
-                        }
-                    } elseif ($cfg->getClientRegistrationMode() == 'public') {
-                        // Public registration mode and not logged in: show 'GU'
-                        echo '<span class="guest_user_header_mob">' . __('GU') . '</span>';
-                    }
-                    ?>
-                </div>
-
-                <!-- Responsive Menu Button -->
-                <button class="menu-button" onclick="toggleMenu()">Menu ⋮</button>
-
-                <div class="header_items" id="headerNav">
-                    <p>
-
+                <div style="display: flex; align-items:center;flex-direction:row-reverse">
+                    <div class="show-guest-mob">
                         <?php
-                        $current = basename($_SERVER['SCRIPT_NAME']);
-                        function activeTabClass($file)
-                        {
-                            return basename($_SERVER['SCRIPT_NAME']) === $file ? 'active_tab_header' : '';
-                        }
-                        ?>
-                        <a href="<?php echo ROOT_PATH; ?>index.php"
-                            class="<?php echo activeTabClass('index.php'); ?>">
-                            <?php echo __('SUPPORT CENTER HOME'); ?>
-                        </a>
-
-                        <a href="<?php echo ROOT_PATH; ?>open.php"
-                            class="<?php echo activeTabClass('open.php'); ?>">
-                            <?php echo __('OPEN A NEW TICKET'); ?>
-                        </a>
-
-                        <?php
-                        if ($thisclient && is_object($thisclient) && $thisclient->isValid() && !$thisclient->isGuest()) {
-                            echo '<a href="' . ROOT_PATH . 'tickets.php" class="ticket_link_header ' . activeTabClass('tickets.php') . '">' .
-                                sprintf(__('TICKETS <b>(%d)</b>'), $thisclient->getNumTickets()) .
-                                '</a>';
-
-                            echo '<a class="signout_btn_header" href="' . $signout_url . '">' . __('SIGN OUT') . '</a>';
-
-                            $initials = strtoupper(substr($thisclient->getName(), 0, 1) .
-                                (strpos($thisclient->getName(), ' ') !== false ? substr($thisclient->getName(), strpos($thisclient->getName(), ' ') + 1, 1) : ''));
-
-                            echo '<a class="user_avatar_header">' . Format::htmlchars($initials) . '</a>';
-                        } elseif ($nav) {
-                            if ($cfg->getClientRegistrationMode() != 'disabled') {
-                        ?>
-                                <a href="<?php echo $signin_url; ?>" class="signin_btn_header"><?php echo __('SIGN IN'); ?></a>
-                            <?php
-                            }
-
-                            if ($thisclient && $thisclient->isValid() && $thisclient->isGuest()) {
+                        if ($thisclient && is_object($thisclient) && $thisclient->isValid()) {
+                            if (!$thisclient->isGuest()) {
+                                // Logged-in user (not guest): show initials
+                                $initials = strtoupper(substr($thisclient->getName(), 0, 1) .
+                                    (strpos($thisclient->getName(), ' ') !== false ? substr($thisclient->getName(), strpos($thisclient->getName(), ' ') + 1, 1) : ''));
+                                echo '<span class="user_avatar_mob">' . Format::htmlchars($initials) . '</span>';
+                            } else {
+                                // Guest user: show sign out
                                 echo '<a href="' . $signout_url . '">' . __('SIGN OUT') . '</a>';
-                            } elseif ($cfg->getClientRegistrationMode() == 'public') {
-                            ?>
-                                <span class="guest_user_header">
-                                    <?php echo __('Guest User'); ?>
-                                </span>
-                        <?php
                             }
+                        } elseif ($cfg->getClientRegistrationMode() == 'public') {
+                            // Public registration mode and not logged in: show 'GU'
+                            echo '<span class="guest_user_header_mob">' . __('GU') . '</span>';
                         }
                         ?>
-                    </p>
+                    </div>
 
-                    <p>
-                        <?php
-                        if (($all_langs = Internationalization::getConfiguredSystemLanguages()) && count($all_langs) > 1) {
-                            $qs = array();
-                            parse_str($_SERVER['QUERY_STRING'], $qs);
-                            foreach ($all_langs as $code => $info) {
-                                list($lang, $locale) = explode('_', $code);
-                                $qs['lang'] = $code;
-                        ?>
-                                <a class="flag flag-<?php echo strtolower($info['flag'] ?: $locale ?: $lang); ?>"
-                                    href="?<?php echo http_build_query($qs); ?>"
-                                    title="<?php echo Internationalization::getLanguageDescription($code); ?>">&nbsp;</a>
-                        <?php }
-                        } ?>
-                    </p>
+                    <!-- Responsive Menu Button -->
+                    <button class="menu-button" onclick="toggleMenu()">Menu ⋮</button>
+
+                    <div class="header_items" id="headerNav">
+                        <p>
+
+                            <?php
+                            $current = basename($_SERVER['SCRIPT_NAME']);
+                            function activeTabClass($file)
+                            {
+                                return basename($_SERVER['SCRIPT_NAME']) === $file ? 'active_tab_header' : '';
+                            }
+                            ?>
+                            <a href="<?php echo ROOT_PATH; ?>index.php"
+                                class="<?php echo activeTabClass('index.php'); ?>">
+                                <?php echo __('SUPPORT CENTER HOME'); ?>
+                            </a>
+
+                            <a href="<?php echo ROOT_PATH; ?>open.php"
+                                class="<?php echo activeTabClass('open.php'); ?>">
+                                <?php echo __('OPEN A NEW TICKET'); ?>
+                            </a>
+
+                            <?php
+                            if ($thisclient && is_object($thisclient) && $thisclient->isValid() && !$thisclient->isGuest()) {
+                                echo '<a href="' . ROOT_PATH . 'tickets.php" class="ticket_link_header ' . activeTabClass('tickets.php') . '">' .
+                                    sprintf(__('TICKETS <b>(%d)</b>'), $thisclient->getNumTickets()) .
+                                    '</a>';
+
+                                echo '<a class="signout_btn_header" href="' . $signout_url . '">' . __('SIGN OUT') . '</a>';
+
+                                $initials = strtoupper(substr($thisclient->getName(), 0, 1) .
+                                    (strpos($thisclient->getName(), ' ') !== false ? substr($thisclient->getName(), strpos($thisclient->getName(), ' ') + 1, 1) : ''));
+
+                                echo '<a class="user_avatar_header">' . Format::htmlchars($initials) . '</a>';
+                            } elseif ($nav) {
+                                if ($cfg->getClientRegistrationMode() != 'disabled') {
+                            ?>
+                                    <a href="<?php echo $signin_url; ?>" class="signin_btn_header"><?php echo __('SIGN IN'); ?></a>
+                                <?php
+                                }
+
+                                if ($thisclient && $thisclient->isValid() && $thisclient->isGuest()) {
+                                    echo '<a href="' . $signout_url . '">' . __('SIGN OUT') . '</a>';
+                                } elseif ($cfg->getClientRegistrationMode() == 'public') {
+                                ?>
+                                    <span class="guest_user_header">
+                                        <?php echo __('Guest User'); ?>
+                                    </span>
+                            <?php
+                                }
+                            }
+                            ?>
+                        </p>
+
+                        <p>
+                            <?php
+                            if (($all_langs = Internationalization::getConfiguredSystemLanguages()) && count($all_langs) > 1) {
+                                $qs = array();
+                                parse_str($_SERVER['QUERY_STRING'], $qs);
+                                foreach ($all_langs as $code => $info) {
+                                    list($lang, $locale) = explode('_', $code);
+                                    $qs['lang'] = $code;
+                            ?>
+                                    <a class="flag flag-<?php echo strtolower($info['flag'] ?: $locale ?: $lang); ?>"
+                                        href="?<?php echo http_build_query($qs); ?>"
+                                        title="<?php echo Internationalization::getLanguageDescription($code); ?>">&nbsp;</a>
+                            <?php }
+                            } ?>
+                        </p>
+                    </div>
                 </div>
-                <a class="pull-left" id="logo" href="https://tgdex.telangana.gov.in/" title="<?php echo __('Support Center'); ?>">
-                    <span class="valign-helper"></span>
-                    <img src="<?php echo ROOT_PATH; ?>logo.php" border=0 alt="<?php echo $ost->getConfig()->getTitle(); ?>">
-                </a>
+                <div class="logo_container_header">
+                    <a class="pull-left" style="" id="logo" href="https://tgdex.telangana.gov.in/" title="<?php echo __('Support Center'); ?>">
+                        <span class="valign-helper"></span>
+                        <img src="/osTicket/assets/default/images/TelenganaGovt-logo.svg" class="tg_govt_header">
+                    </a>
+                    <span class="tg_short_logo_header">
+                        <a class="pull-left" style="" id="logo" href="https://tgdex.telangana.gov.in/" title="<?php echo __('Support Center'); ?>">
+                            <span class="valign-helper"></span>
+                            <img src="/osTicket/assets/default/images/tgdex_short_logo_Green.svg">
+                        </a>
+                    </span>
+                    <span class="tg_big_logo_header">
+
+                        <a class="pull-left" id="logo" href="https://tgdex.telangana.gov.in/" title="<?php echo __('Support Center'); ?>">
+                            <span class="valign-helper"></span>
+                            <img src="<?php echo ROOT_PATH; ?>logo.php" border=0 alt="<?php echo $ost->getConfig()->getTitle(); ?>">
+                        </a>
+                    </span>
+
+                </div>
 
             </div>
 

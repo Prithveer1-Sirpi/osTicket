@@ -372,7 +372,7 @@ body {
   border: 1px #c2c2c2;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  padding: 1rem 0.5rem 1rem;
+  padding: 1rem 2rem;
 }
 .header_items {
   text-align: right !important;
@@ -382,6 +382,7 @@ body {
   color: #000;
   margin-right: 1rem;
 }
+
 /* Active tab button */
 .active_tab_header {
   padding: 0.5rem;
@@ -390,7 +391,18 @@ body {
     light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
   border-radius: 6.25rem;
 }
-
+.logo_container_header {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.tg_govt_header {
+  width: auto;
+  height: 3.5rem !important;
+}
+.tg_short_logo_header {
+  display: none;
+}
 /* Ticket link */
 .ticket_link_header {
   margin-right: 10px;
@@ -457,9 +469,9 @@ body {
 }
 #header #logo img {
   width: auto;
-  height: 1.875rem;
+  height: 2rem;
   vertical-align: middle;
-  padding: 0rem 2rem;
+  /* padding: 0rem 2rem; */
 }
 .valign-helper {
   height: 100%;
@@ -1625,7 +1637,11 @@ img.avatar {
     margin-bottom: 0.5rem;
   }
   #header #logo img {
-    padding: 0rem 2.5rem 0rem 0rem;
+    /* padding: 0rem 2.5rem 0rem 0rem; */
+    height: 2.5rem;
+  }
+  .tg_govt_header {
+    height: 2.5rem;
   }
   .menu-button {
     border: 0.0625rem solid #eab309;
@@ -1660,11 +1676,16 @@ img.avatar {
   }
   #header {
     align-items: flex-start;
-    padding: 10px 15px;
+    padding: 10px 10px;
     z-index: 1001;
     align-items: center;
   }
-
+  .tg_big_logo_header {
+    display: none;
+  }
+  .tg_short_logo_header {
+    display: inline;
+  }
   #headerNav {
     display: none;
     position: absolute;
