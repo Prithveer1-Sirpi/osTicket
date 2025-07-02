@@ -229,15 +229,15 @@ return false;">
     <input type="hidden" name="a" value="mass_process">
     <input type="hidden" name="do" id="action" value="">
 
-    <table class="list queue tickets" border="0" cellspacing="1" cellpadding="2" width="940">
-        <thead>
-            <tr>
-                <?php
-                $canManageTickets = $thisstaff->canManageTickets();
-                if ($canManageTickets) { ?>
-                    <th style="width:12px"></th>
-                <?php
-                }
+<table class="list queue tickets" id = "ticketTable" border="0" cellspacing="1" cellpadding="2" width="940">
+  <thead>
+    <tr>
+<?php
+$canManageTickets = $thisstaff->canManageTickets();
+if ($canManageTickets) { ?>
+        <th style="width:12px"></th>
+<?php
+}
 
                 foreach ($columns as $C) {
                     $heading = Format::htmlchars($C->getLocalHeading());
