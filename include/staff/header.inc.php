@@ -74,21 +74,24 @@ if (!isset($_SERVER['HTTP_X_PJAX'])) { ?>
                     echo sprintf('<div id="notice_bar">%s</div>', $ost->getNotice());
                 ?>
                 <div id="header">
-
-                    <p style="display: flex; align-items:center;flex-direction:row-reverse" id="info" class="pull-right no-pjax">
-                    <!-- <div class="header_items" id="headerNav"> -->
-                        <?php $initials = strtoupper(substr($thisstaff->getName(), 0, 1) . (strpos($thisstaff->getName(), ' ') !== false ? substr($thisstaff->getName(), strpos($thisstaff->getName(), ' ') + 1, 1) : ''));
-                        echo sprintf(__(' %s'), '<strong>' . $initials . '</strong>'); ?>
-                        <?php
-                        if ($thisstaff->isAdmin() && !defined('ADMINPAGE')) { ?>
-                            | <a href="<?php echo ROOT_PATH ?>scp/admin.php" class="no-pjax"><?php echo __('Admin Panel'); ?></a>
-                        <?php } else { ?>
-                            | <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax"><?php echo __('Agent Panel'); ?></a>
-                        <?php } ?>
-                        | <a href="<?php echo ROOT_PATH ?>scp/profile.php"><?php echo __('Profile'); ?></a>
-                        | <a href="<?php echo ROOT_PATH ?>scp/logout.php?auth=<?php echo $ost->getLinkToken(); ?>" class="no-pjax"><?php echo __('Log Out'); ?></a>
-                        </p>
-                    <!-- </div> -->
+                    <div style="display: flex; align-items:center;flex-direction:row-reverse">
+                        <div class="header_items" id="headerNav">
+                            <p id="info" class="pull-right no-pjax">
+                                <!-- <?php $initials = strtoupper(substr($thisstaff->getName(), 0, 1) . (strpos($thisstaff->getName(), ' ') !== false ? substr($thisstaff->getName(), strpos($thisstaff->getName(), ' ') + 1, 1) : ''));
+                                echo sprintf(__(' %s'), '<strong>' . $initials . '</strong>'); ?> -->
+                                <?php
+                                if ($thisstaff->isAdmin() && !defined('ADMINPAGE')) { ?>
+                                    <a href="<?php echo ROOT_PATH ?>scp/admin.php" class="no-pjax"><?php echo __('Admin Panel'); ?></a>
+                                <?php } else { ?>
+                                    <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax"><?php echo __('Agent Panel'); ?></a>
+                                <?php } ?>
+                                <a href="<?php echo ROOT_PATH ?>scp/profile.php"><?php echo __('Profile'); ?></a>
+                                <a href="<?php echo ROOT_PATH ?>scp/logout.php?auth=<?php echo $ost->getLinkToken(); ?>" class="no-pjax"><?php echo __('Log Out'); ?></a>
+                                <?php $initials = strtoupper(substr($thisstaff->getName(), 0, 1) . (strpos($thisstaff->getName(), ' ') !== false ? substr($thisstaff->getName(), strpos($thisstaff->getName(), ' ') + 1, 1) : ''));
+                                echo sprintf(__(' %s'), '<strong>' . $initials . '</strong>'); ?>
+                            </p>
+                        </div>
+                    </div>
                     <div class="logo_container_header">
                         <a class="pull-left" style="" id="logo" href="https://tgdex.telangana.gov.in/" title="<?php echo __('Support Center'); ?>">
                             <span class="valign-helper"></span>
@@ -97,13 +100,13 @@ if (!isset($_SERVER['HTTP_X_PJAX'])) { ?>
                         <span class="tg_short_logo_header">
                             <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax" id="logo">
                                 <span class="valign-helper"></span>
-                                <img src="<?php echo ROOT_PATH ?>logo.php?<?php echo strtotime($cfg->lastModified('staff_logo_id')); ?>" alt="osTicket &mdash; <?php echo __('Customer Support System'); ?>" />
+                                <img style="width:auto;height:2rem;" src="<?php echo ROOT_PATH ?>logo.php?<?php echo strtotime($cfg->lastModified('staff_logo_id')); ?>" alt="osTicket &mdash; <?php echo __('Customer Support System'); ?>" />
                             </a>
                         </span>
                         <span class="tg_big_logo_header">
                             <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax" id="logo">
                                 <span class="valign-helper"></span>
-                                <img src="<?php echo ROOT_PATH ?>logo.php?<?php echo strtotime($cfg->lastModified('staff_logo_id')); ?>" alt="osTicket &mdash; <?php echo __('Customer Support System'); ?>" />
+                                <img style="width:auto;height:2rem;" src="<?php echo ROOT_PATH ?>logo.php?<?php echo strtotime($cfg->lastModified('staff_logo_id')); ?>" alt="osTicket &mdash; <?php echo __('Customer Support System'); ?>" />
                             </a>
                         </span>
                     </div>
