@@ -75,10 +75,10 @@ if (!isset($_SERVER['HTTP_X_PJAX'])) { ?>
                 ?>
                 <div id="header">
 
-                    <p style="display: flex; align-items:center;flex-direction:row-reverse" id="info" class="pull-right no-pjax"><?php
-                                                                                                                                    $initials = strtoupper(substr($thisstaff->getName(), 0, 1) .
-                                                                                                                                        (strpos($thisstaff->getName(), ' ') !== false ? substr($thisstaff->getName(), strpos($thisstaff->getName(), ' ') + 1, 1) : ''));
-                                                                                                                                    echo sprintf(__(' %s'), '<strong>' . $initials . '</strong>'); ?>
+                    <p style="display: flex; align-items:center;flex-direction:row-reverse" id="info" class="pull-right no-pjax">
+                    <!-- <div class="header_items" id="headerNav"> -->
+                        <?php $initials = strtoupper(substr($thisstaff->getName(), 0, 1) . (strpos($thisstaff->getName(), ' ') !== false ? substr($thisstaff->getName(), strpos($thisstaff->getName(), ' ') + 1, 1) : ''));
+                        echo sprintf(__(' %s'), '<strong>' . $initials . '</strong>'); ?>
                         <?php
                         if ($thisstaff->isAdmin() && !defined('ADMINPAGE')) { ?>
                             | <a href="<?php echo ROOT_PATH ?>scp/admin.php" class="no-pjax"><?php echo __('Admin Panel'); ?></a>
@@ -87,23 +87,24 @@ if (!isset($_SERVER['HTTP_X_PJAX'])) { ?>
                         <?php } ?>
                         | <a href="<?php echo ROOT_PATH ?>scp/profile.php"><?php echo __('Profile'); ?></a>
                         | <a href="<?php echo ROOT_PATH ?>scp/logout.php?auth=<?php echo $ost->getLinkToken(); ?>" class="no-pjax"><?php echo __('Log Out'); ?></a>
-                    </p>
+                        </p>
+                    <!-- </div> -->
                     <div class="logo_container_header">
                         <a class="pull-left" style="" id="logo" href="https://tgdex.telangana.gov.in/" title="<?php echo __('Support Center'); ?>">
                             <span class="valign-helper"></span>
                             <img src="/osTicket/assets/default/images/TelenganaGovt-logo.svg" class="tg_govt_header">
                         </a>
                         <span class="tg_short_logo_header">
-                        <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax" id="logo">
-                            <span class="valign-helper"></span>
-                            <img src="<?php echo ROOT_PATH ?>logo.php?<?php echo strtotime($cfg->lastModified('staff_logo_id')); ?>" alt="osTicket &mdash; <?php echo __('Customer Support System'); ?>" />
-                        </a>
+                            <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax" id="logo">
+                                <span class="valign-helper"></span>
+                                <img src="<?php echo ROOT_PATH ?>logo.php?<?php echo strtotime($cfg->lastModified('staff_logo_id')); ?>" alt="osTicket &mdash; <?php echo __('Customer Support System'); ?>" />
+                            </a>
                         </span>
                         <span class="tg_big_logo_header">
-                        <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax" id="logo">
-                            <span class="valign-helper"></span>
-                            <img src="<?php echo ROOT_PATH ?>logo.php?<?php echo strtotime($cfg->lastModified('staff_logo_id')); ?>" alt="osTicket &mdash; <?php echo __('Customer Support System'); ?>" />
-                        </a>
+                            <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax" id="logo">
+                                <span class="valign-helper"></span>
+                                <img src="<?php echo ROOT_PATH ?>logo.php?<?php echo strtotime($cfg->lastModified('staff_logo_id')); ?>" alt="osTicket &mdash; <?php echo __('Customer Support System'); ?>" />
+                            </a>
                         </span>
                     </div>
                 </div>
@@ -119,9 +120,9 @@ if (!isset($_SERVER['HTTP_X_PJAX'])) { ?>
                         if (strpos($h, '<script ') !== false)
                             echo $h;
                     } ?>
-                    <title><?php echo ($ost && ($title = $ost->getPageTitle())) ? $title : 'osTicket :: ' . __('Staff Control Panel'); ?></title><?php
-                                                                                                                                                } # endif X_PJAX 
-                                                                                                                                                    ?>
+                    <title><?php echo ($ost && ($title = $ost->getPageTitle())) ? $title : 'TGDeX :: ' . __('Staff Control Panel'); ?></title><?php
+                                                                                                                                            } # endif X_PJAX 
+                                                                                                                                                ?>
                 <ul id="nav">
                     <?php include STAFFINC_DIR . "templates/navigation.tmpl.php"; ?>
                 </ul>

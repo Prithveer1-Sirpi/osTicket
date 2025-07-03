@@ -239,7 +239,16 @@ header #logo img{
   .tg_short_logo_header {
     display: inline;
   }
-  #headerNav {
+/* .header_items {
+  text-align: right !important;
+}
+.header_items a {
+  text-decoration: none;
+  color: #000;
+  margin-right: 1rem;
+} */
+
+  /* #headerNav {
     display: none;
     position: absolute;
     top: 60px;
@@ -255,7 +264,7 @@ header #logo img{
 
   #headerNav.show {
     display: flex;
-  }
+  } */
 .tg_big_logo_header {
     display: none;
   }
