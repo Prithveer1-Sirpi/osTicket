@@ -161,7 +161,7 @@ return false;">
 <!-- SEARCH FORM END -->
 
 <div class="clear"></div>
-<div style="margin-bottom:20px; padding-top:5px;">
+<div style="margin-bottom:20px; padding-top:5px;padding-bottom:3rem;">
     <div class="sticky bar opaque">
         <div class="content">
             <div class="pull-left flush-left">
@@ -229,15 +229,15 @@ return false;">
     <input type="hidden" name="a" value="mass_process">
     <input type="hidden" name="do" id="action" value="">
 
-<table class="list queue tickets" id = "ticketTable" border="0" cellspacing="1" cellpadding="2" width="940">
-  <thead>
-    <tr>
-<?php
-$canManageTickets = $thisstaff->canManageTickets();
-if ($canManageTickets) { ?>
-        <th style="width:12px"></th>
-<?php
-}
+    <table class="list queue tickets" id="ticketTable" border="0" cellspacing="1" cellpadding="2" width="940">
+        <thead>
+            <tr>
+                <?php
+                $canManageTickets = $thisstaff->canManageTickets();
+                if ($canManageTickets) { ?>
+                    <th style="width:12px"></th>
+                <?php
+                }
 
                 foreach ($columns as $C) {
                     $heading = Format::htmlchars($C->getLocalHeading());
@@ -304,7 +304,7 @@ if ($canManageTickets) { ?>
 
     <?php
     if ($count > 0 || $skipCount) { //if we actually had any tickets returned.
-    ?> <div>
+    ?> <div style="padding: 2rem;">
             <span class="faded pull-right"><?php echo $pageNav->showing(); ?></span>
             <?php
             echo __('Page') . ':' . $pageNav->getPageLinks() . '&nbsp;';
