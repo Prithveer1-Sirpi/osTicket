@@ -53,8 +53,8 @@ if (!isset($_SERVER['HTTP_X_PJAX'])) { ?>
             <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH; ?>css/rtl.css" />
             <link type="text/css" rel="stylesheet" href="<?php echo ROOT_PATH ?>scp/css/translatable.css" />
             <!-- Favicons -->
-            <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/oscar-favicon-32x32.png" sizes="32x32" />
-            <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/oscar-favicon-16x16.png" sizes="16x16" />
+            <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/tgdex_favicon.png" sizes="32x32" />
+            <link rel="icon" type="image/png" href="<?php echo ROOT_PATH ?>images/tgdex_favicon.png" sizes="16x16" />
 
             <?php
             if ($ost && ($headers = $ost->getExtraHeaders())) {
@@ -86,7 +86,7 @@ if (!isset($_SERVER['HTTP_X_PJAX'])) { ?>
                     </p>
                     <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax" id="logo">
                         <span class="valign-helper"></span>
-                        <img src="<?php echo ROOT_PATH ?>scp/logo.php?<?php echo strtotime($cfg->lastModified('staff_logo_id')); ?>" alt="osTicket &mdash; <?php echo __('Customer Support System'); ?>" />
+                        <img src="<?php echo ROOT_PATH ?>logo.php?<?php echo strtotime($cfg->lastModified('staff_logo_id')); ?>" alt="osTicket &mdash; <?php echo __('Customer Support System'); ?>" />
                     </a>
                 </div>
                 <div id="pjax-container" class="<?php if ($_POST) echo 'no-pjax'; ?>">
@@ -102,8 +102,8 @@ if (!isset($_SERVER['HTTP_X_PJAX'])) { ?>
                             echo $h;
                     } ?>
                     <title><?php echo ($ost && ($title = $ost->getPageTitle())) ? $title : 'osTicket :: ' . __('Staff Control Panel'); ?></title><?php
-                                                                                                                                        } # endif X_PJAX 
-                                                                                                                                            ?>
+                                                                                                                                                } # endif X_PJAX 
+                                                                                                                                                    ?>
                 <ul id="nav">
                     <?php include STAFFINC_DIR . "templates/navigation.tmpl.php"; ?>
                 </ul>
