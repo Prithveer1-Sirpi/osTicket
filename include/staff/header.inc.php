@@ -78,17 +78,17 @@ if (!isset($_SERVER['HTTP_X_PJAX'])) { ?>
                         <div class="header_items" id="headerNav">
                             <p id="info" class="pull-right no-pjax">
                                 <!-- <?php $initials = strtoupper(substr($thisstaff->getName(), 0, 1) . (strpos($thisstaff->getName(), ' ') !== false ? substr($thisstaff->getName(), strpos($thisstaff->getName(), ' ') + 1, 1) : ''));
-                                echo sprintf(__(' %s'), '<strong>' . $initials . '</strong>'); ?> -->
+                                        echo sprintf(__(' %s'), '<strong>' . $initials . '</strong>'); ?> -->
                                 <?php
                                 if ($thisstaff->isAdmin() && !defined('ADMINPAGE')) { ?>
-                                    <a href="<?php echo ROOT_PATH ?>scp/admin.php" class="no-pjax"><?php echo __('Admin Panel'); ?></a>
+                                    <a href="<?php echo ROOT_PATH ?>scp/admin.php" class="no-pjax"><?php echo __('ADMIN PANEL'); ?></a>
                                 <?php } else { ?>
-                                    <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax"><?php echo __('Agent Panel'); ?></a>
+                                    <a href="<?php echo ROOT_PATH ?>scp/index.php" class="no-pjax"><?php echo __('AGENT PANEL'); ?></a>
                                 <?php } ?>
-                                <a href="<?php echo ROOT_PATH ?>scp/profile.php"><?php echo __('Profile'); ?></a>
-                                <a href="<?php echo ROOT_PATH ?>scp/logout.php?auth=<?php echo $ost->getLinkToken(); ?>" class="no-pjax"><?php echo __('Log Out'); ?></a>
+                                <a href="<?php echo ROOT_PATH ?>scp/profile.php"><?php echo __('PROFILE'); ?></a>
+                                <a href="<?php echo ROOT_PATH ?>scp/logout.php?auth=<?php echo $ost->getLinkToken(); ?>" class="no-pjax signout_btn_header"><?php echo __('LOG OUT'); ?></a>
                                 <?php $initials = strtoupper(substr($thisstaff->getName(), 0, 1) . (strpos($thisstaff->getName(), ' ') !== false ? substr($thisstaff->getName(), strpos($thisstaff->getName(), ' ') + 1, 1) : ''));
-                                echo sprintf(__(' %s'), '<strong>' . $initials . '</strong>'); ?>
+                                echo '<a class="user_avatar_header">' . Format::htmlchars($initials) . '</a>'; ?>
                             </p>
                         </div>
                     </div>
