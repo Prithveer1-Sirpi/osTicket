@@ -120,7 +120,7 @@ if ($agents->exists(true))
 else
     $showing = __('No agents found!');
 ?>
-<table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
+<table class="list" id="scpTable" border="0" cellspacing="1" cellpadding="0" width="940">
     <thead>
         <tr>
             <th width="20%"><a <?php echo $name_sort; ?> href="directory.php?<?php echo $qstr; ?>&sort=name"><?php echo __('Name'); ?></a></th>
