@@ -86,7 +86,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                         <td><?php echo __('Password Policy'); ?>:</td>
                         <td>
                             <select name="agent_passwd_policy">
-                            <option value=" "> &mdash; <?php echo __('All Active Policies'); ?> &mdash;</option>
+                            <option value=" ">  <?php echo __('All Active Policies'); ?> </option>
                             <?php
                                 foreach (PasswordPolicy::allActivePolicies() as $P) {
                                     $id = $P->getBkId();

@@ -20,7 +20,7 @@
     <div>
         <select name="filter">
           <option value="" <?php if ($queue->filter == "")
-              echo 'selected="selected"'; ?>>— <?php echo __('None'); ?> —</option>
+              echo 'selected="selected"'; ?>> <?php echo __('None'); ?> </option>
           <?php
           if ($queue->parent) { ?>
           <option value="::" <?php if ($queue->filter == "::")
@@ -46,13 +46,13 @@
     <div>
         <select name="sort_id">
          <option value="" <?php if ($queue->sort_id == 0)
-            echo 'selected="selected"'; ?>>— <?php echo __('System Default'); ?> —</option>
+            echo 'selected="selected"'; ?>> <?php echo __('System Default'); ?> </option>
          <?php
          if ($queue->parent) { ?>
           <option value="::" <?php echo $queue->isDefaultSortInherited() ?
-              'selected="selected"' : ''; ?>>— <?php echo __('Inherit from parent');
+              'selected="selected"' : ''; ?>> <?php echo __('Inherit from parent');
             if ($sort = $queue->parent->getDefaultSort())
-                echo sprintf(' (%s)', Format::htmlchars($sort->getName())); ?> —</option>
+                echo sprintf(' (%s)', Format::htmlchars($sort->getName())); ?> </option>
         <?php
          }
         foreach ($queue->getSortOptions() as $sort) { ?>

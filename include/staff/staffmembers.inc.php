@@ -86,14 +86,14 @@ $agents->limit($pageNav->getLimit())->offset($pageNav->getStart());
             <form action="staff.php" method="GET" name="filter">
                 <input type="hidden" name="a" value="filter">
                 <select name="did" id="did">
-                    <option value="0">&mdash;
-                        <?php echo __( 'All Departments');?> &mdash;</option>
+                    <option value="0">
+                        <?php echo __( 'All Departments');?> </option>
                     <?php if (($depts=Dept::getDepartments())) { foreach ($depts as $id=> $name) { $sel=($_REQUEST['did'] && $_REQUEST['did']==$id)?'selected="selected"':''; echo sprintf('
                     <option value="%d" %s>%s</option>',$id,$sel,$name); } } ?>
                 </select>
                 <select name="tid" id="tid">
-                    <option value="0">&mdash;
-                        <?php echo __( 'All Teams');?> &mdash;</option>
+                    <option value="0">
+                        <?php echo __( 'All Teams');?> </option>
                     <?php if (($teams=Team::getTeams())) { foreach ($teams as $id=> $name) { $sel=($_REQUEST['tid'] && $_REQUEST['tid']==$id)?'selected="selected"':''; echo sprintf('
                     <option value="%d" %s>%s</option>',$id,$sel,$name); } } ?>
                 </select>

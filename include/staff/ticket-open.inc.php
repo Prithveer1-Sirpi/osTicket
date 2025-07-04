@@ -232,7 +232,7 @@ if ($_POST)
                         if (count($topics) == 1)
                             $selected = 'selected="selected"';
                         else { ?>
-                        <option value="" selected >&mdash; <?php echo __('Select Help Topic'); ?> &mdash;</option>
+                        <option value="" selected > <?php echo __('Select Help Topic'); ?> </option>
 <?php                   }
                         foreach($topics as $id =>$name) {
                             echo sprintf('<option value="%d" %s %s>%s</option>',
@@ -255,7 +255,7 @@ if ($_POST)
             </td>
             <td>
                 <select name="deptId">
-                    <option value="" selected >&mdash; <?php echo __('Select Department'); ?>&mdash;</option>
+                    <option value="" selected > <?php echo __('Select Department'); ?></option>
                     <?php
                     if($depts=$thisstaff->getDepartmentNames(true)) {
                         foreach($depts as $id =>$name) {
@@ -281,7 +281,7 @@ if ($_POST)
             </td>
             <td>
                 <select name="slaId">
-                    <option value="0" selected="selected" >&mdash; <?php echo __('System Default');?> &mdash;</option>
+                    <option value="0" selected="selected" > <?php echo __('System Default');?> </option>
                     <?php
                     if($slas=SLA::getSLAs()) {
                         foreach($slas as $id =>$name) {
@@ -316,7 +316,7 @@ if ($_POST)
             <td width="160"><?php echo __('Assign To');?>:</td>
             <td>
                 <select id="assignId" name="assignId">
-                    <option value="0" selected="selected">&mdash; <?php echo __('Select an Agent OR a Team');?> &mdash;</option>
+                    <option value="0" selected="selected"> <?php echo __('Select an Agent OR a Team');?> </option>
                     <?php
                     $users = Staff::getStaffMembers(array(
                                 'available' => true,
@@ -373,7 +373,7 @@ if ($_POST)
                 <div style="margin-top:0.3em;margin-bottom:0.5em">
                     <?php echo __('Canned Response');?>:&nbsp;
                     <select id="cannedResp" name="cannedResp">
-                        <option value="0" selected="selected">&mdash; <?php echo __('Select a canned response');?> &mdash;</option>
+                        <option value="0" selected="selected"> <?php echo __('Select a canned response');?> </option>
                         <?php
                         foreach($cannedResponses as $id =>$title) {
                             echo sprintf('<option value="%d">%s</option>',$id,$title);

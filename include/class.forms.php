@@ -4688,8 +4688,8 @@ class ChoicesWidget extends Widget {
             <?php if ($config['multiselect'])
                 echo ' multiple="multiple"'; ?>>
             <?php if ($showdefault || (!$have_def && !$config['multiselect'])) { ?>
-            <option value="<?php echo $showdefault ? '' : $def_key; ?>">&mdash; <?php
-                echo $def_val; ?> &mdash;</option>
+            <option value="<?php echo $showdefault ? '' : $def_key; ?>"> <?php
+                echo $def_val; ?> </option>
 <?php
         }
         $this->emitChoices($choices, $values, $have_def, $def_key); ?>

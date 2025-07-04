@@ -79,7 +79,7 @@ foreach ($condition->getProperties() as $prop=>$v) {
           }
         });
         ">
-          <option>— <?php echo __('Add a property'); ?> —</option>
+          <option> <?php echo __('Add a property'); ?> </option>
 <?php foreach (array_keys(QueueColumnConditionProperty::$properties) as $p) {
     echo sprintf('<option value="%s">%s</option>', $p, mb_convert_case($p, MB_CASE_TITLE));
 } ?>

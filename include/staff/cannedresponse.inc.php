@@ -54,7 +54,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             <td width="180" class="required"><?php echo __('Department');?>:</td>
             <td>
                 <select name="dept_id">
-                    <option value="0">&mdash; <?php echo __('All Departments');?> &mdash;</option>
+                    <option value="0"> <?php echo __('All Departments');?> </option>
                     <?php
                     if (($depts=$thisstaff->getDepartmentNames())) {
                         foreach($depts as $id => $name) {

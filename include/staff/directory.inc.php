@@ -92,7 +92,7 @@ $qstr .= '&amp;order=' . ($order == 'DESC' ? 'ASC' : 'DESC');
         <form action="directory.php" method="GET" name="filter">
             <input type="text" name="q" placeholder="Search agent" value="<?php echo Format::htmlchars($_REQUEST['q']); ?>">
             <select name="did" id="did">
-                <option value="0">&mdash; <?php echo __('All Departments'); ?> &mdash;</option>
+                <option value="0"> <?php echo __('All Departments'); ?></option>
                 <?php
                 foreach ($thisstaff->getDepartmentNames() as $id => $name) {
                     $sel = ($_REQUEST['did'] && $_REQUEST['did'] == $id) ? 'selected="selected"' : '';

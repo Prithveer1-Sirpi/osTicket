@@ -75,8 +75,8 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             </td>
             <td>
                 <select name="schedule_id">
-                    <option value="0" selected="selected" >&mdash; <?php
-                    echo __('System Default');?> &mdash;</option>
+                    <option value="0" selected="selected" > <?php
+                    echo __('System Default');?> </option>
                     <?php
                     if ($schedules=BusinessHoursSchedule::getSchedules()) {
                         foreach ($schedules as $s) {

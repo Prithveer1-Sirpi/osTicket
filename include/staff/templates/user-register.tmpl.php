@@ -52,7 +52,7 @@ echo sprintf(__(
                         $('#password').show();
                 }
                 ">
-                <option value="">&mdash; <?php echo __('Use any available backend'); ?> &mdash;</option>
+                <option value=""> <?php echo __('Use any available backend'); ?> </option>
             <?php foreach (UserAuthenticationBackend::allRegistered() as $ab) {
                 if (!$ab->supportsInteractiveAuthentication()) continue; ?>
                 <option value="<?php echo $ab->getBkId(); ?>" <?php

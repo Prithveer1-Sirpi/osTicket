@@ -84,7 +84,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             </td>
             <td>
                 <select name="topic_pid">
-                    <option value="">&mdash; <?php echo __('Top-Level Topic'); ?> &mdash;</option><?php
+                    <option value=""> <?php echo __('Top-Level Topic'); ?> </option><?php
                     $topics = Topic::getHelpTopics();
                     foreach ($topics as $id=>$topic) {
                         if ($id == $info['topic_id'])
@@ -123,7 +123,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             </td>
             <td>
                 <select name="dept_id" data-quick-add="department">
-                    <option value="0">&mdash; <?php echo __('System Default'); ?> &mdash;</option>
+                    <option value="0"> <?php echo __('System Default'); ?> </option>
                     <?php
                     if($info['dept_id'])
                       $current_name = Dept::getNameById($info['dept_id']);
@@ -139,7 +139,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                     }
                   }
                   ?>
-                    <option value="0" data-quick-add>&mdash; <?php echo __('Add New');?> &mdash;</option>
+                    <option value="0" data-quick-add> <?php echo __('Add New');?> </option>
                 </select>
                 <?php
                 if($warn) { ?>
@@ -189,7 +189,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             <td>
                 <select name="sequence_id">
                 <option value="0" <?php if ($info['sequence_id'] == 0) echo $selected;
-                    ?>>&mdash; <?php echo __('Random'); ?> &mdash;</option>
+                    ?>> <?php echo __('Random'); ?> </option>
 <?php foreach (Sequence::objects() as $s) { ?>
                 <option value="<?php echo $s->id; ?>" <?php
                     if ($info['sequence_id'] == $s->id) echo $selected;
@@ -211,7 +211,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             <td>
                 <span>
                 <select name="status_id">
-                    <option value="">&mdash; <?php echo __('System Default'); ?> &mdash;</option>
+                    <option value=""> <?php echo __('System Default'); ?> </option>
                     <?php
                     foreach (TicketStatusList::getStatuses(array('states'=>array('open'))) as $status) {
                         $name = $status->getName();
@@ -240,7 +240,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             </td>
             <td>
                 <select name="priority_id">
-                    <option value="">&mdash; <?php echo __('System Default'); ?> &mdash;</option>
+                    <option value=""> <?php echo __('System Default'); ?> </option>
                     <?php
                     if (($priorities=Priority::getPriorities())) {
                         foreach ($priorities as $id => $name) {
@@ -260,7 +260,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             </td>
             <td>
                 <select name="sla_id">
-                    <option value="0">&mdash; <?php echo __("Department's Default");?> &mdash;</option>
+                    <option value="0"> <?php echo __("Department's Default");?> </option>
                     <?php
                     if($slas=SLA::getSLAs()) {
                         foreach($slas as $id =>$name) {
@@ -278,7 +278,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             <td width="180"><?php echo __('Thank-You Page'); ?>:</td>
             <td>
                 <select name="page_id">
-                    <option value="">&mdash; <?php echo __('System Default'); ?> &mdash;</option>
+                    <option value=""> <?php echo __('System Default'); ?> </option>
                     <?php
                     if(($pages = Page::getActiveThankYouPages())) {
                         foreach($pages as $page) {
@@ -300,7 +300,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             </td>
             <td>
                 <select name="assign" data-quick-add>
-                    <option value="0">&mdash; <?php echo __('Unassigned'); ?> &mdash;</option>
+                    <option value="0"> <?php echo __('Unassigned'); ?> </option>
                     <?php
                     if (($users=Staff::getStaffMembers())) {
                         echo sprintf('<OPTGROUP label="%s">',
@@ -402,7 +402,7 @@ foreach ($forms as $F) {
    <br/>
    <strong><?php echo __('Add Custom Form'); ?></strong>:
    <select name="form_id" id="newform">
-    <option value=""><?php echo '— '.__('Add a custom form') . ' —'; ?></option>
+    <option value=""><?php echo ''.__('Add a custom form') . ''; ?></option>
     <?php foreach (DynamicForm::objects()
         ->filter(array('type'=>'G'))
         ->exclude(array('flags__hasbit' => DynamicForm::FLAG_DELETED))

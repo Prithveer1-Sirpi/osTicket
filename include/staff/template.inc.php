@@ -116,7 +116,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     else
         $('#language').hide();
 ">
-                    <option value="0">&mdash; <?php echo __('Stock Templates'); ?> &mdash;</option>
+                    <option value="0"> <?php echo __('Stock Templates'); ?> </option>
                     <?php
                     $sql='SELECT tpl_id,name FROM '.EMAIL_TEMPLATE_GRP_TABLE.' ORDER by name';
                     if(($res=db_query($sql)) && db_num_rows($res)){

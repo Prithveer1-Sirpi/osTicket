@@ -70,8 +70,8 @@ if ($_POST)
             </td>
             <td>
                 <select name="source">
-                    <option value="" selected >&mdash; <?php
-                        echo __('Select Source');?> &mdash;</option>
+                    <option value="" selected > <?php
+                        echo __('Select Source');?> </option>
                     <?php
                     $source = $info['source'] ?: 'Phone';
                     foreach (Ticket::getSources() as $k => $v) {
@@ -91,7 +91,7 @@ if ($_POST)
             </td>
             <td>
                 <select name="topicId">
-                    <option value="" selected >&mdash; <?php echo __('Select Help Topic');?> &mdash;</option>
+                    <option value="" selected > <?php echo __('Select Help Topic');?> </option>
                     <?php
                     if ($topics=$thisstaff->getTopicNames()) {
                       if($ticket->topic_id && !array_key_exists($ticket->topic_id, $topics)) {
@@ -122,7 +122,7 @@ if ($_POST)
             </td>
             <td>
                 <select name="slaId">
-                    <option value="0" selected="selected" >&mdash; <?php echo __('None');?> &mdash;</option>
+                    <option value="0" selected="selected" > <?php echo __('None');?> </option>
                     <?php
                     if($slas=SLA::getSLAs()) {
                         foreach($slas as $id =>$name) {

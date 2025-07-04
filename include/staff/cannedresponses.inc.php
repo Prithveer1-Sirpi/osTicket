@@ -134,7 +134,7 @@ else
                     <a href="canned.php?id=<?php echo $row['canned_id']; ?>"><?php echo Format::truncate($row['title'],200); echo "&nbsp;$files"; ?></a>&nbsp;
                 </td>
                 <td><?php echo $row['isenabled']?__('Active'):'<b>'.__('Disabled').'</b>'; ?></td>
-                <td><?php echo $row['department']?$row['department']:'&mdash; '.__('All Departments').' &mdash;'; ?></td>
+                <td><?php echo $row['department']?$row['department']:' '.__('All Departments').' '; ?></td>
                 <td>&nbsp;<?php echo Format::datetime($row['updated']); ?></td>
             </tr>
             <?php

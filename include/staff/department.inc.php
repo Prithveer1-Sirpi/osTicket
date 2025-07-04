@@ -58,7 +58,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
             </td>
             <td>
                 <select name="pid">
-                    <option value="">&mdash; <?php echo __('Top-Level Department'); ?> &mdash;</option>
+                    <option value=""> <?php echo __('Top-Level Department'); ?> </option>
                     <?php
                     if($info['pid'])
                       $current_name = Dept::getNameById($info['pid']);
@@ -129,7 +129,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
             </td>
             <td>
                 <select name="sla_id">
-                    <option value="0">&mdash; <?php echo __('System Default'); ?> &mdash;</option>
+                    <option value="0"> <?php echo __('System Default'); ?> </option>
                     <?php
                     if($slas=SLA::getSLAs()) {
                         foreach($slas as $id =>$name) {
@@ -148,8 +148,8 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
             </td>
             <td>
                 <select name="schedule_id">
-                    <option value="0" selected="selected" >&mdash; <?php
-                    echo __("SLA's Default");?> &mdash;</option>
+                    <option value="0" selected="selected" > <?php
+                    echo __("SLA's Default");?> </option>
                     <?php
                     if ($schedules=BusinessHoursSchedule::getSchedules()) {
                         foreach ($schedules as $s) {
@@ -169,7 +169,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
             <td>
                 <span>
                 <select name="manager_id">
-                    <option value="0">&mdash; <?php echo __('None'); ?> &mdash;</option>
+                    <option value="0"> <?php echo __('None'); ?> </option>
                     <?php
                     $sql='SELECT staff_id,CONCAT_WS(", ",lastname, firstname) as name '
                         .' FROM '.STAFF_TABLE.' staff '
@@ -239,7 +239,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
             </td>
             <td>
                 <select name="email_id">
-                    <option value="0">&mdash; <?php echo __('System Default'); ?> &mdash;</option>
+                    <option value="0"> <?php echo __('System Default'); ?> </option>
                     <?php
                     $sql='SELECT email_id,email,name FROM '.EMAIL_TABLE.' email ORDER by name';
                     if(($res=db_query($sql)) && db_num_rows($res)){
@@ -261,7 +261,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
             </td>
             <td>
                 <select name="tpl_id">
-                    <option value="0">&mdash; <?php echo __('System Default'); ?> &mdash;</option>
+                    <option value="0"> <?php echo __('System Default'); ?> </option>
                     <?php
                     $sql='SELECT tpl_id,name FROM '.EMAIL_TEMPLATE_GRP_TABLE.' tpl WHERE isactive=1 ORDER by name';
                     if(($res=db_query($sql)) && db_num_rows($res)){
@@ -313,7 +313,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
             <td>
                 <span>
                 <select name="autoresp_email_id">
-                    <option value="0" selected="selected">&mdash; <?php echo __('Department Email'); ?> &mdash;</option>
+                    <option value="0" selected="selected"> <?php echo __('Department Email'); ?> </option>
                     <?php
                     $sql='SELECT email_id,email,name FROM '.EMAIL_TABLE.' email ORDER by name';
                     if(($res=db_query($sql)) && db_num_rows($res)){
@@ -425,13 +425,13 @@ foreach ($dept->getMembers() as $member) {
         <td colspan="2">
           <i class="icon-plus-sign"></i>
           <select id="add_access" data-quick-add="staff">
-            <option value="0">&mdash; <?php echo __('Select Agent');?> &mdash;</option>
+            <option value="0"> <?php echo __('Select Agent');?> </option>
             <?php
             foreach ($agents as $id=>$name) {
               echo sprintf('<option value="%d">%s</option>',$id,Format::htmlchars($name));
             }
             ?>
-            <option value="0" data-quick-add>&mdash; <?php echo __('Add New');?> &mdash;</option>
+            <option value="0" data-quick-add> <?php echo __('Add New');?> </option>
           </select>
           <button type="button" class="action-button">
             <?php echo __('Add'); ?>
@@ -446,13 +446,13 @@ foreach ($dept->getMembers() as $member) {
         </td>
         <td>
           <select data-name="member_role" data-quick-add="role">
-            <option value="0">&mdash; <?php echo __('Select Role');?> &mdash;</option>
+            <option value="0"> <?php echo __('Select Role');?> </option>
             <?php
             foreach (Role::getRoles() as $id=>$name) {
               echo sprintf('<option value="%d" %s>%s</option>',$id,$sel,$name);
             }
             ?>
-            <option value="0" data-quick-add>&mdash; <?php echo __('Add New');?> &mdash;</option>
+            <option value="0" data-quick-add> <?php echo __('Add New');?> </option>
           </select>
           <span style="display:inline-block;width:60px"> </span>
           <label class="inline checkbox">

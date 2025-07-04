@@ -48,7 +48,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
                 <td>
                     <select name="task_sequence_id">
                     <option value="0" <?php if ($config['task_sequence_id'] == 0) echo $selected;
-                        ?>>&mdash; <?php echo __('Random'); ?> &mdash;</option>
+                        ?>> <?php echo __('Random'); ?> </option>
     <?php foreach (Sequence::objects() as $s) { ?>
                     <option value="<?php echo $s->id; ?>" <?php
                         if ($config['task_sequence_id'] == $s->id) echo $selected;

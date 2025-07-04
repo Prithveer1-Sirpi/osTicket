@@ -50,7 +50,7 @@ $pages = Page::getPages();
             <td>
                 <span>
                 <select name="landing_page_id">
-                    <option value="">&mdash; <?php echo __('Select Landing Page'); ?> &mdash;</option>
+                    <option value=""> <?php echo __('Select Landing Page'); ?> </option>
                     <?php
                     foreach($pages as $page) {
                         if(strcasecmp($page->getType(), 'landing')) continue;
@@ -69,8 +69,8 @@ $pages = Page::getPages();
             <td>
                 <span>
                 <select name="offline_page_id">
-                    <option value="">&mdash; <?php echo __('Select Offline Page');
-                        ?> &mdash;</option>
+                    <option value=""> <?php echo __('Select Offline Page');
+                        ?> </option>
                     <?php
                     foreach($pages as $page) {
                         if(strcasecmp($page->getType(), 'offline')) continue;
@@ -90,8 +90,8 @@ $pages = Page::getPages();
             <td>
                 <span>
                 <select name="thank-you_page_id">
-                    <option value="">&mdash; <?php
-                        echo __('Select Thank-You Page'); ?> &mdash;</option>
+                    <option value=""> <?php
+                        echo __('Select Thank-You Page'); ?> </option>
                     <?php
                     foreach($pages as $page) {
                         if(strcasecmp($page->getType(), 'thank-you')) continue;

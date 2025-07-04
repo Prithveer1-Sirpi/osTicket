@@ -353,7 +353,7 @@ $gmtime = Misc::gmtime();
             </div>
             <i class="icon-plus-sign"></i>&nbsp;
             <select name="add_secondary_language">
-                <option value="">&mdash; <?php echo __('Add a Language'); ?> &mdash;</option>
+                <option value=""> <?php echo __('Add a Language'); ?> </option>
 <?php foreach($langs as $l) {
     $selected = ($config['add_secondary_language'] == $l['code']) ? 'selected="selected"' : '';
     if (!$selected && $l['code'] == $cfg->getPrimaryLanguage())

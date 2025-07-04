@@ -113,7 +113,7 @@ if (count($langs) > 1) { ?>
     </div>
     <div style="padding-bottom:8px;">
         <select name="pid">
-            <option value="">&mdash; <?php echo __('Top-Level Category'); ?> &mdash;</option>
+            <option value=""> <?php echo __('Top-Level Category'); ?> </option>
             <?php
             foreach (Category::getCategories() as $id=>$name) {
                 if ($info['id'] && $id == $info['id'])

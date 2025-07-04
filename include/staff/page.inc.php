@@ -75,8 +75,8 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             <td>
                 <span>
                 <select name="type">
-                    <option value="" selected="selected">&mdash; <?php
-                    echo __('Select Page Type'); ?> &mdash;</option>
+                    <option value="" selected="selected"> <?php
+                    echo __('Select Page Type'); ?> </option>
                     <?php
                     foreach($pageTypes as $k => $v)
                         echo sprintf('<option value="%s" %s>%s</option>',

@@ -16,7 +16,7 @@ $queues = array();
 foreach (CustomQueue::queues() as  $q)
     $queues[$q->id] = $q->getFullName();
 asort($queues);
-$queues = array(0 => ('—'.__("My Searches").'—')) + $queues;
+$queues = array(0 => (''.__("My Searches").'')) + $queues;
 $queue = $search;
 $qname = $search->getName() ?:  __('Advanced Ticket Search');
 ?>

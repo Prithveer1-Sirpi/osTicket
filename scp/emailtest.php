@@ -75,7 +75,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             </td>
             <td>
                 <select name="email_id">
-                    <option value="0">&mdash; <?php echo __('Select FROM Email');?> &mdash;</option>
+                    <option value="0"> <?php echo __('Select FROM Email');?> </option>
                     <?php
 
                     $emails = Email::objects()->values_flat('email_id',

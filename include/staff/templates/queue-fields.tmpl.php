@@ -63,7 +63,7 @@ $hidden_cols = $queue->inheritExport();
     <td colspan="3" id="append-field">
     <i class="icon-plus-sign"></i>
     <select id="add-field" name="new-field" style="max-width: 300px;">
-        <option value="">— <?php echo __('Add Other Field'); ?> —</option>
+        <option value=""> <?php echo __('Add Other Field'); ?> </option>
     <?php
     $fields = CustomQueue::getExportableFields();
     if (is_array($fields)) {

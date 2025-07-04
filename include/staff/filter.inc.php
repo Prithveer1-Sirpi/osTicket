@@ -86,7 +86,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                 </td>
                 <td>
                     <select name="target">
-                       <option value="">&mdash; <?php echo __('Select a Channel');?> &mdash;</option>
+                       <option value=""> <?php echo __('Select a Channel');?> </option>
                        <?php
                        foreach(Filter::getTargets() as $k => $v) {
                            echo sprintf('<option value="%s" %s>%s</option>',
@@ -153,7 +153,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                 <tr>
                     <td colspan="2">
                         <select style="max-width: 200px;" name="rules[<?php echo $i; ?>][w]">
-                            <option value="">&mdash; <?php echo __('Select One');?> &mdash;</option>
+                            <option value=""> <?php echo __('Select One');?> </option>
                                 <?php
                                 foreach ($matches as $group=>$ms) { ?>
                                     <optgroup label="<?php echo __($group); ?>"><?php
@@ -166,7 +166,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                                 <?php } ?>
                             </select>
                             <select name="rules[<?php echo $i; ?>][h]">
-                                <option value="0">&mdash; <?php echo __('Select One');?> &mdash;</option>
+                                <option value="0"> <?php echo __('Select One');?> </option>
                                 <?php
                                     foreach($match_types as $k=>$v){
                                     $sel=($rule["h"]==$k)?'selected="selected"':'';
@@ -188,7 +188,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                 <tr>
                     <td colspan="2">
                         <select style="max-width: 200px;" data-name="rulew">
-                            <option value="">&mdash; <?php echo __('Select One');?> &mdash;</option>
+                            <option value=""> <?php echo __('Select One');?> </option>
                             <?php
                             foreach ($matches as $group=>$ms) { ?>
                                 <optgroup label="<?php echo __($group); ?>"><?php
@@ -200,7 +200,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                             <?php } ?>
                         </select>
                         <select data-name="ruleh">
-                            <option value="0">&mdash; <?php echo __('Select One');?> &mdash;</option>
+                            <option value="0"> <?php echo __('Select One');?> </option>
                             <?php
                                 foreach($match_types as $k=>$v){
                                 echo sprintf('<option value="%s">%s</option>',
