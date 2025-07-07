@@ -223,12 +223,12 @@ if (($lang = Internationalization::getCurrentLanguage())) {
                 <div class="logo_container_header">
                     <a class="pull-left" style="" id="logo" href="https://tgdex.telangana.gov.in/" title="<?php echo __('Support Center'); ?>">
                         <span class="valign-helper"></span>
-                        <img src="/osTicket/assets/default/images/TelenganaGovt-logo.svg" class="tg_govt_header">
+                        <img src="../assets/default/images/TelenganaGovt-logo.svg" class="tg_govt_header">
                     </a>
                     <span class="tg_short_logo_header">
                         <a class="pull-left" style="" id="logo" href="https://tgdex.telangana.gov.in/" title="<?php echo __('Support Center'); ?>">
                             <span class="valign-helper"></span>
-                            <img src="/osTicket/assets/default/images/tgdex_short_logo_Green.svg">
+                            <img src="../assets/default/images/tgdex_short_logo_Green.svg">
                         </a>
                     </span>
                     <span class="tg_big_logo_header">

@@ -39,7 +39,7 @@
             <div style="min-width: 280px;">
                 <!-- Logo with geometric design -->
                 <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
-                    <img src="/osTicket/assets/default/images/logo.png" alt="TGDeX Logo" style="height: 36px; margin-right: 12px;">
+                    <img src="assets/default/images/logo.png" alt="TGDeX Logo" style="height: 36px; margin-right: 12px;">
                     <!-- <div style="color: #00b359; font-size: 28px; font-weight: 700; letter-spacing: -0.5px;">TGDeX</div> -->
                 </div>
 
@@ -51,10 +51,10 @@
                 <div>
                     <h3 style="color: #00b359; font-size: 20px; font-weight: 450; margin-bottom: 1rem; letter-spacing: -0.3px;">Social Media</h3>
                     <div style="display: flex; gap: 2rem;">
-                        <a href="https://www.facebook.com/etgots/"><img src="/osTicket/assets/default/images/icons/meta-icon.png" alt="Meta" style="width:22px; height: 22px;"></a>
-                        <a href="https://x.com/emergingtechts"><img src="/osTicket/assets/default/images/icons/twitter-icon.png" alt="X" style="width: 18px; height: 18px;"></a>
-                        <a href="https://www.linkedin.com/company/et-itec-gots/?originalSubdomain=in"><img src="/osTicket/assets/default/images/icons/linkedin-icon.png" alt="LinkedIn" style="width: 18px; height: 18px;"></a>
-                        <a href="https://www.instagram.com/emerging.technology.ts.gov.in/"><img src="/osTicket/assets/default/images/icons/instagram-icon.png" alt="Instagram" style="width: 18px; height: 18px;"></a>
+                        <a href="https://www.facebook.com/etgots/"><img src="assets/default/images/icons/meta-icon.png" alt="Meta" style="width:22px; height: 22px;"></a>
+                        <a href="https://x.com/emergingtechts"><img src="assets/default/images/icons/twitter-icon.png" alt="X" style="width: 18px; height: 18px;"></a>
+                        <a href="https://www.linkedin.com/company/et-itec-gots/?originalSubdomain=in"><img src="assets/default/images/icons/linkedin-icon.png" alt="LinkedIn" style="width: 18px; height: 18px;"></a>
+                        <a href="https://www.instagram.com/emerging.technology.ts.gov.in/"><img src="assets/default/images/icons/instagram-icon.png" alt="Instagram" style="width: 18px; height: 18px;"></a>
                     </div>
                 </div>
             </div>
@@ -186,7 +186,7 @@
                 <div class="powered-by-container" style="display: flex; align-items: center;">
                     <span style="color: #6b7280; font-size: 14px; margin-right: 1rem;">Powered by :</span>
                     <!-- <a href="https://your-site.com" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none;"> -->
-                    <img src="/osTicket/assets/default/images/et-logo.png" alt="Your Logo" style="height:75px; vertical-align: middle; padding: 1rem 0rem 1rem 0rem;">
+                    <img src="assets/default/images/et-logo.png" alt="Your Logo" style="height:75px; vertical-align: middle; padding: 1rem 0rem 1rem 0rem;">
                     </a>
                 </div>
                 <div class="bottom-links" style="display: flex; align-items: center; gap: 1rem;">
