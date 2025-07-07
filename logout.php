@@ -21,5 +21,35 @@ if ($thisclient && $_GET['auth'] && $ost->validateLinkToken($_GET['auth']))
 
 osTicketSession::destroyCookie();
 session_destroy();
+
+// Try to get OAuth2 config (for Keycloak)
+$keycloakLogoutUrl = null;
+if (class_exists('OAuth2Plugin')) {
+    foreach (PluginManager::allInstalled() as $path => $plugin) {
+        if ($plugin instanceof OAuth2Plugin && $plugin->isActive()) {
+            $instances = $plugin->getActiveInstances();
+            if ($instances && $instances->count() > 0) {
+                $instance = $instances->first();
+                $config = $instance->getConfig();
+                $authUrl = $config->getAuthorizationUrl();
+                $redirectUri = $config->getRedirectUri();
+
+                // Parse Keycloak base and realm from the auth URL
+                if (preg_match('#^(https://[^/]+/auth/realms/[^/]+)/protocol/openid-connect/auth#', $authUrl, $matches)) {
+                    $base = $matches[1];
+                    $keycloakLogoutUrl = $base . '/protocol/openid-connect/logout?redirect_uri=' . urlencode($redirectUri ?: osTicket::get_base_url());
+                }
+            }
+            break;
+        }
+    }
+}
+
+if ($keycloakLogoutUrl) {
+    header('Location: ' . $keycloakLogoutUrl);
+    exit;
+}
+
+// fallback
 Http::redirect('index.php');
 ?>

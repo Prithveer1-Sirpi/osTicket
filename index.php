@@ -118,7 +118,7 @@ require(CLIENTINC_DIR . 'header.inc.php');
             <!-- Chief Minister Card - Left Side -->
             <div style="display: flex; align-items: center; gap: 10px; background: #ffffff; padding: 0.25rem 0.5rem; padding-right: 1.5rem; border-radius: 40px; border: 1px solid #d8b167; white-space: nowrap; margin-left: 1rem" class="minister_card cm_card">
                 <div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; flex-shrink: 0;" class="minister_img_wrapper">
-                    <img src="/osTicket/assets/default/images/honcm.svg" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="../assets/default/images/honcm.svg" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="minister_text" style="padding-left: 0.5rem;">
                     <div style="font-size: 13px; color: #000; font-weight: 700; margin: 0 0 2px 0; line-height: 1; padding-bottom: 0.25rem;font-family: sans-serif">Sri Anumula Revanth Reddy</div>
@@ -129,7 +129,7 @@ require(CLIENTINC_DIR . 'header.inc.php');
             <!-- IT Minister Card - Right Side -->
             <div style="display: flex; align-items: center; gap: 10px; background: #ffffff; padding: 0.25rem 0.5rem; padding-right: 0.5rem; border-radius: 40px; border: 1px solid #d8b167;" class="minister_card it_card">
                 <div style="width: 60px; height: 60px; border-radius: 50%; overflow: hidden; flex-shrink: 0;" class="minister_img_wrapper">
-                    <img src="/osTicket/assets/default/images/itmin.svg" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="../assets/default/images/itmin.svg" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="minister_text" style="padding-left: 0.5rem;">
                     <div style="font-size: 13px; color: #000; font-weight: 700; margin: 0 0 2px 0; line-height: 1; padding-bottom: 2px;font-family: sans-serif ">Sri Duddilla Sridhar Babu</div>
@@ -144,7 +144,7 @@ require(CLIENTINC_DIR . 'header.inc.php');
         </div>
 
         <div style="display: flex; align-items: center; justify-content: center; gap: 12px; min-width: 300px; margin-top: 2rem; padding-top: 1rem;" class="tgdex_wrapper">
-            <img src="/osTicket/assets/default/images/logo.png" style="height: 36px;">
+            <img src="../assets/default/images/logo.png" style="height: 36px;">
             <div style="font-size: 36px; color: #212529; font-weight: 400; margin-left: 5px; padding-bottom: 0.6rem;" class="tgdex_text">Telangana Data Exchange</div>
         </div>
 

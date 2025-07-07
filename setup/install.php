@@ -19,7 +19,7 @@ require_once INC_DIR.'class.installer.php';
 
 
 //define('OSTICKET_CONFIGFILE','../include/ost-config.php'); //osTicket config file full path.
-define('OSTICKET_CONFIGFILE','../include/ost-config.php'); //XXX: Make sure the path is corrent b4 releasing.
+define('OSTICKET_CONFIGFILE','/var/www/html/upload/ost-config.php'); //XXX: Make sure the path is corrent b4 releasing.
 
 
 $installer = new Installer(OSTICKET_CONFIGFILE); //Installer instance.
