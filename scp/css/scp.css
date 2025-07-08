@@ -129,9 +129,9 @@ a time {
   margin: 0;
   padding: 5px;
   margin-bottom: 10px;
-  color: #3a87ad;
+  color: #005d01;
   border: 1px solid #bce8f1;
-  background-color: #d9edf7;
+  background-color: #d1ffda;
 }
 
 #msg_notice,
@@ -1465,7 +1465,7 @@ a.Icon:hover {
   border: 1px solid #aaa;
   border-top: none;
   border-bottom: 3px solid #bbb;
-  padding: 10px 10px 20px 10px;
+  padding: 10px 2rem 20px 2rem;
   background: #fff;
 }
 
@@ -1653,8 +1653,8 @@ a.print {
 .table tr.header td,
 .table tr.header th,
 .table > thead th {
-  font-weight: 400;
-  font-size: 1.3em;
+  font-weight: 501;
+  font-size: 1.4em;
   text-align: left;
   min-height: 24px;
 }
@@ -1682,19 +1682,156 @@ a.print {
 .table td .pull-right {
   margin-right: 15px;
 }
-
 .form_table {
-  margin-top: 3px;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
+    margin-top: 3px;
+    margin-left: 20px;
+    border: none; /* Remove old borders */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Modern shadow */
+    background: #ffffff;
 }
 
 .form_table td {
-  border-bottom: 1px solid #ddd;
-  padding: 4px;
+    border-bottom: 1px solid #e9ecef;
+    padding: 12px 16px; /* More generous padding */
+    vertical-align: middle;
+    transition: background-color 0.2s ease; /* Smooth hover effect */
 }
+
+.form_table tr:hover td {
+    background-color: #f8f9fa; /* Subtle row hover */
+}
+
+.form_table tr:last-child td {
+    border-bottom: none; /* Remove border from last row */
+}
+
 .form_table td:not(:empty) {
-  height: 20px;
+    height: auto; /* Allow natural height */
+    min-height: 20px;
+}
+
+.form_table input[type="radio"],
+.form_table input[type="checkbox"] {
+    margin-left: 0;
+    padding-left: 0;
+    transform: scale(1.1); /* Slightly larger checkboxes/radios */
+}
+
+.form_table input[type="text"],
+.form_table input[type="email"],
+.form_table input[type="password"],
+.form_table select,
+.form_table textarea {
+    border: 1px solid #ced4da;
+    border-radius: 24px;
+    padding: 8px 15px;
+    font-size: 14px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form_table input[type="text"]:focus,
+.form_table input[type="email"]:focus,
+.form_table input[type="password"]:focus,
+.form_table select:focus,
+.form_table textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+.form_table .required {
+    font-weight: 600;
+    color: #495057;
+}
+
+.form_table em {
+    font-weight: 400;
+    color: #6c757d;
+    font-size: 13px;
+}
+
+.error {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+.form_table .error input {
+    border: 1px solid #dc3545;
+    box-shadow: 0 0 0 2px rgba(220, 53, 69, 0.25);
+}
+
+.form_table th,
+div.section-break {
+    text-align: left;
+    border: none;
+  background: linear-gradient(to right, #05ac54, #015b2d);
+    padding: 16px;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+div.section-break {
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+div.section-break h3 {
+    margin: 0;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.form_table th h4 {
+    margin: -16px -16px 8px -16px;
+    color: #fff;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 16px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+.form_table th em:not(:first-child) {
+    margin-top: 8px;
+}
+
+.form_table th em {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+.form_table tr i.help-tip {
+    opacity: 0.6;
+    margin-left: 8px;
+    color: #000000;
+    transition: opacity 0.2s ease;
+}
+
+.form_table tr i.help-tip:hover {
+    opacity: 1;
+    color: #495057;
+}
+
+.form_table th h4 i.help-tip {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.form_table th h4 i.help-tip:hover {
+    color: white;
+}
+
+.form_table tr:nth-child(even) {
+    background-color: #f8f9fa;
 }
 
 table.fixed {
@@ -1743,59 +1880,7 @@ input {
   /* -moz-border-radius: 4px; */
 }
 
-.form_table input[type="radio"],
-.form_table input[type="checkbox"] {
-  margin-left: 0;
-  padding-left: 0;
-}
-
-.form_table .required {
-  font-weight: bold;
-}
-
-.form_table em {
-  font-weight: 400;
-  color: #666;
-}
-
-.error {
-  color: #f00;
-}
-
-.form_table .error input {
-  border: 1px solid #f00;
-}
-
-.form_table th,
-div.section-break {
-  text-align: left;
-  border: 1px solid #ccc;
-  background: #eee;
-  padding: 0;
-  padding: 5px;
-}
-
-div.section-break h3 {
-  margin: 0;
-  padding: 0;
-}
-
-.form_table th h4 {
-  margin: -0.3em -0.3em;
-  color: #fff;
-  background: #929292;
-  padding: 0.3em;
-}
-
-.form_table th em:not(:first-child) {
-  margin-top: 0.6em;
-}
-.form_table th em {
-  display: block;
-  color: #000;
-}
-
-.settings_table {
+/* .settings_table {
   margin-top: 2px;
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
@@ -1828,7 +1913,7 @@ div.section-break h3 {
   background: #ccc;
   position: relative;
   top: 2px;
-}
+} */
 
 h2 {
   margin: 0 0 0.7em;
@@ -2127,7 +2212,7 @@ ul.tabs {
   text-align: left;
   height: 29px;
   border-bottom: 1px solid #aaa;
-  background: #eef3f8;
+  background: #deffe1;
   position: relative;
   box-shadow: inset 0 -5px 10px -9px rgba(0, 0, 0, 0.3);
 }
@@ -2555,9 +2640,6 @@ caption:hover > i.help-tip {
 h2 > i.help-tip {
   vertical-align: middle;
   font-size: 0.7em;
-}
-.form_table th h4 i.help-tip {
-  color: white;
 }
 
 /* Knowledgebase */
@@ -3693,11 +3775,6 @@ tr i.help-tip.warning {
   color: #ffc20f;
 }
 
-.form_table tr i.help-tip {
-  opacity: 0.2;
-  margin-left: 5px;
-}
-
 .ui-datepicker {
   z-index: 200 !important;
 }
@@ -4277,7 +4354,7 @@ select {
   /* height: 24px; */
   line-height: 24px;
   max-width: 350px;
-  /* width: 100%; */
+  width: 100%;
   border: 1px solid #ccc;
   display: inline-block;
   padding: 8px 10px;
@@ -4461,7 +4538,7 @@ img.avatar + img.avatar {
 }
 #scpTable td {
   padding: 12px 16px;
-  border-bottom: 1px solid #f0f0f0;
+  /* border-bottom: 1px solid #f0f0f0; */
   border-right: none;
   border-left: none;
   border-top: none;

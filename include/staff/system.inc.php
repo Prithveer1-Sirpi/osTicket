@@ -86,6 +86,7 @@ else {
     $cv = $tv[0] == 'v' ? $tv : $gv;
 ?>
       <a class="green button action-button pull-right"
+         style="color: #fff"
          href="https://osticket.com/download?cv=<?php echo $cv; ?>"><i class="icon-rocket"></i>
         <?php echo __('Upgrade'); ?></a>
 <?php if ($lv) { ?>
