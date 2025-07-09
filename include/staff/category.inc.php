@@ -51,12 +51,15 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     <div style="margin:8px 0"><strong><?php echo __('Category Type');?>:</strong>
         <span class="error">*</span></div>
     <div style="margin-left:5px; gap: 1rem !important">
-    <input type="radio" name="ispublic" value="2" <?php echo $info['ispublic']==2?'checked="checked"':''; ?>><b><?php echo __('Featured');?></b> <?php echo __('(on front-page sidebar)');?>
-    <br/>
-    <input type="radio" name="ispublic" value="1" <?php echo $info['ispublic']==1?'checked="checked"':''; ?>><b><?php echo __('Public');?></b> <?php echo __('(publish)');?>
-    <br/>
-    <input type="radio" name="ispublic" value="0" <?php echo !$info['ispublic']?'checked="checked"':''; ?>><?php echo __('Private');?> <?php echo __('(internal)');?>
-    <br/>
+        <div style="margin-bottom: 0.5rem;">
+    <input type="radio" name="ispublic" value="2" <?php echo $info['ispublic']==2?'checked="checked"':''; ?>><b><?php echo __(' Featured');?></b> <?php echo __('(on front-page sidebar)');?>
+        </div>
+        <div style="margin-bottom: 0.5rem;">
+    <input type="radio" name="ispublic" value="1" <?php echo $info['ispublic']==1?'checked="checked"':''; ?>><b><?php echo __(' Public');?></b> <?php echo __('(publish)');?>
+        </div>
+        <div style="margin-bottom: 0.5rem;">
+    <input type="radio" name="ispublic" value="0" <?php echo !$info['ispublic']?'checked="checked"':''; ?>><?php echo __(' Private');?> <?php echo __('(internal)');?>
+        </div>
     <div class="error"><?php echo $errors['ispublic']; ?></div>
     </div>
 
