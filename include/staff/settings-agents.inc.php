@@ -136,7 +136,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                     <tr>
                         <td><?php echo __('Agent Excessive Logins'); ?>:</td>
                         <td>
-                            <select name="staff_max_logins">
+                            <select name="staff_max_logins" style="margin-bottom: 5px;">
                                 <?php
                                     for ($i = 1; $i <= 10; $i++) {
                                         echo sprintf('<option value="%d" %s>%d</option>', $i,(($config['staff_max_logins']==$i)?'selected="selected"':''), $i);
