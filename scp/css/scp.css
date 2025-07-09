@@ -62,6 +62,7 @@ div#header a {
 .faded {
   color: #666;
   color: rgba(0, 0, 0, 0.5);
+  margin-left: 0.7rem;
 }
 .faded b {
   color: #333;
@@ -3033,6 +3034,28 @@ input[type="button"],
   transition: opacity 0.1s ease, background-color 0.1s ease,
     box-shadow 0.1s ease, color 0.1s ease, background 0.1s ease;
 }
+
+#cancelButton {
+  background-color: transparent;
+  border: 1px solid light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+  color: black;
+}
+#cancelButton:hover {
+  background-color: transparent !important;
+  border: 1px solid light-dark(rgba(16, 16, 16, 0.3), rgba(255, 255, 255, 0.3));
+  color: black !important;
+}
+
+#resetChanges {
+  background-color: #dd4d4d;
+  color: white;
+}
+
+#resetChanges:hover {
+  background-color: #d01919 !important;
+  color: white !important;
+}
+
 input[type="submit"] i,
 input[type="reset"] i,
 input[type="button"] i,
@@ -4354,7 +4377,7 @@ select {
   /* height: 24px; */
   line-height: 24px;
   max-width: 350px;
-  width: 100%;
+  width: auto;
   border: 1px solid #ccc;
   display: inline-block;
   padding: 8px 10px;
