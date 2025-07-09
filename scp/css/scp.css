@@ -1831,7 +1831,7 @@ div.section-break h3 {
 }
 
 .form_table tr:nth-child(even) {
-    background-color: #f8f9fa;
+    background-color: #f8f9fa00;
 }
 
 table.fixed {
@@ -1867,7 +1867,7 @@ input[type="password"],
 textarea,
 input {
   padding: 8px 10px;
-  /* width: 300px; */
+  width: 300px;
   font-size: 14px;
   /* font-family: inherit; */
   /* background: #fff; */
@@ -2758,7 +2758,7 @@ time.faq {
 
 .dialog {
   position: fixed;
-  padding: 1em;
+  padding: 1.5em;
   width: 500px;
   height: 250px;
   height: auto !important;
@@ -2904,7 +2904,7 @@ fieldset {
 .dialog fieldset input:not([type="checkbox"]) {
   border: 1px solid #ccc;
   background: #fff;
-  padding: 3px;
+  /*padding: 3px; */
 }
 
 .dialog fieldset span.between {
@@ -4354,7 +4354,7 @@ select {
   /* height: 24px; */
   line-height: 24px;
   max-width: 350px;
-  width: 100%;
+  width: auto;
   border: 1px solid #ccc;
   display: inline-block;
   padding: 8px 10px;
