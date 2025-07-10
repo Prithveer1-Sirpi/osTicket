@@ -255,7 +255,7 @@ id="msg_warning"><?php echo __('Are you sure you want to delete the child ticket
 
 <p class="full-width">
     <span class="buttons pull-left">
-        <input type="button" name="cancel" class="<?php
+        <input type="button" id="cancelButton" name="cancel" class="<?php
             echo $user ? 'cancel' : 'close' ?>" value="<?php echo __('Cancel'); ?>">
     </span>
     <?php if (!$info['error']) { ?>

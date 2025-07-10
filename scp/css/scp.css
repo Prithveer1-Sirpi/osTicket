@@ -194,7 +194,7 @@ a time {
     /* width:960px; */
     /* margin:0 auto 20px auto; */
     overflow: auto;
-    height: 100dvh;
+    min-height: 100dvh;
 }
 
 #header {
@@ -1686,30 +1686,30 @@ a.print {
 .form_table {
     margin-top: 3px;
     margin-left: 20px;
-    border: none; /* Remove old borders */
+    border: none; 
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Modern shadow */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
     background: #ffffff;
 }
 
 .form_table td {
     border-bottom: 1px solid #e9ecef;
-    padding: 12px 16px; /* More generous padding */
+    padding: 12px 16px; 
     vertical-align: middle;
-    transition: background-color 0.2s ease; /* Smooth hover effect */
+    transition: background-color 0.2s ease; 
 }
 
 .form_table tr:hover td {
-    background-color: #f8f9fa; /* Subtle row hover */
+    background-color: #f8f9fa; 
 }
 
 .form_table tr:last-child td {
-    border-bottom: none; /* Remove border from last row */
+    border-bottom: none; 
 }
 
 .form_table td:not(:empty) {
-    height: auto; /* Allow natural height */
+    height: auto; 
     min-height: 20px;
 }
 
@@ -1717,7 +1717,7 @@ a.print {
 .form_table input[type="checkbox"] {
     margin-left: 0;
     padding-left: 0;
-    transform: scale(1.1); /* Slightly larger checkboxes/radios */
+    transform: scale(1.1);
 }
 
 .form_table input[type="text"],
@@ -1772,6 +1772,67 @@ div.section-break {
     color: white;
     font-weight: 500;
     letter-spacing: 0.5px;
+}
+.........................
+.form_table_og {
+ margin-top: 3px;
+border-left: 1px solid #ddd;
+border-right: 1px solid #ddd;
+}
+.form_table_og td {
+border-bottom: 1px solid #ddd;
+padding: 4px;
+}
+.form_table_og td:not(:empty) {
+height: 20px;
+}
+.form_table_og input[type="radio"],
+.form_table_og input[type="checkbox"] {
+margin-left: 0;
+padding-left: 0;
+}
+.form_table_og .required {
+font-weight: bold;
+}
+.form_table_og em {
+font-weight: 400;
+color: #666;
+}
+
+.form_table_og .error input {
+border: 1px solid #f00;
+}
+.form_table_og th,
+div.section-break {
+text-align: left;
+border: 1px solid #ccc;
+background: #eee;
+padding: 0;
+padding: 5px;
+}
+div.section-break h3 {
+margin: 0;
+padding: 0;
+}
+.form_table_og th h4 {
+margin: -0.3em -0.3em;
+color: #fff;
+background: #929292;
+padding: 0.3em;
+}
+.form_table_og th em:not(:first-child) {
+margin-top: 0.6em;
+}
+.form_table_og th em {
+display: block;
+color: #000;
+}
+.form_table_og tr i.help-tip {
+opacity: 0.2;
+margin-left: 5px;
+}
+.form_table_og th h4 i.help-tip {
+color: white;
 }
 
 div.section-break {
@@ -1868,7 +1929,7 @@ input[type="password"],
 textarea,
 input {
   padding: 8px 10px;
-  width: 300px;
+  /* width: 100%; */
   font-size: 14px;
   /* font-family: inherit; */
   /* background: #fff; */
@@ -3046,12 +3107,12 @@ input[type="button"],
   color: black !important;
 }
 
-#resetChanges {
+#resetButton {
   background-color: #dd4d4d;
   color: white;
 }
 
-#resetChanges:hover {
+#resetButton:hover {
   background-color: #d01919 !important;
   color: white !important;
 }

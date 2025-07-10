@@ -147,7 +147,7 @@ if ($search->isSaved()) { ?>
  <div>
   <p class="full-width">
     <span class="buttons pull-left">
-        <input type="button"  name="cancel"  class="close" value="<?php echo __('Cancel'); ?>">
+        <input type="button"  id="cancelButton" name="cancel"  class="close" value="<?php echo __('Cancel'); ?>">
         <?php
         if ($search->isSaved()) { ?>
         <input type="button" name="done" class="done" value="<?php echo

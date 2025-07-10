@@ -288,7 +288,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
 </div>
 <p style="text-align:center;">
     <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
-    <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
+    <input class="button" id="resetButton" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
 </p>
 </form>
 <script type="text/javascript">

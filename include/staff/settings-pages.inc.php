@@ -109,7 +109,7 @@ $pages = Page::getPages();
 </table>
 </div>
 <div class="hidden tab_content" id="logos">
-<table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="form_table_og settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -197,7 +197,7 @@ $pages = Page::getPages();
                     </tbody>
                 </table>
                 <b><?php echo __('Upload a new logo'); ?>:</b>
-                <input type="file" name="logo[]" size="30" value="" /><br/>
+                <input type="file" name="logo[]" size="30" value="" style="margin-top: 0.5rem" /><br/>
                 <font class="error"><?php echo $errors['logo']; ?></font>
             </td>
         </tr>
@@ -206,7 +206,7 @@ $pages = Page::getPages();
 </div>
 
 <div class="hidden tab_content" id="backdrops">
-<table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="form_table_og settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2">
@@ -276,7 +276,7 @@ $pages = Page::getPages();
                     </tbody>
                 </table>
                 <b><?php echo __('Upload a new backdrop'); ?>:</b>
-                <input type="file" name="backdrop[]" size="30" value=""
+                <input type="file" name="backdrop[]" size="30" value="" style="margin-top:0.5rem;"
                 /><br/>
                 <font class="error"><?php echo $errors['backdrop']; ?></font>
             </td>
@@ -288,7 +288,7 @@ $pages = Page::getPages();
 <p style="text-align:center;">
     <input class="button" type="submit" name="submit-button" value="<?php
     echo __('Save Changes'); ?>">
-    <input class="button" type="reset" name="reset" value="<?php
+    <input class="button" id="resetButton" type="reset" name="reset" value="<?php
     echo __('Reset Changes'); ?>">
 </p>
 </form>

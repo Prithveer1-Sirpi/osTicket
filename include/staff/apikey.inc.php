@@ -116,7 +116,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
 </table>
 <p style="text-align:center">
     <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="apikeys.php"'>
+    <input type="reset" id="resetButton" name="reset"  value="<?php echo __('Reset');?>">
+    <input type="button" id="cancelButton" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="apikeys.php"'>
 </p>
 </form>
