@@ -1868,7 +1868,7 @@ input[type="password"],
 textarea,
 input {
   padding: 8px 10px;
-  width: 300px;
+  /* width: 300px; */
   font-size: 14px;
   /* font-family: inherit; */
   /* background: #fff; */
@@ -2781,7 +2781,7 @@ time.faq {
 }
 
 .dialog.size-normal {
-  width: 650px !important;
+  width: 685px !important;
 }
 
 .dialog.size-large {
