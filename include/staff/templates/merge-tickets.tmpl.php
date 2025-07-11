@@ -199,7 +199,7 @@ foreach ($tickets as $t) {
     <label class="inline checkbox">
         <?php echo __('Parent Status');?>
         <select id="parentStatusId" name="parentStatusId">
-        <option value="">— Select —</option>
+        <option value=""> Select </option>
         <?php
         $states = array('open', 'closed');
         foreach (TicketStatusList::getStatuses(

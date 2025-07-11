@@ -15,7 +15,7 @@ if ($_POST)
     <input type="hidden" name="do" value="update">
     <input type="hidden" name="a" value="edit">
     <input type="hidden" name="id" value="<?php echo $ticket->getId(); ?>">
-    <div style="margin-bottom:20px; padding-top:5px;">
+    <div style="margin-bottom:43px; padding-top:5px;">
         <div class="pull-left flush-left">
             <h2><?php echo sprintf(__('Update Ticket #%s'),$ticket->getNumber());?></h2>
         </div>
