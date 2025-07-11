@@ -1767,17 +1767,18 @@ a.print {
 div.section-break {
     text-align: left;
     border: none;
-  background: linear-gradient(to right, #05ac54, #015b2d);
+    background: linear-gradient(to right, #05ac54, #015b2d);
     padding: 16px;
     color: white;
     font-weight: 500;
     letter-spacing: 0.5px;
 }
-.........................
+
+/*Original table styles: */
 .form_table_og {
  margin-top: 3px;
-border-left: 1px solid #ddd;
-border-right: 1px solid #ddd;
+/* border-left: 1px solid #ddd;
+border-right: 1px solid #ddd; */
 }
 .form_table_og td {
 border-bottom: 1px solid #ddd;
@@ -1828,11 +1829,11 @@ display: block;
 color: #000;
 }
 .form_table_og tr i.help-tip {
-opacity: 0.2;
+/* opacity: 0.2; */
 margin-left: 5px;
 }
 .form_table_og th h4 i.help-tip {
-color: white;
+color: rgb(67, 67, 67);
 }
 
 div.section-break {
@@ -1873,7 +1874,7 @@ div.section-break h3 {
 }
 
 .form_table tr i.help-tip {
-    opacity: 0.6;
+    opacity: 0.4;
     margin-left: 8px;
     color: #000000;
     transition: opacity 0.2s ease;

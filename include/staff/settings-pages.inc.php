@@ -112,8 +112,8 @@ $pages = Page::getPages();
 <table class="form_table_og settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
-            <th colspan="2">
-                <em><?php echo __('System Default Logo'); ?><i class="help-tip icon-question-sign" href="#logos"></i></em>
+            <th colspan="2" style="background: white; border: none;">
+                <em style="font-weight: 600;"><?php echo __('System Default Logo'); ?><i class="help-tip icon-question-sign" href="#logos"></i></em>
             </th>
         </tr>
     </thead>
@@ -209,8 +209,8 @@ $pages = Page::getPages();
 <table class="form_table_og settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
-            <th colspan="2">
-                <em><?php echo __('System Default Backdrop'); ?><i
+            <th colspan="2" style="background: white; border: none;">
+                <em style="font-weight: 600"><?php echo __('System Default Backdrop'); ?><i
                 class="help-tip icon-question-sign" href="#backdrops"></i></em>
             </th>
         </tr>
