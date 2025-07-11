@@ -130,9 +130,9 @@ if ($template instanceof EmailTemplate) {
 
 <p style="text-align:center">
     <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes'); ?>">
-    <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes'); ?>" onclick="javascript:
+    <input class="button" type="reset" id="resetButton" name="reset" value="<?php echo __('Reset Changes'); ?>" onclick="javascript:
         setTimeout('location.reload()', 25);" />
-    <input class="button" type="button" name="cancel" value="<?php echo __('Cancel Changes'); ?>"
+    <input class="button" type="button" id="cancelButton" name="cancel" value="<?php echo __('Cancel Changes'); ?>"
         onclick='window.location.href="templates.php?tpl_id=<?php echo $tpl_id; ?>"'>
 </p>
 </form>
