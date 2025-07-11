@@ -225,8 +225,8 @@ if (
             <?php } ?>
             <p style="text-align:center">
                 <input type="submit" style="background-color: #00a651; color: white;" value="<?php echo __('Post Reply'); ?>">
-                <input type="reset" style="background-color: #ff4d4d; color: white" value="<?php echo __('Reset'); ?>">
-                <input type="button" style="background-color: #ffffff; border-color: #000000;" value="<?php echo __('Cancel'); ?>" onClick="history.go(-1)">
+                <input type="reset" id="resetButton" style="background-color: #ff4d4d; color: white" value="<?php echo __('Reset'); ?>">
+                <input type="button" id="cancelButton" style="background-color: #ffffff; border-color: #000000;" value="<?php echo __('Cancel'); ?>" onClick="history.go(-1)">
             </p>
         </form>
     <?php

@@ -109,11 +109,11 @@ $pages = Page::getPages();
 </table>
 </div>
 <div class="hidden tab_content" id="logos">
-<table class="form_table_og settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2" style="background: white; border: none;">
-                <em style="font-weight: 600;"><?php echo __('System Default Logo'); ?><i class="help-tip icon-question-sign" href="#logos"></i></em>
+                <em style="font-weight: 600; color: black;"><?php echo __('System Default Logo'); ?><i class="help-tip icon-question-sign" href="#logos"></i></em>
             </th>
         </tr>
     </thead>
@@ -206,11 +206,11 @@ $pages = Page::getPages();
 </div>
 
 <div class="hidden tab_content" id="backdrops">
-<table class="form_table_og settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
+<table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
             <th colspan="2" style="background: white; border: none;">
-                <em style="font-weight: 600"><?php echo __('System Default Backdrop'); ?><i
+                <em style="font-weight: 600; color: black;"><?php echo __('System Default Backdrop'); ?><i
                 class="help-tip icon-question-sign" href="#backdrops"></i></em>
             </th>
         </tr>
@@ -307,7 +307,7 @@ $pages = Page::getPages();
     <hr style="margin-top:1em"/>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" value="<?php echo __('No, Cancel'); ?>" class="close">
+            <input type="button" id="cancelButton" value="<?php echo __('No, Cancel'); ?>" class="close">
         </span>
         <span class="buttons pull-right">
             <input type="button" value="<?php echo __('Yes, Do it!'); ?>" class="confirm">

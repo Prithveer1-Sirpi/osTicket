@@ -648,7 +648,7 @@ else
         </table>
        <p  style="text-align:center;">
            <input class="save pending" type="submit" value="<?php echo __('Post Update');?>">
-           <input type="reset" value="<?php echo __('Reset');?>">
+           <input type="reset" id="resetButton" value="<?php echo __('Reset');?>">
        </p>
     </form>
     <?php
@@ -708,7 +708,7 @@ else
         </table>
        <p  style="text-align:center;">
            <input class="save pending" type="submit" value="<?php echo __('Post Note');?>">
-           <input type="reset" value="<?php echo __('Reset');?>">
+           <input type="reset" id="resetButton" value="<?php echo __('Reset');?>">
        </p>
     </form>
  </div>

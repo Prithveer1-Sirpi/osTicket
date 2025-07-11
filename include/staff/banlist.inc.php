@@ -186,7 +186,7 @@ $query = "$select $from $where ORDER BY $order_by LIMIT " . $pageNav->getStart()
     <hr style="margin-top:1em" />
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" value="<?php echo __('No, Cancel'); ?>" class="close">
+            <input type="button" id="cancelButton" value="<?php echo __('No, Cancel'); ?>" class="close">
         </span>
         <span class="buttons pull-right">
             <input type="button" value="<?php echo __('Yes, Do it!'); ?>" class="confirm">

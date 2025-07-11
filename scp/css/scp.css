@@ -1767,7 +1767,7 @@ a.print {
 div.section-break {
     text-align: left;
     border: none;
-    background: linear-gradient(to right, #05ac54, #015b2d);
+    background: #05ac54;
     padding: 16px;
     color: white;
     font-weight: 500;
@@ -1792,7 +1792,7 @@ div.section-break {
 
 .form_table th em {
     display: block;
-    color: rgba(255, 255, 255, 0.9);
+    color: white;
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
@@ -1822,71 +1822,10 @@ div.section-break {
     background-color: #f8f9fa00;
 }
 
-/*Original table styles: */
-.form_table_og { 
-  margin-top: 3px;
-  border-radius: 8px;
-  border: none;
-/* border-left: 1px solid #ddd;
-border-right: 1px solid #ddd; */
 
-}
-.form_table_og td {
-  border-bottom: 1px solid #ddd;
-  padding: 4px;
-}
-.form_table_og td:not(:empty) {
-  height: 20px;
-}
-.form_table_og input[type="radio"],
-.form_table_og input[type="checkbox"] {
-  margin-left: 0;
-  padding-left: 0;
-}
-.form_table_og .required {
-  font-weight: bold;
-}
-.form_table_og em {
-  font-weight: 400;
-  color: #666;
-}
-
-.form_table_og .error input {
-  border: 1px solid #f00;
-}
-.form_table_og th,
-div.section-break {
-  text-align: left;
-  border: 1px solid #ffffff;
-  background: #28a745;
-  padding: 16px;
-  color: #fff;
-  font-weight: 400;
-  font-size: 14px
-}
 div.section-break h3 {
   margin: 0;
   padding: 0;
-}
-.form_table_og th h4 {
-  margin: -0.3em -0.3em;
-  color: #fff;
-  background: #929292;
-  padding: 0.3em;
-}
-.form_table_og th em:not(:first-child) {
-  margin-top: 0.6em;
-}
-.form_table_og th em {
-  display: block;
-  color: #000;
-}
-.form_table_og tr i.help-tip {
-/* opacity: 0.2; */
-  margin-left: 5px;
-}
-.form_table_og th h4 i.help-tip {
-  color: rgb(67, 67, 67);
 }
 
 div.section-break {
