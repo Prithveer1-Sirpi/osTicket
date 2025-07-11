@@ -18,7 +18,7 @@ if(!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config)
             <td width="180" class="required"><?php echo __('Default Template Set'); ?>:</td>
             <td>
                 <select name="default_template_id">
-                    <option value="">&mdash; <?php echo __('Select Default Email Template Set'); ?> &mdash;</option>
+                    <option value=""> <?php echo __('Select Default Email Template Set'); ?> </option>
                     <?php
                     $sql='SELECT tpl_id, name FROM '.EMAIL_TEMPLATE_GRP_TABLE
                         .' WHERE isactive =1 ORDER BY name';

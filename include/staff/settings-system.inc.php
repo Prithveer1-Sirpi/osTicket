@@ -47,7 +47,7 @@ $gmtime = Misc::gmtime();
             <td width="220" class="required"><?php echo __('Default Department');?>:</td>
             <td>
                 <select name="default_dept_id" data-quick-add="department">
-                    <option value="">&mdash; <?php echo __('Select Default Department');?> &mdash;</option>
+                    <option value=""> <?php echo __('Select Default Department');?> </option>
                     <?php
                     if (($depts=Dept::getPublicDepartments())) {
                         foreach ($depts as $id => $name) {
@@ -56,7 +56,7 @@ $gmtime = Misc::gmtime();
                         <?php
                         }
                     } ?>
-                    <option value="0" data-quick-add>&mdash; <?php echo __('Add New');?> &mdash;</option>
+                    <option value="0" data-quick-add> <?php echo __('Add New');?></option>
                 </select>&nbsp;<font class="error">*&nbsp;<?php echo $errors['default_dept_id']; ?></font>
                 <i class="help-tip icon-question-sign" href="#default_department"></i>
             </td>
@@ -227,7 +227,7 @@ $gmtime = Misc::gmtime();
 <?php foreach (array(
     '' => __('Locale Defaults'),
     '24' => __('Locale Defaults, 24-hour Time'),
-    'custom' => '— '.__("Advanced").' —',
+    'custom' => ' '.__("Advanced").' ',
 ) as $v=>$name) { ?>
                     <option value="<?php echo $v; ?>" <?php
                     if ($v == $config['date_formats'])
@@ -287,8 +287,8 @@ $gmtime = Misc::gmtime();
             </td>
             <td>
                 <select name="schedule_id">
-                    <option value="0" selected="selected" >&mdash; <?php
-                    echo __('None');?> &mdash;</option>
+                    <option value="0" selected="selected" > <?php
+                    echo __('None');?> </option>
                     <?php
                     if ($schedules=BusinessHoursSchedule::getSchedules()) {
                         foreach ($schedules as $s) {
@@ -315,7 +315,7 @@ $gmtime = Misc::gmtime();
         <?php
         $langs = Internationalization::availableLanguages(); ?>
                 <select name="system_language">
-                    <option value="">&mdash; <?php echo __('Select a Language'); ?> &mdash;</option>
+                    <option value=""> <?php echo __('Select a Language'); ?> </option>
 <?php foreach($langs as $l) {
     $selected = ($config['system_language'] == $l['code']) ? 'selected="selected"' : ''; ?>
                     <option value="<?php echo $l['code']; ?>" <?php echo $selected;
@@ -400,7 +400,7 @@ $gmtime = Misc::gmtime();
                 'Agent Maximum File Size');?>:</td>
             <td>
                 <select name="max_file_size">
-                    <option value="262144">&mdash; <?php echo __('Small'); ?> &mdash;</option>
+                    <option value="262144"> <?php echo __('Small'); ?> </option>
                     <?php $next = 512 << 10;
                     $max = strtoupper(ini_get('upload_max_filesize'));
                     $limit = (int) $max;

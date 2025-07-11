@@ -3070,7 +3070,7 @@ input[type="button"],
   box-sizing: content-box;
   display: inline-block;
   vertical-align: bottom;
-  margin: 2px 0;
+  margin: 2px 2px;
   height: 18px;
   width:auto;
   max-width: 300px;
@@ -3600,7 +3600,7 @@ div.selected-signature .inner {
 }
 .row-item {
   border: 1px solid rgba(0, 0, 0, 0.7);
-  padding: 9px;
+  padding: 8px 10px;
   position: relative;
 }
 .sortable:hover {
@@ -3610,12 +3610,12 @@ div.selected-signature .inner {
   background: rgba(0, 0, 0, 0.3);
 }
 .row-item:first-child {
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  border-top-right-radius: 16px;
+  border-top-left-radius: 16px;
 }
 .row-item:last-child {
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 16px;
+  border-bottom-left-radius: 16px;
 }
 .row-item + .row-item {
   margin-top: -1px;

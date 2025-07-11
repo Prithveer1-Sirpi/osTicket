@@ -286,7 +286,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
                 <i class="icon-plus-sign"></i>
                 <select name="new-action" id="new-action-select"
                         onchange="javascript: $('#new-action-btn').trigger('click');">
-                    <option value="">— <?php echo __('Select an Action'); ?> —</option>
+                    <option value=""> <?php echo __('Select an Action'); ?> </option>
                     <?php
                     $current_group = '';
                     foreach (FilterAction::allRegistered() as $group=>$actions) {

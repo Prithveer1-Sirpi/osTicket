@@ -178,7 +178,7 @@ if ($_POST)
             <select id="reply-to" name="reply-to">
               <option value="all"><?php echo __('Alert All'); ?></option>
               <option value="user"><?php echo __('Alert to User'); ?></option>
-              <option value="none">&mdash; <?php echo __('Do Not Send Alert'); ?> &mdash;</option>
+              <option value="none"> <?php echo __('Do Not Send Alert'); ?> </option>
             </select>
           </td>
         </tr>

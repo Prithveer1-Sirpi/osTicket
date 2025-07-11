@@ -47,8 +47,8 @@ if ($ticket && $ticket->getOwnerId() == $user->getId())
                 </td>
                 <td>
                     <select name="manager">
-                        <option value="0" selected="selected">&mdash; <?php
-                            echo __('None'); ?> &mdash;</option><?php
+                        <option value="0" selected="selected"> <?php
+                            echo __('None'); ?> </option><?php
                         if ($users=Staff::getStaffMembers(array('available' => true,
                                  'staff' => $thisstaff))) {
                         ?>

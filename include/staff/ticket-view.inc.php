@@ -530,7 +530,7 @@ if($ticket->isOverdue())
                                 <?php if($ticket->isAssigned())
                                         echo Format::htmlchars(implode('/', $ticket->getAssignees()));
                                       else
-                                        echo '<span class="faded">&mdash; '.__('Unassigned').' &mdash;</span>';
+                                        echo '<span class="faded"> '.__('Unassigned').' </span>';
                         ?></span>
                         </a>
                     </td>
@@ -541,7 +541,7 @@ if($ticket->isOverdue())
                       if($ticket->isAssigned())
                           echo Format::htmlchars(implode('/', $ticket->getAssignees()));
                       else
-                          echo '<span class="faded">&mdash; '.__('Unassigned').' &mdash;</span>';
+                          echo '<span class="faded"> '.__('Unassigned').' </span>';
                       ?>
                     </td>
                     <?php
@@ -556,7 +556,7 @@ if($ticket->isOverdue())
                         if(($staff = $ticket->getStaff()))
                             echo Format::htmlchars($staff->getName());
                         else
-                            echo '<span class="faded">&mdash; '.__('Unknown').' &mdash;</span>';
+                            echo '<span class="faded"> '.__('Unknown').' </span>';
                         ?>
                     </td>
                 </tr>
@@ -591,7 +591,7 @@ if($ticket->isOverdue())
                            ?>/field/duedate/edit">
                            <?php $due_date = Format::datetime($ticket->getEstDueDate()); ?>
                            <span id="field_duedate" <?php if (!$due_date) echo 'class="faded"'; ?>>
-                               <?php echo $due_date ?: '&mdash;'.__('Empty').'&mdash;'; ?>
+                               <?php echo $due_date ?: ''.__('Empty').''; ?>
                            </span>
                       </a>
                            </td>
@@ -683,7 +683,7 @@ foreach (DynamicFormEntry::forTicket($ticket->getId()) as $form) {
         $class = (Format::striptags($v)) ? '' : 'class="faded"';
         $clean = (Format::striptags($v))
                 ? ($html ? Format::striptags($v) : $v)
-                : '&mdash;' . __('Empty') .  '&mdash;';
+                : '' . __('Empty') .  '';
         $isFile = ($field instanceof FileUploadField);
         $url = "#tickets/".$ticket->getId()."/field/".$id;
 ?>
@@ -978,7 +978,7 @@ if ($errors['err'] && isset($_POST['a'])) {
                             'user'  =>  sprintf('%s (%s)',
                                 __('Ticket Owner'),
                                 Format::htmlchars($ticket->getOwner()->getEmail())),
-                            'none'  =>  sprintf('&mdash; %s  &mdash;',
+                            'none'  =>  sprintf(' %s  ',
                                 __('Do Not Email Reply'))
                             );
 
@@ -1248,7 +1248,7 @@ if ($errors['err'] && isset($_POST['a'])) {
         <fieldset>
             <label class="fixed-size" for="psize"><?php echo __('Paper Size');?>:</label>
             <select id="psize" name="psize">
-                <option value="">&mdash; <?php echo __('Select Print Paper Size');?> &mdash;</option>
+                <option value=""> <?php echo __('Select Print Paper Size');?> </option>
                 <?php
                   $psize =$_SESSION['PAPER_SIZE']?$_SESSION['PAPER_SIZE']:$thisstaff->getDefaultPaperSize();
                   foreach(Export::$paper_sizes as $v) {

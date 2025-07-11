@@ -3836,7 +3836,7 @@ class FileUploadField extends FormField {
 
     function getConfigurationOptions() {
         // Compute size selections
-        $sizes = array('262144' => '— '.__('Small').' —');
+        $sizes = array('262144' => ' '.__('Small').' ');
         $next = 512 << 10;
         $max = strtoupper(ini_get('upload_max_filesize'));
         $limit = (int) $max;
