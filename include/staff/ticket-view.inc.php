@@ -1127,7 +1127,7 @@ if ($errors['err'] && isset($_POST['a'])) {
         </table>
         <p  style="text-align:center;">
             <input class="save pending" type="submit" value="<?php echo __('Post Reply');?>">
-            <input class="" type="reset" value="<?php echo __('Reset');?>">
+            <input class="" id="resetButton" type="reset" value="<?php echo __('Reset');?>">
         </p>
     </form>
     <?php
@@ -1217,7 +1217,7 @@ if ($errors['err'] && isset($_POST['a'])) {
 
        <p style="text-align:center;">
            <input class="save pending" type="submit" value="<?php echo __('Post Note');?>">
-           <input class="" type="reset" value="<?php echo __('Reset');?>">
+           <input class="" type="reset" id="resetButton" value="<?php echo __('Reset');?>">
        </p>
    </form>
    <?php } ?>
@@ -1261,8 +1261,8 @@ if ($errors['err'] && isset($_POST['a'])) {
         <hr style="margin-top:3em"/>
         <p class="full-width">
             <span class="buttons pull-left">
-                <input type="reset" value="<?php echo __('Reset');?>">
-                <input type="button" value="<?php echo __('Cancel');?>" class="close">
+                <input type="reset" id="resetButton" value="<?php echo __('Reset');?>">
+                <input type="button" id="cancelButton" value="<?php echo __('Cancel');?>" class="close">
             </span>
             <span class="buttons pull-right">
                 <input type="submit" value="<?php echo __('Print');?>">
@@ -1319,7 +1319,7 @@ if ($errors['err'] && isset($_POST['a'])) {
         <hr style="margin-top:1em"/>
         <p class="full-width">
             <span class="buttons pull-left">
-                <input type="button" value="<?php echo __('Cancel');?>" class="close">
+                <input type="button" id="cancelButton" value="<?php echo __('Cancel');?>" class="close">
             </span>
             <span class="buttons pull-right">
                 <input type="submit" value="<?php echo __('OK');?>">

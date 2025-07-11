@@ -57,7 +57,7 @@ if ($info['error']) {
 <hr>
 <p class="full-width">
     <span class="buttons pull-left">
-        <input type="button" name="cancel" class="close"  value="<?php echo __('Cancel'); ?>">
+        <input type="button" id="cancelButton" name="cancel" class="close"  value="<?php echo __('Cancel'); ?>">
     </span>
     <span class="buttons pull-right">
         <input type="submit" value="<?php echo __('Continue'); ?>">

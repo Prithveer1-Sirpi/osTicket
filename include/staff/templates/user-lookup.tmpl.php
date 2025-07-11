@@ -69,7 +69,7 @@ if ($user) { ?>
     <hr>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" name="cancel" class="close"  value="<?php
+            <input type="button" id="cancelButton" name="cancel" class="close"  value="<?php
             echo __('Cancel'); ?>">
         </span>
         <span class="buttons pull-right">
@@ -102,7 +102,7 @@ else { ?>
     <hr/>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" name="cancel" class="<?php echo $user ?  'cancel' : 'close' ?>"  value="<?php echo __('Cancel'); ?>">
+            <input type="button" id="cancelButton" name="cancel" class="<?php echo $user ?  'cancel' : 'close' ?>"  value="<?php echo __('Cancel'); ?>">
         </span>
      </p>
 <?php } ?>

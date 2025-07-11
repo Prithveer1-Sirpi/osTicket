@@ -255,10 +255,10 @@ echo $attrs; ?>><?php echo $draft ?: Format::viewableImages($answer);
 
 <p style="text-align:center;">
     <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset'); ?>" onclick="javascript:
+    <input type="reset" id="resetButton"  name="reset"  value="<?php echo __('Reset'); ?>" onclick="javascript:
         $(this.form).find('textarea.richtext')
             .redactor('deleteDraft');
         location.reload();" />
-    <input type="button" name="cancel" value="<?php echo __('Cancel'); ?>" onclick='window.location.href="faq.php?<?php echo $qstr; ?>"'>
+    <input type="button" id="cancelButton" name="cancel" value="<?php echo __('Cancel'); ?>" onclick='window.location.href="faq.php?<?php echo $qstr; ?>"'>
 </p>
 </form>

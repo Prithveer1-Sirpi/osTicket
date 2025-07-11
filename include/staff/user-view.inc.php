@@ -195,7 +195,7 @@ if ($thisstaff->hasPerm(User::PERM_EDIT)) { ?>
         <hr style="margin-top:1em"/>
         <p class="full-width">
             <span class="buttons pull-left">
-                <input type="button" value="<?php echo __('Cancel'); ?>" class="close">
+                <input type="button" id="cancelButton" value="<?php echo __('Cancel'); ?>" class="close">
             </span>
             <span class="buttons pull-right">
                 <input type="submit" value="<?php echo __('OK'); ?>">

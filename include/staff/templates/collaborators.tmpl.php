@@ -62,7 +62,7 @@ if(($users=$thread->getCollaborators())) {?>
     id="msg_warning"><?php echo __('You have made changes that you need to save.'); ?></p></div>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
+            <input type="reset" id="resetButton" value="<?php echo __('Reset'); ?>">
             <input type="button" value="<?php echo __('Done'); ?>" class="close">
         </span>
         <span class="buttons pull-right">
