@@ -1010,7 +1010,7 @@ extends Form {
                 'label' => '',
                 'default' => 0,
                 'choices' =>
-                    array(0 => '— '.__('Top-Level Department').' —')
+                    array(0 => ''.__('Top-Level Department').'')
                     + Dept::getPublicDepartments()
             )),
             'name' => new TextboxField(array(

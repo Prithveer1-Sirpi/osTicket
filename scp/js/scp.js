@@ -793,7 +793,7 @@ $.confirm = function(message, title, options) {
       body.append($('<hr style="margin-top:1em"/>'))
         .append($('<p class="full-width"></p>')
             .append($('<span class="buttons pull-left"></span>')
-                .append($('<input type="button" class="close"/>')
+                .append($('<input type="button" id="cancelButton" class="close"/>')
                     .attr('value', __('Cancel'))
                     .click(function() { hide();  D.resolve(false); })
             )).append($('<span class="buttons pull-right"></span>')

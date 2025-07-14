@@ -347,7 +347,7 @@ if (!$ticket) { ?>
                                  ?>/field/duedate/edit">
                                  <span id="field_duedate"><?php echo $task->duedate ?
                                     (Format::datetime($task->duedate)) :
-                                    '&mdash;' . __('None') .  '&mdash;' ; ?></span>
+                                    '' . __('None') .  '' ; ?></span>
                             </a>
                         </td>
                     </tr>
@@ -393,7 +393,7 @@ if (!$ticket) { ?>
                                     <?php if($task->isAssigned())
                                             echo Format::htmlchars(implode('/', $task->getAssignees()));
                                           else
-                                            echo '<span class="faded">&mdash; '.__('Unassigned').' &mdash;</span>';
+                                            echo '<span class="faded"> '.__('Unassigned').' </span>';
                             ?></span>
                             </a>
                         </td>
@@ -404,7 +404,7 @@ if (!$ticket) { ?>
                           if($task->isAssigned())
                               echo Format::htmlchars(implode('/', $task->getAssignees()));
                           else
-                              echo '<span class="faded">&mdash; '.__('Unassigned').' &mdash;</span>';
+                              echo '<span class="faded"> '.__('Unassigned').' </span>';
                           ?>
                         </td>
                         <?php
@@ -419,7 +419,7 @@ if (!$ticket) { ?>
                             if (($staff = $task->getStaff()))
                                 echo Format::htmlchars($staff->getName());
                             else
-                                echo '<span class="faded">&mdash; '.__('Unknown').' &mdash;</span>';
+                                echo '<span class="faded"> '.__('Unknown').' </span>';
                             ?>
                         </td>
                     </tr>
@@ -481,7 +481,7 @@ if (!$ticket) { ?>
                     $label = $a->getLocal('label');
                     $v = $a->display();
                     $class = (Format::striptags($v)) ? '' : 'class="faded"';
-                    $clean = (Format::striptags($v)) ? $v : '&mdash;' . __('Empty') .  '&mdash;';
+                    $clean = (Format::striptags($v)) ? $v : '' . __('Empty') .  '';
                     $field = $a->getField();
                     $isFile = ($field instanceof FileUploadField);
                     ?>
@@ -648,7 +648,7 @@ else
         </table>
        <p  style="text-align:center;">
            <input class="save pending" type="submit" value="<?php echo __('Post Update');?>">
-           <input type="reset" value="<?php echo __('Reset');?>">
+           <input type="reset" id="resetButton" value="<?php echo __('Reset');?>">
        </p>
     </form>
     <?php
@@ -708,7 +708,7 @@ else
         </table>
        <p  style="text-align:center;">
            <input class="save pending" type="submit" value="<?php echo __('Post Note');?>">
-           <input type="reset" value="<?php echo __('Reset');?>">
+           <input type="reset" id="resetButton" value="<?php echo __('Reset');?>">
        </p>
     </form>
  </div>

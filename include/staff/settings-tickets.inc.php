@@ -51,7 +51,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
             <td>
                 <select name="ticket_sequence_id">
                 <option value="0" <?php if ($config['ticket_sequence_id'] == 0) echo $selected;
-                    ?>>&mdash; <?php echo __('Random'); ?> &mdash;</option>
+                    ?>> <?php echo __('Random'); ?> </option>
 <?php foreach (Sequence::objects() as $s) { ?>
                 <option value="<?php echo $s->id; ?>" <?php
                     if ($config['ticket_sequence_id'] == $s->id) echo $selected;
@@ -123,7 +123,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
             <td>
                 <span>
                 <select name="default_sla_id">
-                    <option value="0">&mdash; <?php echo __('None');?> &mdash;</option>
+                    <option value="0"> <?php echo __('None');?> </option>
                     <?php
                     if($slas=SLA::getSLAs()) {
                         foreach($slas as $id => $name) {
@@ -143,7 +143,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
             <td width="180"><?php echo __('Default Help Topic'); ?>:</td>
             <td>
                 <select name="default_help_topic">
-                    <option value="0">&mdash; <?php echo __('None'); ?> &mdash;</option><?php
+                    <option value="0"> <?php echo __('None'); ?> </option><?php
                     $topics = Topic::getHelpTopics(false, Topic::DISPLAY_DISABLED);
                     foreach ($topics as $id=>$topic) { ?>
                         <option value="<?php echo $id; ?>"<?php echo ($config['default_help_topic']==$id)?'selected':''; ?>><?php echo $topic; ?></option>
@@ -281,7 +281,7 @@ if(!($maxfileuploads=ini_get('max_file_uploads')))
 
 <p style="text-align:center;">
     <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes');?>">
-    <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
+    <input class="button" id="resetButton" type="reset" name="reset" value="<?php echo __('Reset Changes');?>">
 </p>
 </form>
 <script type="text/javascript">

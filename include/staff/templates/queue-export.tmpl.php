@@ -83,8 +83,8 @@ name="queue-export" id="queue-export">
   </div>
   <p class="full-width">
     <span class="buttons pull-left">
-        <input type="reset"  id="reset"  value="<?php echo __('Reset'); ?>">
-        <input type="button" name="cancel" class="close"
+        <input type="reset" id="resetButton" id="reset"  value="<?php echo __('Reset'); ?>">
+        <input type="button" id="cancelButton" name="cancel" class="close"
         value="<?php echo __('Cancel'); ?>">
     </span>
     <span class="buttons pull-right">

@@ -50,7 +50,7 @@ $pages = Page::getPages();
             <td>
                 <span>
                 <select name="landing_page_id">
-                    <option value="">&mdash; <?php echo __('Select Landing Page'); ?> &mdash;</option>
+                    <option value=""> <?php echo __('Select Landing Page'); ?> </option>
                     <?php
                     foreach($pages as $page) {
                         if(strcasecmp($page->getType(), 'landing')) continue;
@@ -69,8 +69,8 @@ $pages = Page::getPages();
             <td>
                 <span>
                 <select name="offline_page_id">
-                    <option value="">&mdash; <?php echo __('Select Offline Page');
-                        ?> &mdash;</option>
+                    <option value=""> <?php echo __('Select Offline Page');
+                        ?> </option>
                     <?php
                     foreach($pages as $page) {
                         if(strcasecmp($page->getType(), 'offline')) continue;
@@ -90,8 +90,8 @@ $pages = Page::getPages();
             <td>
                 <span>
                 <select name="thank-you_page_id">
-                    <option value="">&mdash; <?php
-                        echo __('Select Thank-You Page'); ?> &mdash;</option>
+                    <option value=""> <?php
+                        echo __('Select Thank-You Page'); ?> </option>
                     <?php
                     foreach($pages as $page) {
                         if(strcasecmp($page->getType(), 'thank-you')) continue;
@@ -112,8 +112,8 @@ $pages = Page::getPages();
 <table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
-            <th colspan="2">
-                <em><?php echo __('System Default Logo'); ?><i class="help-tip icon-question-sign" href="#logos"></i></em>
+            <th colspan="2" style="background: white; border: none;">
+                <em style="font-weight: 600; color: black;"><?php echo __('System Default Logo'); ?><i class="help-tip icon-question-sign" href="#logos"></i></em>
             </th>
         </tr>
     </thead>
@@ -197,7 +197,7 @@ $pages = Page::getPages();
                     </tbody>
                 </table>
                 <b><?php echo __('Upload a new logo'); ?>:</b>
-                <input type="file" name="logo[]" size="30" value="" /><br/>
+                <input type="file" name="logo[]" size="30" value="" style="margin-top: 0.5rem" /><br/>
                 <font class="error"><?php echo $errors['logo']; ?></font>
             </td>
         </tr>
@@ -209,8 +209,8 @@ $pages = Page::getPages();
 <table class="form_table settings_table" width="940" border="0" cellspacing="0" cellpadding="2">
     <thead>
         <tr>
-            <th colspan="2">
-                <em><?php echo __('System Default Backdrop'); ?><i
+            <th colspan="2" style="background: white; border: none;">
+                <em style="font-weight: 600; color: black;"><?php echo __('System Default Backdrop'); ?><i
                 class="help-tip icon-question-sign" href="#backdrops"></i></em>
             </th>
         </tr>
@@ -276,7 +276,7 @@ $pages = Page::getPages();
                     </tbody>
                 </table>
                 <b><?php echo __('Upload a new backdrop'); ?>:</b>
-                <input type="file" name="backdrop[]" size="30" value=""
+                <input type="file" name="backdrop[]" size="30" value="" style="margin-top:0.5rem;"
                 /><br/>
                 <font class="error"><?php echo $errors['backdrop']; ?></font>
             </td>
@@ -288,7 +288,7 @@ $pages = Page::getPages();
 <p style="text-align:center;">
     <input class="button" type="submit" name="submit-button" value="<?php
     echo __('Save Changes'); ?>">
-    <input class="button" type="reset" name="reset" value="<?php
+    <input class="button" id="resetButton" type="reset" name="reset" value="<?php
     echo __('Reset Changes'); ?>">
 </p>
 </form>
@@ -307,7 +307,7 @@ $pages = Page::getPages();
     <hr style="margin-top:1em"/>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" value="<?php echo __('No, Cancel'); ?>" class="close">
+            <input type="button" id="cancelButton" value="<?php echo __('No, Cancel'); ?>" class="close">
         </span>
         <span class="buttons pull-right">
             <input type="button" value="<?php echo __('Yes, Do it!'); ?>" class="confirm">

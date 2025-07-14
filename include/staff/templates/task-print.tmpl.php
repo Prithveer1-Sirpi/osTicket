@@ -150,7 +150,7 @@ div.hr {
         if (($staff = $task->getStaff()))
             echo Format::htmlchars($staff->getName());
         else
-            echo '<span class="faded">&mdash; '.__('Unknown').' &mdash;</span>';
+            echo '<span class="faded"> '.__('Unknown').' </span>';
     ?>
     </td>
     <?php

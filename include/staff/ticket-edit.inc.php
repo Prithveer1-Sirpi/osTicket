@@ -15,7 +15,7 @@ if ($_POST)
     <input type="hidden" name="do" value="update">
     <input type="hidden" name="a" value="edit">
     <input type="hidden" name="id" value="<?php echo $ticket->getId(); ?>">
-    <div style="margin-bottom:20px; padding-top:5px;">
+    <div style="margin-bottom:43px; padding-top:5px;">
         <div class="pull-left flush-left">
             <h2><?php echo sprintf(__('Update Ticket #%s'),$ticket->getNumber());?></h2>
         </div>
@@ -70,8 +70,8 @@ if ($_POST)
             </td>
             <td>
                 <select name="source">
-                    <option value="" selected >&mdash; <?php
-                        echo __('Select Source');?> &mdash;</option>
+                    <option value="" selected > <?php
+                        echo __('Select Source');?> </option>
                     <?php
                     $source = $info['source'] ?: 'Phone';
                     foreach (Ticket::getSources() as $k => $v) {
@@ -91,7 +91,7 @@ if ($_POST)
             </td>
             <td>
                 <select name="topicId">
-                    <option value="" selected >&mdash; <?php echo __('Select Help Topic');?> &mdash;</option>
+                    <option value="" selected > <?php echo __('Select Help Topic');?> </option>
                     <?php
                     if ($topics=$thisstaff->getTopicNames()) {
                       if($ticket->topic_id && !array_key_exists($ticket->topic_id, $topics)) {
@@ -122,7 +122,7 @@ if ($_POST)
             </td>
             <td>
                 <select name="slaId">
-                    <option value="0" selected="selected" >&mdash; <?php echo __('None');?> &mdash;</option>
+                    <option value="0" selected="selected" > <?php echo __('None');?> </option>
                     <?php
                     if($slas=SLA::getSLAs()) {
                         foreach($slas as $id =>$name) {
@@ -175,8 +175,8 @@ if ($_POST)
 </table>
 <p style="text-align:center;">
     <input type="submit" name="submit" value="<?php echo __('Save');?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="tickets.php?id=<?php echo $ticket->getId(); ?>"'>
+    <input type="reset"  id="resetButton" name="reset"  value="<?php echo __('Reset');?>">
+    <input type="button" id="cancelButton" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="tickets.php?id=<?php echo $ticket->getId(); ?>"'>
 </p>
 </form>
 <div style="display:none;" class="dialog draggable" id="user-lookup">

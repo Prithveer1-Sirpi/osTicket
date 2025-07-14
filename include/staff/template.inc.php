@@ -116,7 +116,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
     else
         $('#language').hide();
 ">
-                    <option value="0">&mdash; <?php echo __('Stock Templates'); ?> &mdash;</option>
+                    <option value="0"> <?php echo __('Stock Templates'); ?> </option>
                     <?php
                     $sql='SELECT tpl_id,name FROM '.EMAIL_TEMPLATE_GRP_TABLE.' ORDER by name';
                     if(($res=db_query($sql)) && db_num_rows($res)){
@@ -169,7 +169,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
 </table>
 <p style="text-align:center">
     <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="templates.php"'>
+    <input type="reset" id="resetButton" name="reset"  value="<?php echo __('Reset');?>">
+    <input type="button" id="cancelButton" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="templates.php"'>
 </p>
 </form>

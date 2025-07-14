@@ -75,8 +75,8 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             <td>
                 <span>
                 <select name="type">
-                    <option value="" selected="selected">&mdash; <?php
-                    echo __('Select Page Type'); ?> &mdash;</option>
+                    <option value="" selected="selected"> <?php
+                    echo __('Select Page Type'); ?> </option>
                     <?php
                     foreach($pageTypes as $k => $v)
                         echo sprintf('<option value="%s" %s>%s</option>',
@@ -190,7 +190,7 @@ else
 
 <p style="text-align:center">
     <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset'); ?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel'); ?>" onclick='window.location.href="pages.php"'>
+    <input type="reset" id="resetButton" name="reset"  value="<?php echo __('Reset'); ?>">
+    <input type="button" id="cancelButton" name="cancel" value="<?php echo __('Cancel'); ?>" onclick='window.location.href="pages.php"'>
 </p>
 </form>

@@ -66,7 +66,7 @@ foreach ($sequences as $e) {
 </div>
 
 <hr/>
-<button onclick="javascript:
+<button style="padding: 8px 10px;border-radius: 16px;" onclick="javascript:
   var id = ++$.uid, base = 'seq[new-'+id+']';
   var clone = $('.row-item#template').clone()
     .appendTo($('#sequences'))

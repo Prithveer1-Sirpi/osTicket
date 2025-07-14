@@ -65,8 +65,8 @@ if ($auth && $form) {
     <hr>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" name="close" value="<?php echo __('Cancel'); ?>" class="close">
+            <input type="reset" id="resetButton" value="<?php echo __('Reset'); ?>">
+            <input type="button" id="cancelButton" name="close" value="<?php echo __('Cancel'); ?>" class="close">
         </span>
         <span class="buttons pull-right">
             <input type="submit" value="<?php echo ($state == 'verify') ?

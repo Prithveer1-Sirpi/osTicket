@@ -75,8 +75,8 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
             </td>
             <td>
                 <select name="schedule_id">
-                    <option value="0" selected="selected" >&mdash; <?php
-                    echo __('System Default');?> &mdash;</option>
+                    <option value="0" selected="selected" > <?php
+                    echo __('System Default');?> </option>
                     <?php
                     if ($schedules=BusinessHoursSchedule::getSchedules()) {
                         foreach ($schedules as $s) {
@@ -127,7 +127,7 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
 </table>
 <p style="text-align:center;">
     <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="slas.php"'>
+    <input type="reset" id="resetButton" name="reset"  value="<?php echo __('Reset');?>">
+    <input type="button" id="cancelButton" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="slas.php"'>
 </p>
 </form>

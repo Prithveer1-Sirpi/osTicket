@@ -822,7 +822,7 @@ implements TemplateVariable {
         'short' => array(     /*@trans*/ "First L.", 'getShort'),
         'shortformal' => array(/*@trans*/ "F. Last", 'getShortFormal'),
         'complete' => array(  /*@trans*/ "Mr. First M. Last Sr.", 'getComplete'),
-        'original' => array(  /*@trans*/ '-- As Entered --', 'getOriginal'),
+        'original' => array(  /*@trans*/ ' As Entered ', 'getOriginal'),
     );
 
     function __construct($name, $format=null) {

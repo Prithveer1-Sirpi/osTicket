@@ -49,7 +49,7 @@ if (isset($errors['mailbox_auth'])) {
             <td>
 		<span>
 			<select name="mailbox_protocol">
-                <option value=''>&mdash; <?php echo __('Select protocol'); ?> &mdash;</option>
+                <option value=''> <?php echo __('Select protocol'); ?> </option>
 <?php
     foreach (Email::mailboxProtocols() as $proto => $desc) {
 ?>
@@ -69,7 +69,7 @@ if (isset($errors['mailbox_auth'])) {
             </td>
             <td>
 			<select class="emailauth" name="mailbox_auth_bk">
-                <option value=''>&mdash; <?php echo __('Select Type'); ?> &mdash;</option>
+                <option value=''> <?php echo __('Select Type'); ?> </option>
 <?php
     foreach (Email::getSupportedAuthTypes() as $auth => $desc) { ?>
                 <option value="<?php echo $auth; ?>" <?php
@@ -134,7 +134,7 @@ if (isset($errors['mailbox_auth'])) {
         <tr><td valign="top"><?php echo __('Fetched Emails');?></td>
              <td>
                 <select id="postfetch" name="mailbox_postfetch">
-                    <option value=''>&mdash; <?php echo __('Select Action'); ?> &mdash;</option>
+                    <option value=''> <?php echo __('Select Action'); ?> </option>
                     <?php
                     $actions = [
                         'archive' => sprintf('%s - %s',
