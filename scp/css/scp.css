@@ -2102,7 +2102,7 @@ img.avatar {
 }
 
 .thread-entry.message .header {
-  background: #c3d9ff;
+  background: #deffe1;
 }
 .thread-entry.avatar.message .header:after {
   border-left: 7px solid #c3d9ff;
