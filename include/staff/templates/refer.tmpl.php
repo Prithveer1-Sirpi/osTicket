@@ -113,7 +113,7 @@ $manage = (!$target);
     if ($thread->getNumReferrals()) {?>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" name="cancel" class="close"
+            <input type="button" id="cancelButton" name="cancel" class="close"
             value="<?php echo __('Cancel'); ?>">
         </span>
         <span class="buttons pull-right">

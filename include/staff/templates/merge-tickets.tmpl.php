@@ -177,7 +177,7 @@ foreach ($tickets as $t) {
 &nbsp;&nbsp;&nbsp;
     <label class="inline checkbox">
         <?php echo __('Child Status');?>
-        <select id="childStatusId" name="childStatusId">
+        <select id="childStatusId" name="childStatusId" style="margin-top: 1rem">
         <?php
         $states = array('closed');
         foreach (TicketStatusList::getStatuses(
