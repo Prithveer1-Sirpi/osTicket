@@ -50,13 +50,16 @@ $info=Format::htmlchars(($errors && $_POST)?$_POST:$info, true);
 
     <div style="margin:8px 0"><strong><?php echo __('Category Type');?>:</strong>
         <span class="error">*</span></div>
-    <div style="margin-left:5px">
-    <input type="radio" name="ispublic" value="2" <?php echo $info['ispublic']==2?'checked="checked"':''; ?>><b><?php echo __('Featured');?></b> <?php echo __('(on front-page sidebar)');?>
-    <br/>
-    <input type="radio" name="ispublic" value="1" <?php echo $info['ispublic']==1?'checked="checked"':''; ?>><b><?php echo __('Public');?></b> <?php echo __('(publish)');?>
-    <br/>
-    <input type="radio" name="ispublic" value="0" <?php echo !$info['ispublic']?'checked="checked"':''; ?>><?php echo __('Private');?> <?php echo __('(internal)');?>
-    <br/>
+    <div style="margin-left:5px; gap: 1rem !important">
+        <div style="margin-bottom: 0.5rem;">
+    <input type="radio" name="ispublic" value="2" <?php echo $info['ispublic']==2?'checked="checked"':''; ?>><b><?php echo __(' Featured');?></b> <?php echo __('(on front-page sidebar)');?>
+        </div>
+        <div style="margin-bottom: 0.5rem;">
+    <input type="radio" name="ispublic" value="1" <?php echo $info['ispublic']==1?'checked="checked"':''; ?>><b><?php echo __(' Public');?></b> <?php echo __('(publish)');?>
+        </div>
+        <div style="margin-bottom: 0.5rem;">
+    <input type="radio" name="ispublic" value="0" <?php echo !$info['ispublic']?'checked="checked"':''; ?>><?php echo __(' Private');?> <?php echo __('(internal)');?>
+        </div>
     <div class="error"><?php echo $errors['ispublic']; ?></div>
     </div>
 
@@ -113,7 +116,7 @@ if (count($langs) > 1) { ?>
     </div>
     <div style="padding-bottom:8px;">
         <select name="pid">
-            <option value="">&mdash; <?php echo __('Top-Level Category'); ?> &mdash;</option>
+            <option value=""> <?php echo __('Top-Level Category'); ?> </option>
             <?php
             foreach (Category::getCategories() as $id=>$name) {
                 if ($info['id'] && $id == $info['id'])
@@ -166,7 +169,7 @@ if (count($langs) > 1) { ?>
 
 <p style="text-align:center">
     <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="categories.php"'>
+    <input type="reset"  id="resetButton" name="reset"  value="<?php echo __('Reset');?>">
+    <input type="button" id="cancelButton" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="categories.php"'>
 </p>
 </form>

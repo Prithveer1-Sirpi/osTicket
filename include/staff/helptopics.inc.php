@@ -62,11 +62,11 @@ $order_by = 'sort';
  <?php csrf_token(); ?>
  <input type="hidden" name="do" value="mass_process" >
 <input type="hidden" id="action" name="a" value="sort" >
- <table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
+ <table class="list" id="scpTable" border="0" cellspacing="1" cellpadding="0" width="940">
 
     <thead>
-<tr><td colspan="7">
-    <div style="padding:3px" class="pull-right"><?php echo __('Sorting Mode'); ?>:
+<tr><td colspan="8">
+    <div style="padding:3px;" class="pull-right"><?php echo __('Sorting Mode'); ?>:
     <select name="help_topic_sort_mode" onchange="javascript:
     var $form = $(this).closest('form');
     $form.find('input[name=a]').val('sort');
@@ -216,7 +216,7 @@ endif;
     <hr style="margin-top:1em"/>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" value="<?php echo __('No, Cancel');?>" class="close">
+            <input type="button" id="cancelButton" value="<?php echo __('No, Cancel');?>" class="close">
         </span>
         <span class="buttons pull-right">
             <input type="button" value="<?php echo __('Yes, Do it!');?>" class="confirm">

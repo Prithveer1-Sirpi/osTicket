@@ -3836,7 +3836,7 @@ class FileUploadField extends FormField {
 
     function getConfigurationOptions() {
         // Compute size selections
-        $sizes = array('262144' => '— '.__('Small').' —');
+        $sizes = array('262144' => ' '.__('Small').' ');
         $next = 512 << 10;
         $max = strtoupper(ini_get('upload_max_filesize'));
         $limit = (int) $max;
@@ -4688,8 +4688,8 @@ class ChoicesWidget extends Widget {
             <?php if ($config['multiselect'])
                 echo ' multiple="multiple"'; ?>>
             <?php if ($showdefault || (!$have_def && !$config['multiselect'])) { ?>
-            <option value="<?php echo $showdefault ? '' : $def_key; ?>">&mdash; <?php
-                echo $def_val; ?> &mdash;</option>
+            <option value="<?php echo $showdefault ? '' : $def_key; ?>"> <?php
+                echo $def_val; ?> </option>
 <?php
         }
         $this->emitChoices($choices, $values, $have_def, $def_key); ?>

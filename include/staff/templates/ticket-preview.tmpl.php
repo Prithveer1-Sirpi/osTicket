@@ -54,9 +54,9 @@ echo '<table border="0" cellspacing="" cellpadding="1" width="100%" class="ticke
 $ticket_state=sprintf('<span>%s</span>',ucfirst($ticket->getStatus()));
 if($ticket->isOpen()) {
     if($ticket->isOverdue())
-        $ticket_state.=' &mdash; <span>'.__('Overdue').'</span>';
+        $ticket_state.='  <span>'.__('Overdue').'</span>';
     else
-        $ticket_state.=sprintf(' &mdash; <span>%s</span>',$ticket->getPriority());
+        $ticket_state.=sprintf('  <span>%s</span>',$ticket->getPriority());
 }
 
 echo sprintf('
@@ -96,7 +96,7 @@ if($ticket->isOpen()) {
             <tr>
                 <th width="100">'.__('Assigned To').':</th>
                 <td>%s</td>
-            </tr>',$ticket->isAssigned()?implode('/', $ticket->getAssignees()):' <span class="faded">&mdash; '.__('Unassigned').' &mdash;</span>');
+            </tr>',$ticket->isAssigned()?implode('/', $ticket->getAssignees()):' <span class="faded"> '.__('Unassigned').' </span>');
 }
 echo sprintf(
     '

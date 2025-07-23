@@ -148,7 +148,7 @@ if (($bks = StaffAuthenticationBackend::getInteractive())) {
                 else if (!$('#welcome-email').is(':checked'))
                     $('#password-fields').show();
                 ">
-              <option value="">&mdash; <?php echo __('Use any available backend'); ?> &mdash;</option>
+              <option value=""> <?php echo __('Use any available backend'); ?> </option>
 <?php foreach ($bks as $ab) {
                 $id = $ab->getBkId(); ?>
               <option value="<?php echo $id; ?>" <?php
@@ -256,7 +256,7 @@ if ($bks=Staff2FABackend::allRegistered() && $current = $staff->get2FABackend())
         <tr>
           <td style="vertical-align:top">
             <select name="dept_id" id="dept_id" data-quick-add="department">
-              <option value="0">&mdash; <?php echo __('Select Department');?> &mdash;</option>
+              <option value="0"> <?php echo __('Select Department');?> </option>
               <?php
               if($depts = Dept::getDepartments(array('activeonly' => true, 'publiconly' => true))) {
                 if($staff->dept_id && !array_key_exists($staff->dept_id, $depts))
@@ -270,7 +270,7 @@ if ($bks=Staff2FABackend::allRegistered() && $current = $staff->get2FABackend())
                   }
               }
               ?>
-              <option value="0" data-quick-add>&mdash; <?php echo __('Add New');?> &mdash;</option>
+              <option value="0" data-quick-add> <?php echo __('Add New');?> </option>
             </select>
             <i class="offset help-tip icon-question-sign" href="#primary_department"></i>
             <div class="error"><?php echo $errors['dept_id']; ?></div>
@@ -281,14 +281,14 @@ if ($bks=Staff2FABackend::allRegistered() && $current = $staff->get2FABackend())
           </td>
           <td style="vertical-align:top">
             <select name="role_id" data-quick-add="role">
-              <option value="0">&mdash; <?php echo __('Select Role');?> &mdash;</option>
+              <option value="0"> <?php echo __('Select Role');?> </option>
               <?php
               foreach (Role::getRoles() as $id=>$name) {
                 $sel=($staff->role_id==$id)?'selected="selected"':'';
                 echo sprintf('<option value="%d" %s>%s</option>',$id,$sel,$name);
               }
               ?>
-              <option value="0" data-quick-add>&mdash; <?php echo __('Add New');?> &mdash;</option>
+              <option value="0" data-quick-add> <?php echo __('Add New');?> </option>
             </select>
             <i class="offset help-tip icon-question-sign" href="#primary_role"></i>
             <div class="error"><?php echo $errors['role_id']; ?></div>
@@ -313,13 +313,13 @@ if ($bks=Staff2FABackend::allRegistered() && $current = $staff->get2FABackend())
           </td>
           <td>
             <select data-name="dept_access_role" data-quick-add="role">
-              <option value="0">&mdash; <?php echo __('Select Role');?> &mdash;</option>
+              <option value="0"> <?php echo __('Select Role');?> </option>
               <?php
               foreach (Role::getRoles() as $id=>$name) {
                 echo sprintf('<option value="%d" %s>%s</option>',$id,$sel,$name);
               }
               ?>
-              <option value="0" data-quick-add>&mdash; <?php echo __('Add New');?> &mdash;</option>
+              <option value="0" data-quick-add> <?php echo __('Add New');?> </option>
             </select>
           </td>
           <td>
@@ -348,13 +348,13 @@ foreach ($staff->dept_access as $dept_access) {
           <td colspan="2">
             <i class="icon-plus-sign"></i>
             <select id="add_access" data-quick-add="department">
-              <option value="0">&mdash; <?php echo __('Select Department');?> &mdash;</option>
+              <option value="0"> <?php echo __('Select Department');?> </option>
               <?php
               foreach ($depts as $id=>$name) {
                 echo sprintf('<option value="%d">%s</option>',$id,Format::htmlchars($name));
               }
               ?>
-              <option value="0" data-quick-add>&mdash; <?php echo __('Add New');?> &mdash;</option>
+              <option value="0" data-quick-add> <?php echo __('Add New');?> </option>
             </select>
             <button type="button" class="green button">
               <?php echo __('Add'); ?>
@@ -440,13 +440,13 @@ foreach ($staff->teams as $TM) {
           <td colspan="2">
             <i class="icon-plus-sign"></i>
             <select id="add_team" data-quick-add="team">
-              <option value="0">&mdash; <?php echo __('Select Team');?> &mdash;</option>
+              <option value="0"> <?php echo __('Select Team');?> </option>
               <?php
               foreach ($teams as $id=>$name) {
                 echo sprintf('<option value="%d">%s</option>',$id,Format::htmlchars($name));
               }
               ?>
-              <option value="0" data-quick-add>&mdash; <?php echo __('Add New');?> &mdash;</option>
+              <option value="0" data-quick-add> <?php echo __('Add New');?> </option>
             </select>
             <button type="button" class="green button">
               <?php echo __('Add'); ?>
@@ -477,8 +477,8 @@ foreach ($staff->teams as $TM) {
 
   <p style="text-align:center;">
       <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-      <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-      <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick="window.history.go(-1);">
+      <input type="reset" id="resetButton" name="reset"  value="<?php echo __('Reset');?>">
+      <input type="button" id="cancelButton" name="cancel" value="<?php echo __('Cancel');?>" onclick="window.history.go(-1);">
   </p>
 </form>
 

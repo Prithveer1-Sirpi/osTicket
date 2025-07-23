@@ -104,7 +104,7 @@ else
  <?php csrf_token(); ?>
  <input type="hidden" name="do" value="mass_process" >
  <input type="hidden" id="action" name="a" value="" >
- <table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
+ <table class="list" id="scpTable" border="0" cellspacing="1" cellpadding="0" width="940">
     <thead>
         <tr>
             <th width="4%">&nbsp;</th>
@@ -134,7 +134,7 @@ else
                     <a href="canned.php?id=<?php echo $row['canned_id']; ?>"><?php echo Format::truncate($row['title'],200); echo "&nbsp;$files"; ?></a>&nbsp;
                 </td>
                 <td><?php echo $row['isenabled']?__('Active'):'<b>'.__('Disabled').'</b>'; ?></td>
-                <td><?php echo $row['department']?$row['department']:'&mdash; '.__('All Departments').' &mdash;'; ?></td>
+                <td><?php echo $row['department']?$row['department']:' '.__('All Departments').' '; ?></td>
                 <td>&nbsp;<?php echo Format::datetime($row['updated']); ?></td>
             </tr>
             <?php
@@ -185,7 +185,7 @@ endif;
     <hr style="margin-top:1em"/>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" value="<?php echo __('No, Cancel');?>" class="close">
+            <input type="button" id="cancelButton" value="<?php echo __('No, Cancel');?>" class="close">
         </span>
         <span class="buttons pull-right">
             <input type="button" value="<?php echo __('Yes, Do it!');?>" class="confirm">

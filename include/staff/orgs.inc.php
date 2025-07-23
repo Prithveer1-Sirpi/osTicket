@@ -63,8 +63,9 @@ $orgs->order_by($order . $order_column);
             <?php csrf_token(); ?>
             <div class="attached input">
             <input type="hidden" name="a" value="search">
-            <input type="search" class="basic-search" id="basic-org-search" name="query" autofocus size="30" value="<?php echo Format::htmlchars($_REQUEST['query']); ?>" autocomplete="off" autocorrect="off" autocapitalize="off">
-                <button type="submit" class="attached button"><i class="icon-search"></i>
+            <input type="search" class="basic-search" placeholder="Search Organization" id="basic-org-search" name="query" autofocus size="30" value="<?php echo Format::htmlchars($_REQUEST['query']); ?>" autocomplete="off" autocorrect="off" autocapitalize="off">
+                <button type="submit" class="attached button">
+                    <!-- <i class="icon-search"></i> -->Search
                 </button>
             <!-- <td>&nbsp;&nbsp;<a href="" id="advanced-user-search">[advanced]</a></td> -->
             </div>
@@ -117,7 +118,7 @@ else
  <input type="hidden" name="a" value="mass_process" >
  <input type="hidden" id="action" name="do" value="" >
  <input type="hidden" id="selected-count" name="count" value="" >
- <table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
+ <table class="list" id="scpTable" border="0" cellspacing="1" cellpadding="0" width="940">
     <thead>
         <tr>
             <th nowrap width="4%">&nbsp;</th>

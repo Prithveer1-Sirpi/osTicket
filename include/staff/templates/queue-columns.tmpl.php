@@ -83,7 +83,7 @@ $hidden_cols = $queue->inheritColumns() || $queue->useStandardColumns();
               Format::htmlchars($C->name); ?></option>
 <?php } ?>
 <?php if (!$queue instanceof SavedSearch) { ?>
-          <option value="0" data-quick-add>&mdash; <?php echo __('Add New');?> &mdash;</option>
+          <option value="0" data-quick-add> <?php echo __('Add New');?> </option>
 <?php } ?>
         </select>
         <button type="button" class="green button">

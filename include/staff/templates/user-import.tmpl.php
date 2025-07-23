@@ -76,8 +76,8 @@ if ($org_id) { ?>
     <hr>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" name="cancel" class="close"  value="<?php
+            <input style="margin-bottom:1.5rem;" type="reset" id="resetButton" value="<?php echo __('Reset'); ?>">
+            <input style="margin-bottom:1.5rem;" type="button" id="cancelButton" name="cancel" class="close"  value="<?php
             echo __('Cancel'); ?>">
         </span>
         <span class="buttons pull-right">

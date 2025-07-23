@@ -79,8 +79,8 @@ foreach ($forms as $e) { ?>
     <hr>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" name="cancel" class="<?php
+            <input style="margin-bottom: 1.5rem;" id="resetButton" type="reset" value="<?php echo __('Reset'); ?>">
+            <input style="margin-bottom: 1.5rem;" id="cancelButton" type="button" name="cancel" class="<?php
                 echo $user ? 'cancel' : 'close' ?>" value="<?php echo __('Cancel'); ?>">
         </span>
         <span class="buttons pull-right">

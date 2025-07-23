@@ -53,7 +53,7 @@
 }
 .action-dropdown ul li.active > a  {
   background-color: rgba(0, 136, 204, 0.2);
-  color: #08C;
+  color: rgb(7, 7, 7);
 }
 .action-dropdown ul li.positive > a:hover, .customQ-dropdown ul li.positive > a:hover, .noclick-dropdown ul li.positive > a:hover {
   background-color: #02aa4c;
@@ -125,7 +125,7 @@
     border-color: inherit;
 }
 a.action-button, .action-button a {
-  color: inherit;
+  color: #f9f7f7;
   text-decoration: none;
 }
 .action-buttons {

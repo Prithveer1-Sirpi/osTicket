@@ -135,7 +135,7 @@ if (($bks=Staff2FABackend::allRegistered())) {
               style="width:300px">
               <?php
               if (!$required2fa) { ?>
-              <option value="">&mdash; <?php echo __('Disable'); ?> &mdash;</option>
+              <option value=""> <?php echo __('Disable'); ?> </option>
               <?php
               }
              foreach ($bks as $bk) {
@@ -204,7 +204,7 @@ if (($bks=Staff2FABackend::allRegistered())) {
             <td width="180"><?php echo __('Maximum Page size');?>:</td>
             <td>
                 <select name="max_page_size">
-                    <option value="0">&mdash; <?php echo __('System Default');?> &mdash;</option>
+                    <option value="0"> <?php echo __('System Default');?> </option>
                     <?php
                     $pagelimit = $staff->max_page_size ?: $cfg->getPageSize();
                     for ($i = 5; $i <= 50; $i += 5) {
@@ -220,7 +220,7 @@ if (($bks=Staff2FABackend::allRegistered())) {
             </td>
             <td>
                 <select name="auto_refresh_rate">
-                  <option value="0">&mdash; <?php echo __('Disabled');?> &mdash;</option>
+                  <option value="0"> <?php echo __('Disabled');?> </option>
                   <?php
                   $y=1;
                    for($i=1; $i <=30; $i+=$y) {
@@ -266,7 +266,7 @@ if (($bks=Staff2FABackend::allRegistered())) {
             </td>
             <td>
                 <select name="default_ticket_queue_id">
-                 <option value="0">&mdash; <?php echo __('system default');?> &mdash;</option>
+                 <option value="0"> <?php echo __('System default');?> </option>
                  <?php
                  $queues = CustomQueue::queues()
                     ->filter(Q::any(array(
@@ -294,7 +294,7 @@ if (($bks=Staff2FABackend::allRegistered())) {
                    $options=array(
                            'desc' => __('Descending'),
                            'asc' => __('Ascending'),
-                           '' => '— '.__('System Default').' —',
+                           '' => ' '.__('System Default').' ',
                            );
                   foreach($options as $k=>$v) {
                       echo sprintf('<option value="%s" %s>%s</option>',
@@ -313,7 +313,7 @@ if (($bks=Staff2FABackend::allRegistered())) {
             </td>
             <td>
                 <select name="default_signature_type">
-                  <option value="none" selected="selected">&mdash; <?php echo __('None');?> &mdash;</option>
+                  <option value="none" selected="selected"> <?php echo __('None');?> </option>
                   <?php
                    $options=array('mine'=>__('My Signature'),'dept'=>sprintf(__('Department Signature (%s)'),
                        __('if set' /* This is used in 'Department Signature (>if set<)' */)));
@@ -332,7 +332,7 @@ if (($bks=Staff2FABackend::allRegistered())) {
             </td>
             <td>
                 <select name="default_paper_size">
-                  <option value="none" selected="selected">&mdash; <?php echo __('None');?> &mdash;</option>
+                  <option value="none" selected="selected"> <?php echo __('None');?> </option>
                   <?php
 
                   foreach(Export::$paper_sizes as $v) {
@@ -420,7 +420,7 @@ if (($bks=Staff2FABackend::allRegistered())) {
     $datetime_format = $staff->datetime_format;
     foreach (array(
     'relative' => __('Relative Time'),
-    '' => '— '.__('System Default').' —',
+    '' => ' '.__('System Default').' ',
 ) as $v=>$name) { ?>
                     <option value="<?php echo $v; ?>" <?php
                     if ($v == $datetime_format)
@@ -437,7 +437,7 @@ if (($bks=Staff2FABackend::allRegistered())) {
         <?php
         $langs = Internationalization::getConfiguredSystemLanguages(); ?>
                 <select name="lang">
-                    <option value="">&mdash; <?php echo __('Use Browser Preference'); ?> &mdash;</option>
+                    <option value=""> <?php echo __('Use Browser Preference'); ?> </option>
 <?php foreach($langs as $l) {
     $selected = ($staff->lang == $l['code']) ? 'selected="selected"' : ''; ?>
                     <option value="<?php echo $l['code']; ?>" <?php echo $selected;
@@ -494,9 +494,9 @@ if (($bks=Staff2FABackend::allRegistered())) {
 
   <p style="text-align:center;">
     <button class="button action-button" type="submit" name="submit" ><i class="icon-save"></i> <?php echo __('Save Changes'); ?></button>
-    <button class="button action-button" type="reset"  name="reset"><i class="icon-undo"></i>
+    <button class="button action-button" type="reset"  id="resetButton" name="reset"><i class="icon-undo"></i>
         <?php echo __('Reset');?></button>
-    <button class="red button action-button" type="button" name="cancel" onclick="window.history.go(-1);"><i class="icon-remove-circle"></i> <?php echo __('Cancel');?></button>
+    <button class="red button action-button" type="button" id="cancelButton" name="cancel" onclick="window.history.go(-1);"><i class="icon-remove-circle"></i> <?php echo __('Cancel');?></button>
   </p>
     <div class="clear"></div>
 </form>

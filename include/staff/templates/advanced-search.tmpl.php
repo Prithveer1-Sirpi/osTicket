@@ -16,7 +16,7 @@ $queues = array();
 foreach (CustomQueue::queues() as  $q)
     $queues[$q->id] = $q->getFullName();
 asort($queues);
-$queues = array(0 => ('—'.__("My Searches").'—')) + $queues;
+$queues = array(0 => (''.__("My Searches").'')) + $queues;
 $queue = $search;
 $qname = $search->getName() ?:  __('Advanced Ticket Search');
 ?>
@@ -147,7 +147,7 @@ if ($search->isSaved()) { ?>
  <div>
   <p class="full-width">
     <span class="buttons pull-left">
-        <input type="button"  name="cancel"  class="close" value="<?php echo __('Cancel'); ?>">
+        <input type="button"  style="margin-bottom: 1.5rem;" id="cancelButton" name="cancel"  class="close" value="<?php echo __('Cancel'); ?>">
         <?php
         if ($search->isSaved()) { ?>
         <input type="button" name="done" class="done" value="<?php echo

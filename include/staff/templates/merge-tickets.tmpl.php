@@ -177,7 +177,7 @@ foreach ($tickets as $t) {
 &nbsp;&nbsp;&nbsp;
     <label class="inline checkbox">
         <?php echo __('Child Status');?>
-        <select id="childStatusId" name="childStatusId">
+        <select id="childStatusId" name="childStatusId" style="margin-top: 1rem">
         <?php
         $states = array('closed');
         foreach (TicketStatusList::getStatuses(
@@ -199,7 +199,7 @@ foreach ($tickets as $t) {
     <label class="inline checkbox">
         <?php echo __('Parent Status');?>
         <select id="parentStatusId" name="parentStatusId">
-        <option value="">— Select —</option>
+        <option value=""> Select </option>
         <?php
         $states = array('open', 'closed');
         foreach (TicketStatusList::getStatuses(
@@ -255,7 +255,7 @@ id="msg_warning"><?php echo __('Are you sure you want to delete the child ticket
 
 <p class="full-width">
     <span class="buttons pull-left">
-        <input type="button" name="cancel" class="<?php
+        <input style="margin-bottom:1.5rem;" type="button" id="cancelButton" name="cancel" class="<?php
             echo $user ? 'cancel' : 'close' ?>" value="<?php echo __('Cancel'); ?>">
     </span>
     <?php if (!$info['error']) { ?>

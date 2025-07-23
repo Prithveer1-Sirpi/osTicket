@@ -30,7 +30,7 @@
             <td colspan="3" id="append-sort-column">
                 <i class="icon-plus-sign"></i>
                 <select id="add-sort-column">
-                    <option value="">— <?php echo __("Add Field"); ?> —</option>
+                    <option value=""> <?php echo __("Add Field"); ?> </option>
 <?php foreach (CustomQueue::getSearchableFields($sort->getRoot()) as $path=>$F) {
     list($label,) = $F;
 ?>

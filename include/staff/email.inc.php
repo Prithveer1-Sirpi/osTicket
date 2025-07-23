@@ -22,11 +22,11 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
 <h2  style="margin:0 0 10px 2px;"><?php
     echo sprintf('<a href="emails.php">%s</a>',   __('Emails'));
     if ($email) {
-        echo sprintf('<small> &mdash; <a href="emails.php?id=%d">%s</a></small>',
+        echo sprintf('<small>  <a href="emails.php?id=%d">%s</a></small>',
         $email->getId(),
         Format::htmlchars($email->getAddress()));
     } else
-        echo "<small> &mdash; $title </small>";
+        echo "<small>  $title </small>";
 ?>
 </h2>
 
@@ -93,8 +93,8 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
             <td>
         <span>
 			<select name="dept_id">
-			    <option value="0" selected="selected">&mdash; <?php
-                echo __('System Default'); ?> &mdash;</option>
+			    <option value="0" selected="selected"> <?php
+                echo __('System Default'); ?> </option>
 			    <?php
                 if ($depts=Dept::getPublicDepartments()) {
                   if($info['dept_id'] && !array_key_exists($info['dept_id'], $depts))
@@ -125,8 +125,8 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
             <td>
 		<span>
 			<select name="priority_id">
-			    <option value="0" selected="selected">&mdash; <?php
-                echo __('System Default'); ?> &mdash;</option>
+			    <option value="0" selected="selected"> <?php
+                echo __('System Default'); ?> </option>
 			    <?php
 			    $sql='SELECT priority_id, priority_desc FROM '.PRIORITY_TABLE.' pri ORDER by priority_urgency DESC';
 			    if(($res=db_query($sql)) && db_num_rows($res)){
@@ -149,7 +149,7 @@ $info = Format::htmlchars(($errors && $_POST) ? $_POST : $info, true);
             <td>
 		<span>
 			<select name="topic_id">
-                <option value="0" selected="selected">&mdash; <?php echo __('System Default'); ?> &mdash;</option>
+                <option value="0" selected="selected"> <?php echo __('System Default'); ?> </option>
 			    <?php
                     $warn = '';
                     $topics = Topic::getHelpTopics();
@@ -215,8 +215,8 @@ if ($email) { ?>
 } ?>
 <p style="text-align:center;">
     <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="emails.php"'>
+    <input type="reset" id="resetButton" name="reset"  value="<?php echo __('Reset');?>">
+    <input type="button" id="cancelButton" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="emails.php"'>
 </p>
 </form>
 <script type="text/javascript">

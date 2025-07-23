@@ -12,7 +12,7 @@ if (isset($options['entry']) && $options['mode'] == 'edit'
 if (isset($options['entry']) && $options['mode'] == 'edit') { ?>
 <tbody>
 <?php } ?>
-    <tr><td style="width:<?php echo $options['width'] ?: 150;?>px;"></td><td></td></tr>
+    <!-- <tr><td style="width:<?php echo $options['width'] ?: 150;?>px;"></td><td></td></tr> -->
 <?php
 // Keep up with the entry id in a hidden field to decide what to add and
 // delete when the parent form is submitted

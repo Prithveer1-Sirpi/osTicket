@@ -86,7 +86,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                         <td><?php echo __('Password Policy'); ?>:</td>
                         <td>
                             <select name="agent_passwd_policy">
-                            <option value=" "> &mdash; <?php echo __('All Active Policies'); ?> &mdash;</option>
+                            <option value=" ">  <?php echo __('All Active Policies'); ?> </option>
                             <?php
                                 foreach (PasswordPolicy::allActivePolicies() as $P) {
                                     $id = $P->getBkId();
@@ -136,7 +136,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
                     <tr>
                         <td><?php echo __('Agent Excessive Logins'); ?>:</td>
                         <td>
-                            <select name="staff_max_logins">
+                            <select name="staff_max_logins" style="margin-bottom: 5px;">
                                 <?php
                                     for ($i = 1; $i <= 10; $i++) {
                                         echo sprintf('<option value="%d" %s>%d</option>', $i,(($config['staff_max_logins']==$i)?'selected="selected"':''), $i);
@@ -230,7 +230,7 @@ if (!defined('OSTADMININC') || !$thisstaff || !$thisstaff->isAdmin() || !$config
         </div>
     <p style="text-align:center">
         <input class="button" type="submit" name="submit" value="<?php echo __('Save Changes'); ?>">
-        <input class="button" type="reset" name="reset" value="<?php echo __('Reset Changes'); ?>">
+        <input class="button" id="resetButton" type="reset" name="reset" value="<?php echo __('Reset Changes'); ?>">
     </p>
     </div>
 </form>

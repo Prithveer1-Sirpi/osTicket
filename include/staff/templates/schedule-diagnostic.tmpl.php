@@ -39,8 +39,8 @@ $action = "#schedule/{$schedule->getId()}/diagnostic";
     <hr>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="reset" value="<?php echo __('Reset'); ?>">
-            <input type="button" value="<?php echo __('Done'); ?>" class="close">
+            <input style="margin-bottom: 1.5rem;" id="resetButton" type="reset" value="<?php echo __('Reset'); ?>">
+            <input style="margin-bottom: 1.5rem;" id="cancelButton" type="button" value="<?php echo __('Done'); ?>" class="close">
         </span>
         <span class="buttons pull-right">
         <input type="submit" value="<?php echo __('Apply'); ?>">

@@ -46,7 +46,7 @@ $plots = $report->getPlotData();
 </div>
 <div class="clear"></div>
 <!-- Create a graph and fetch some data to create pretty dashboard -->
-<div style="position:relative">
+  <div style="width:100%;max-width:1300px;margin:0 auto;position: relative">
     <div id="line-chart-here" style="height:300px"></div>
     <div style="position:absolute;right:0;top:0" id="line-chart-legend"></div>
 </div>

@@ -720,14 +720,14 @@ class TicketsAjaxAPI extends AjaxController {
                     case $field instanceof FileUploadField:
                         $field->save();
                         $answer =  $field->getAnswer();
-                        $clean = $answer->display() ?: '&mdash;' . __('Empty') .  '&mdash;';
+                        $clean = $answer->display() ?: '' . __('Empty') .  '';
                         break;
                     case $field instanceof DepartmentField:
                         $clean = (string) Dept::lookup($field->getClean());
                         break;
                     case $field instanceof TextareaField:
                         $clean =  (string) $field->getClean();
-                        $clean = Format::striptags($clean) ?: '&mdash;' . __('Empty') .  '&mdash;';
+                        $clean = Format::striptags($clean) ?: '' . __('Empty') .  '';
                         if (strlen($clean) > 200)
                              $clean = Format::truncate(Format::striptags($clean), 200);
                         break;
@@ -742,7 +742,7 @@ class TicketsAjaxAPI extends AjaxController {
 
                 // Set basic response data
                 $response = array(
-                    'value' => $clean ?: '&mdash;' . __('Empty') .  '&mdash;',
+                    'value' => $clean ?: '' . __('Empty') .  '',
                     'id' => $fid, 'msg' => $msg
                 );
 
@@ -845,7 +845,7 @@ class TicketsAjaxAPI extends AjaxController {
                         );
 
                 $assignee =  $ticket->isAssigned() ? Format::htmlchars(implode('/', $ticket->getAssignees())) :
-                                            '<span class="faded">&mdash; '.__('Unassigned').' &mdash;';
+                                            '<span class="faded"> '.__('Unassigned').' ';
                 Http::response(201, $this->json_encode(['value' =>
                     $assignee, 'id' => 'assign', 'msg' => $msg]));
             }
@@ -1727,7 +1727,7 @@ class TicketsAjaxAPI extends AjaxController {
         $count = $_REQUEST['count'] ?:
             ($_REQUEST['tids'] ?  count($_REQUEST['tids']) : 0);
 
-        $info['title'] = sprintf(__('Change Status &mdash; %1$d %2$s selected'),
+        $info['title'] = sprintf(__('Change Status  %1$d %2$s selected'),
                  $count,
                  _N('ticket', 'tickets', $count)
                  );

@@ -47,8 +47,8 @@ if ($ticket && $ticket->getOwnerId() == $user->getId())
                 </td>
                 <td>
                     <select name="manager">
-                        <option value="0" selected="selected">&mdash; <?php
-                            echo __('None'); ?> &mdash;</option><?php
+                        <option value="0" selected="selected"> <?php
+                            echo __('None'); ?> </option><?php
                         if ($users=Staff::getStaffMembers(array('available' => true,
                                  'staff' => $thisstaff))) {
                         ?>
@@ -164,8 +164,8 @@ if ($ticket && $ticket->getOwnerId() == $user->getId())
 <hr>
 <p class="full-width">
     <span class="buttons pull-left">
-        <input type="reset" value="<?php echo __('Reset'); ?>">
-        <input type="button" name="cancel" class="<?php
+        <input type="reset" id="resetButton" value="<?php echo __('Reset'); ?>">
+        <input type="button" id="cancelButton" name="cancel" class="<?php
 echo $account ? 'cancel' : 'close'; ?>"  value="<?php echo __('Cancel'); ?>">
     </span>
     <span class="buttons pull-right">

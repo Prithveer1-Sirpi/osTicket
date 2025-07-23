@@ -86,14 +86,14 @@ $agents->limit($pageNav->getLimit())->offset($pageNav->getStart());
             <form action="staff.php" method="GET" name="filter">
                 <input type="hidden" name="a" value="filter">
                 <select name="did" id="did">
-                    <option value="0">&mdash;
-                        <?php echo __( 'All Departments');?> &mdash;</option>
+                    <option value="0">
+                        <?php echo __( 'All Departments');?> </option>
                     <?php if (($depts=Dept::getDepartments())) { foreach ($depts as $id=> $name) { $sel=($_REQUEST['did'] && $_REQUEST['did']==$id)?'selected="selected"':''; echo sprintf('
                     <option value="%d" %s>%s</option>',$id,$sel,$name); } } ?>
                 </select>
                 <select name="tid" id="tid">
-                    <option value="0">&mdash;
-                        <?php echo __( 'All Teams');?> &mdash;</option>
+                    <option value="0">
+                        <?php echo __( 'All Teams');?> </option>
                     <?php if (($teams=Team::getTeams())) { foreach ($teams as $id=> $name) { $sel=($_REQUEST['tid'] && $_REQUEST['tid']==$id)?'selected="selected"':''; echo sprintf('
                     <option value="%d" %s>%s</option>',$id,$sel,$name); } } ?>
                 </select>
@@ -173,7 +173,7 @@ $agents->limit($pageNav->getLimit())->offset($pageNav->getStart());
  <?php csrf_token(); ?>
  <input type="hidden" name="do" value="mass_process" >
  <input type="hidden" id="action" name="a" value="" >
- <table class="list" border="0" cellspacing="1" cellpadding="0" width="940">
+ <table class="list" id="scpTable" border="0" cellspacing="1" cellpadding="0" width="940">
     <thead>
         <tr>
             <th width="4%">&nbsp;</th>
@@ -258,7 +258,7 @@ if ($count) { //Show options..
     <hr style="margin-top:1em"/>
     <p class="full-width">
         <span class="buttons pull-left">
-            <input type="button" value="<?php echo __('No, Cancel');?>" class="close">
+            <input type="button" id="cancelButton" value="<?php echo __('No, Cancel');?>" class="close">
         </span>
         <span class="buttons pull-right">
             <input type="button" value="<?php echo __('Yes, Do it!');?>" class="confirm">

@@ -93,7 +93,7 @@ if ($matches && is_array($matches)) { ?>
 <hr/>
 <i class="icon-plus-sign"></i>
 <select id="search-add-new-field" name="new-field" style="max-width: 300px;">
-    <option value="">— <?php echo __('Add Other Field'); ?> —</option>
+    <option value=""> <?php echo __('Add Other Field'); ?> </option>
 <?php
 foreach ($matches as $path => $F) {
     # Skip fields already listed above the drop-down

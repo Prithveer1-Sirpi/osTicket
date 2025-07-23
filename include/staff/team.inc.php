@@ -83,14 +83,14 @@ $info = $team->getInfo();
             <td>
                 <span>
                 <select id="team-lead-select" name="lead_id" data-quick-add="staff">
-                    <option value="0">&mdash; <?php echo __('None');?> &mdash;</option>
+                    <option value="0"> <?php echo __('None');?> </option>
 <?php               if ($members) {
                         foreach($members as $k=>$staff){
                             $selected=($team->lead_id && $staff->getId()==$team->lead_id)?'selected="selected"':'';
                             echo sprintf('<option value="%d" %s>%s</option>',$staff->getId(),$selected,$staff->getName());
                         }
                     } ?>
-                    <option value="0" data-quick-add>&mdash; <?php echo __('Add New');?> &mdash;</option>
+                    <option value="0" data-quick-add> <?php echo __('Add New');?> </option>
                 </select>
                 &nbsp;<span class="error"><?php echo $errors['lead_id']; ?></span>
                 <i class="help-tip icon-question-sign" href="#lead"></i>
@@ -144,13 +144,13 @@ foreach ($members as $m)
         <td colspan="2">
           <i class="icon-plus-sign"></i>
           <select id="add_access" data-quick-add="staff">
-            <option value="0">&mdash; <?php echo __('Select Agent');?> &mdash;</option>
+            <option value="0"> <?php echo __('Select Agent');?> </option>
             <?php
             foreach ($agents as $id=>$name) {
               echo sprintf('<option value="%d">%s</option>',$id,Format::htmlchars($name));
             }
             ?>
-            <option value="0" data-quick-add>&mdash; <?php echo __('Add New');?> &mdash;</option>
+            <option value="0" data-quick-add> <?php echo __('Add New');?> </option>
           </select>
           <button type="button" class="action-button">
             <?php echo __('Add'); ?>
@@ -178,8 +178,8 @@ foreach ($members as $m)
 
 <p style="text-align:center">
     <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="?"'>
+    <input type="reset" id="resetButton" name="reset"  value="<?php echo __('Reset');?>">
+    <input type="button" id="cancelButton" name="cancel" value="<?php echo __('Cancel');?>" onclick='window.location.href="?"'>
 </p>
 </form>
 

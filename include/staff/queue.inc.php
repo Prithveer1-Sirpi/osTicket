@@ -66,7 +66,7 @@ else {
         <div>
           <div><strong><?php echo __("Parent Queue"); ?>:</strong></div>
           <select name="parent_id" id="parent-id">
-            <option value="0">— <?php echo __('Top-Level Queue'); ?> —</option>
+            <option value="0"> <?php echo __('Top-Level Queue'); ?> </option>
   <?php foreach (CustomQueue::queues() as $cq) {
           // Queue cannot be a descendent of itself
           if ($cq->id == $queue->id)
@@ -106,12 +106,12 @@ else {
         <hr/>
         <select name="filter">
           <option value="" <?php if ($queue->filter == "")
-              echo 'selected="selected"'; ?>>— <?php echo __('None'); ?> —</option>
+              echo 'selected="selected"'; ?>> <?php echo __('None'); ?> </option>
           <option value="::" <?php if ($queue->filter == "::")
-              echo 'selected="selected"'; ?>>— <?php echo __('Inherit from parent');
+              echo 'selected="selected"'; ?>> <?php echo __('Inherit from parent');
             if ($queue->parent
                 && ($qf = $queue->parent->getQuickFilterField()))
-                echo sprintf(' (%s)', $qf->getLabel()); ?> —</option>
+                echo sprintf(' (%s)', $qf->getLabel()); ?> </option>
 <?php foreach ($queue->getSupportedFilters() as $path => $f) {
         list($label, $field) = $f;
 ?>
@@ -128,12 +128,12 @@ else {
         <hr/>
         <select name="sort_id">
           <option value="" <?php if ($queue->filter == "")
-              echo 'selected="selected"'; ?>>— <?php echo __('None'); ?> —</option>
+              echo 'selected="selected"'; ?>> <?php echo __('None'); ?> </option>
           <option value="::" <?php if ($queue->isDefaultSortInherited())
-              echo 'selected="selected"'; ?>>— <?php echo __('Inherit from parent');
+              echo 'selected="selected"'; ?>> <?php echo __('Inherit from parent');
             if ($queue->parent
                 && ($sort = $queue->parent->getDefaultSort()))
-                echo sprintf(' (%s)', $sort->getName()); ?> —</option>
+                echo sprintf(' (%s)', $sort->getName()); ?> </option>
 <?php foreach ($queue->getSortOptions() as $sort) { ?>
           <option value="<?php echo $sort->id; ?>"
             <?php if ($sort->id == $queue->sort_id) echo 'selected="selected"'; ?>
@@ -232,14 +232,14 @@ if ($queue->parent) { ?>
                   <td colspan="3" id="append-sort">
                       <i class="icon-plus-sign"></i>
                       <select id="add-sort" data-quick-add="queue-sort">
-                          <option value="">— <?php
-                            echo __('Add Sort Criteria'); ?> —</option>
+                          <option value=""> <?php
+                            echo __('Add Sort Criteria'); ?> </option>
 <?php foreach (QueueSort::forQueue($queue) as $QS) { ?>
                           <option value="<?php echo $QS->id; ?>"><?php
                             echo Format::htmlchars($QS->getName()); ?></option>
 <?php } ?>
-                          <option value="0" data-quick-add>&mdash; <?php
-                            echo __('Add New Sort Criteria');?> &mdash;</option>
+                          <option value="0" data-quick-add> <?php
+                            echo __('Add New Sort Criteria');?> </option>
                       </select>
                       <button type="button" class="green button"><?php
                         echo __('Add'); ?></button>
@@ -370,7 +370,7 @@ if ($queue->getConditions()) {
     <div style="margin-top: 10px; padding-top: 10px; border-top: 1px solid #bbb">
       <i class="icon-plus-sign"></i>
       <select class="add-condition">
-        <option value="0">— <?php echo __("Add a condition"); ?> —</option>
+        <option value="0"> <?php echo __("Add a condition"); ?> </option>
 <?php
       foreach (CustomQueue::getSearchableFields('Ticket') as $path=>$f) {
           list($label) = $f;
@@ -408,8 +408,8 @@ if ($queue->getConditions()) {
 
   <p style="text-align:center;">
     <input type="submit" name="submit" value="<?php echo $submit_text; ?>">
-    <input type="reset"  name="reset"  value="<?php echo __('Reset');?>">
-    <input type="button" name="cancel" value="<?php echo __('Cancel');?>" onclick="window.history.go(-1);">
+    <input type="reset" id="resetButton"  name="reset"  value="<?php echo __('Reset');?>">
+    <input type="button" id="cancelButton" name="cancel" value="<?php echo __('Cancel');?>" onclick="window.history.go(-1);">
   </p>
 
 </form>

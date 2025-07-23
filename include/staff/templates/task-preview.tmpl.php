@@ -75,7 +75,7 @@ if ($task->isOpen()) {
             <tr>
                 <th width="100">'.__('Assigned To').':</th>
                 <td>%s</td>
-            </tr>', $task->getAssigned() ?: ' <span class="faded">&mdash; '.__('Unassigned').' &mdash;</span>');
+            </tr>', $task->getAssigned() ?: ' <span class="faded"> '.__('Unassigned').' </span>');
 }
 echo sprintf(
     '

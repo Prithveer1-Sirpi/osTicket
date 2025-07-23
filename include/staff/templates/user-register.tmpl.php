@@ -52,7 +52,7 @@ echo sprintf(__(
                         $('#password').show();
                 }
                 ">
-                <option value="">&mdash; <?php echo __('Use any available backend'); ?> &mdash;</option>
+                <option value=""> <?php echo __('Use any available backend'); ?> </option>
             <?php foreach (UserAuthenticationBackend::allRegistered() as $ab) {
                 if (!$ab->supportsInteractiveAuthentication()) continue; ?>
                 <option value="<?php echo $ab->getBkId(); ?>" <?php
@@ -142,8 +142,8 @@ echo sprintf(__(
         <hr>
         <p class="full-width">
             <span class="buttons pull-left">
-                <input type="reset" value="<?php echo __('Reset'); ?>">
-                <input type="button" name="cancel" class="close" value="<?php echo __('Cancel'); ?>">
+                <input type="reset" id="resetButton" value="<?php echo __('Reset'); ?>">
+                <input type="button" id="cancelButton" name="cancel" class="close" value="<?php echo __('Cancel'); ?>">
             </span>
             <span class="buttons pull-right">
                 <input type="submit" value="<?php echo __('Create Account'); ?>">
